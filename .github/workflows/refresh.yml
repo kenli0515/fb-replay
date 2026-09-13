@@ -3,6 +3,13 @@ name: Refresh match data
 on:
   schedule:
     - cron: "0 1,13 * * *"
+  # 改动抓取脚本或本文件时顺手重建一次数据；
+  # 刻意排除 data/matches.json，避免 workflow 自己的 commit 触发循环。
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/build_data.py"
+      - ".github/workflows/refresh.yml"
   workflow_dispatch:
     inputs:
       areas:
