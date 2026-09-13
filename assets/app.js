@@ -214,7 +214,7 @@ function createCard(match) {
     el("header", {}, title, meta),
     actions,
     noteLine,
-    match.nowtvUrl ? nowNote : null,
+    ...(match.nowtvUrl ? [nowNote] : []),
     el("div", { class: "stage" }),
   );
   return card;
