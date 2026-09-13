@@ -126,6 +126,25 @@ button:hover, .btn:hover { border-color: #3a4a5a; text-decoration: none; }
   background: #000;
   pointer-events: none;
 }
+/* NOW TV 站內播放：播放器固定 660x400 在 iframe 內 (20,227)，y=641 開始就係帶比分嘅列表，
+   所以放大 iframe 至 700x800 再向左上推，只露播放器，上下各留 12px 不透明保險條。 */
+.crop-scaler { position: relative; width: 100%; max-width: 660px; overflow: hidden; }
+.frame-wrap.crop {
+  position: absolute; top: 0; left: 0;
+  width: var(--box-w, 660px); height: var(--box-h, 424px);
+  transform-origin: top left;
+}
+.frame-wrap.crop iframe {
+  position: absolute;
+  left: calc(-1 * var(--crop-x, 20px));
+  top: calc(-1 * (var(--crop-y, 227px) - var(--crop-pad, 12px)));
+  width: var(--frame-w, 700px); height: var(--frame-h, 800px);
+  aspect-ratio: auto;
+}
+.frame-wrap.crop .bar { position: absolute; left: 0; right: 0; height: var(--crop-pad, 12px); background: #000; z-index: 5; }
+.frame-wrap.crop .bar.t { top: 0; }
+.frame-wrap.crop .bar.b { bottom: 0; }
+
 .framebar { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 6px; }
 .framebar .src { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 

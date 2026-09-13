@@ -4,12 +4,26 @@
 
 | 來源 | 內容 | 備註 |
 | --- | --- | --- |
-| **NOW TV**（PCCW，香港） | 官方免費精華，每場約 3 分鐘 | 有廣東話隊名；頁面本身會顯示比分，所以只提供外連 |
+| **NOW TV**（PCCW，香港） | 官方免費精華，每場約 3 分鐘 | 有廣東話隊名；可以喺本頁 iframe 直接播（裁切到只剩播放器） |
 | **YouTube** | 球會／電視台官方精華 | 可以喺本頁 iframe 直接播 |
 
 頁面唔會出現任何比分、勝負或入球提示。NOW TV 嘅中文標題本身寫住賽果
 （例如「【英超】新特蘭0:2阿仙奴」），所以 `scripts/build_data.py` 會先洗走比分再寫入
 `data/matches.json`；如果洗完仲有比分痕跡，個 script 會直接報錯、拒絕寫檔。
+
+## NOW TV 站內播放（裁切 embedding）
+
+NOW TV 嘅播放頁本身會顯示比分同賽果縮圖，但播放器係可以喺 iframe 內正常播放嘅
+（Bitmovin player，只係被 `autoplay` 政策擋住，要撳一下播放鍵）。所以本站用「放大 iframe + 裁切」：
+
+- 播放器喺 `https://sports.now.com/mobileweb/video#tvVideoId=<id>` 內固定係 **660×400，位置 (20, 227)**
+- 由 **y=641** 開始就係帶比分嘅影片列表，所以裁剪框一定要收喺 641 之上
+- 實際做法：iframe 放大到 **700×800**，再 `position:absolute; left:-20px; top:-215px`，
+  外面用 `overflow:hidden` 嘅 660×424 容器包住，上下各加 12px 唔透明保險條
+- 播放器未載入完成前、或者版面被廣告推高／推低少過 12px 都唔會漏比分
+
+想自己調位置可以改 `assets/styles.css` 嘅 `.frame-wrap.crop` 同 `.crop-scaler`。
+首次播放會彈一次 NOW TV 嘅同意視窗，撳過 Consent 之後就唔會再問。
 
 ## 本地預覽
 

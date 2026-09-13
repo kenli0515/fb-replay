@@ -2,6 +2,10 @@
 
 const YT_EMBED = "https://www.youtube-nocookie.com/embed/";
 
+/* NOW TV 播放器固定 660x400，位於 mobileweb 頁面內 (20, 227)；y=641 起就係帶比分嘅列表。 */
+const NOW_EMBED = "https://sports.now.com/mobileweb/video#tvVideoId=";
+const NOW_CROP = { "crop-x": 20, "crop-y": 227, "frame-w": 700, "frame-h": 800, "crop-pad": 12, "box-w": 660, "box-h": 424 };
+
 const state = { matches: [], query: "", league: "all", mask: true, generatedAt: null };
 
 /* ---------- helpers ---------- */
@@ -69,7 +73,7 @@ async function copyText(text) {
 
 /* ---------- playback ---------- */
 
-function mountFrame(card, src, sourceLabel, maskable) {
+function mountFrame(card, src, sourceLabel, maskable, crop) {
   const stage = card.querySelector(".stage");
   stage.textContent = "";
 
@@ -78,10 +82,15 @@ function mountFrame(card, src, sourceLabel, maskable) {
     allow: "autoplay; encrypted-media; picture-in-picture; fullscreen",
     allowfullscreen: "true",
     referrerpolicy: "origin",
+    scrolling: "no",
     loading: "eager",
   });
-  const wrap = el("div", { class: "frame-wrap" }, frame);
+  const wrap = el("div", { class: crop ? "frame-wrap crop" : "frame-wrap" }, frame);
   if (maskable && state.mask) wrap.append(el("div", { class: "title-mask" }));
+  if (crop) {
+    for (const [key, value] of Object.entries(NOW_CROP)) wrap.style.setProperty(`--${key}`, `${value}px`);
+    wrap.append(el("div", { class: "bar t" }), el("div", { class: "bar b" }));
+  }
 
   const close = el("button", { class: "ghost", type: "button", text: "閂咗播放器" });
   close.addEventListener("click", () => {
@@ -101,10 +110,20 @@ function mountFrame(card, src, sourceLabel, maskable) {
     el("span", { class: "actions" }, open, close),
   );
 
-  stage.append(wrap, bar);
+  const scaler = crop ? el("div", { class: "crop-scaler" }, wrap) : null;
+  stage.append(scaler || wrap, bar);
   stage.classList.add("on");
+  if (scaler) fitCrop(scaler);
   card.classList.add("playing");
   card.scrollIntoView({ block: "nearest", behavior: "smooth" });
+}
+
+function fitCrop(scaler) {
+  const wrap = scaler.querySelector(".frame-wrap");
+  if (!wrap) return;
+  const scale = Math.min(1, scaler.clientWidth / NOW_CROP["box-w"]);
+  wrap.style.transform = `scale(${scale})`;
+  scaler.style.height = `${Math.round(NOW_CROP["box-h"] * scale)}px`;
 }
 
 /* ---------- card ---------- */
@@ -160,12 +179,20 @@ function createCard(match) {
   }
 
   if (match.nowtvUrl) {
+    const embed = match.videoId ? `${NOW_EMBED}${match.videoId}` : null;
+    if (embed) {
+      const playNow = el("button", { class: "btn now", type: "button", text: "▶ 站內睇 NOW TV 精華" });
+      playNow.addEventListener("click", () =>
+        mountFrame(card, embed, "NOW TV 官方精華（站內播放）", false, true),
+      );
+      actions.append(playNow);
+    }
     actions.append(el("a", {
-      class: "btn now",
+      class: "ghost btn",
       href: match.nowtvUrl,
       target: "_blank",
       rel: "noopener noreferrer",
-      text: "NOW TV 官方精華 ↗",
+      text: "NOW TV 開啟 ↗",
     }));
   }
   const copy = el("button", { class: "ghost", type: "button", text: "複製連結" });
@@ -181,7 +208,7 @@ function createCard(match) {
   }
   const noteLine = el("div", { class: "note" }, ...notes);
 
-  const nowNote = el("div", { class: "note warn", text: "NOW TV 頁面會顯示比分，介意嘅話請用 YouTube 播放。" });
+  const nowNote = el("div", { class: "note", text: "NOW TV 站內播放只露出播放器，比分同結果縮圖已經裁走；首次播放會彈出一次同意視窗，按 Consent 之後就唔會再問。" });
 
   card.append(
     el("header", {}, title, meta),
@@ -275,5 +302,9 @@ async function init() {
   renderLeagueChips();
   render();
 }
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".crop-scaler").forEach(fitCrop);
+});
 
 init();
