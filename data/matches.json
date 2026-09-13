@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T03:39:05Z",
+  "generatedAt": "2026-09-13T13:48:32Z",
   "areas": [
     {
       "key": "england",
@@ -30,11 +30,11 @@
       "publishedAt": "2026-09-13T00:00:00+08:00",
       "youtube": [
         {
-          "id": "aTYTfso6kro",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TNT Sports Football",
-          "durationSeconds": 180.0
+          "id": "vH9PRdWxf3Q",
+          "title": "Sunderland v. Arsenal | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 833.0
         }
       ],
       "id": "nowtv-202608132156348-0"
@@ -54,11 +54,11 @@
       "publishedAt": "2026-09-13T00:00:00+08:00",
       "youtube": [
         {
-          "id": "2vIfl_dQIZc",
-          "title": "TOTTENHAM v EVERTON | Premier League highlights",
+          "id": "iD8CM8PWkTk",
+          "title": "Everton v. Tottenham Hotspur | PREMIER LEAGUE HIGHLIGHTS | 10/26/2025 | NBC Sports",
           "titleHidden": false,
-          "channel": "Everton Football Club",
-          "durationSeconds": 172.0
+          "channel": "NBC Sports",
+          "durationSeconds": 604.0
         }
       ],
       "id": "nowtv-202608132156347-1"
@@ -78,11 +78,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "82dHG2i3-nk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Sky Sports Premier League and Sky Sports News",
-          "durationSeconds": 192.0
+          "id": "HfX417hSwPM",
+          "title": "Bournemouth v. Brentford | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 793.0
         }
       ],
       "id": "nowtv-202608132156341-2"
@@ -102,11 +102,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "J42n6v_Nhac",
-          "title": "Chelsea vs Hull City | HIGHLIGHTS | Premier League 2026/27",
+          "id": "1-G_ZhydOd4",
+          "title": "Chelsea v. Hull City | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
           "titleHidden": false,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 129.0
+          "channel": "NBC Sports",
+          "durationSeconds": 742.0
         }
       ],
       "id": "nowtv-202608132156343-3"
@@ -126,11 +126,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "xeWi5SkDP0A",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Sky Sports Premier League",
-          "durationSeconds": 171.0
+          "id": "a-Zt9QGl5O4",
+          "title": "Liverpool v. Fulham | PREMIER LEAGUE HIGHLIGHTS | 4/11/2026 | NBC Sports",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 670.0
         }
       ],
       "id": "nowtv-202608132156344-4"
@@ -150,11 +150,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "ojLgWcx1-LQ",
-          "title": "Match Highlights | Crystal Palace vs Ipswich Town | Premier League",
+          "id": "ChGZUj9OUyE",
+          "title": "Ipswich Town v. Crystal Palace | PREMIER LEAGUE HIGHLIGHTS | 12/3/2024 | NBC Sports",
           "titleHidden": false,
-          "channel": "Crystal Palace FC",
-          "durationSeconds": 147.0
+          "channel": "NBC Sports",
+          "durationSeconds": 591.0
         }
       ],
       "id": "nowtv-202608132156340-5"
@@ -174,11 +174,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "AVPzUb6Ssv0",
-          "title": "Highlights: Villa vs Forest (28.11.18.)",
+          "id": "WZlViwalxzo",
+          "title": "Nottingham Forest v. Aston Villa | PREMIER LEAGUE HIGHLIGHTS | 4/12/2026 | NBC Sports",
           "titleHidden": false,
-          "channel": "Nottingham Forest FC",
-          "durationSeconds": 128.0
+          "channel": "NBC Sports",
+          "durationSeconds": 756.0
         }
       ],
       "id": "nowtv-202608132156342-6"
@@ -222,11 +222,11 @@
       "publishedAt": "2026-09-11T00:00:00+08:00",
       "youtube": [
         {
-          "id": "12WZEO94kqU",
+          "id": "oC5pM4Z4jDI",
           "title": null,
           "titleHidden": true,
-          "channel": "TNT Sports Football",
-          "durationSeconds": 340.0
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 623.0
         }
       ],
       "id": "nowtv-202609072162710-8"
@@ -246,11 +246,11 @@
       "publishedAt": "2026-09-11T00:00:00+08:00",
       "youtube": [
         {
-          "id": "Fy7486gQLFY",
-          "title": "PSV Eindhoven - Shakhtar Donetsk | vs | Highlights | UEFA Champions League 2026/27 | shakhtar psv",
+          "id": "bYkS2fSkzfI",
+          "title": "HIGHLIGHTS - PSV Eindhoven vs Shakhtar | UEFA Champions League 24/25 | TUDN",
           "titleHidden": false,
-          "channel": "CHEFON FF",
-          "durationSeconds": 155.0
+          "channel": "TUDN USA",
+          "durationSeconds": 913.0
         }
       ],
       "id": "nowtv-202608132156330-9"
@@ -270,11 +270,11 @@
       "publishedAt": "2026-09-11T00:00:00+08:00",
       "youtube": [
         {
-          "id": "ZMLSwLQreXk",
+          "id": "DW68WzlQ2l4",
           "title": null,
           "titleHidden": true,
-          "channel": "TNT Sports Football",
-          "durationSeconds": 313.0
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 585.0
         }
       ],
       "id": "nowtv-202608132156333-10"
@@ -294,11 +294,11 @@
       "publishedAt": "2026-09-11T00:00:00+08:00",
       "youtube": [
         {
-          "id": "v2DHdi6hjKo",
+          "id": "AytJ8mEWwSA",
           "title": null,
           "titleHidden": true,
-          "channel": "TNT Sports Football",
-          "durationSeconds": 273.0
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 566.0
         }
       ],
       "id": "nowtv-202608132156334-11"
