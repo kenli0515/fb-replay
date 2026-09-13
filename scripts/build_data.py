@@ -86,6 +86,11 @@ def tokenize(value: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", ascii_fold(value).lower())
 
 
+def hk_today() -> datetime.date:
+    """Today in Hong Kong, the day a European fixture is filed under."""
+    return datetime.datetime.now(HK_TZ).date()
+
+
 def clean_text(value: str) -> str:
     value = re.sub(r"<[^>]+>", " ", value)
     value = html.unescape(value)
@@ -380,6 +385,153 @@ def nowtv_fixtures(areas: list[str], page_size: int, timeout: int) -> list[dict]
 
 
 # ---------------------------------------------------------------------------
+# Fixtures still to come (openfootball)
+# ---------------------------------------------------------------------------
+
+# openfootball keeps the season files of the big leagues in the open; they carry
+# dates and kick-off times and, for a match nobody has played yet, no score at
+# all, which makes them a safe source for a spoiler-free schedule.
+SCHEDULE_BASE = "https://raw.githubusercontent.com/openfootball/football.json/master"
+AREA_SCHEDULE = {
+    "england": "en.1",
+    "spain": "es.1",
+    "italy": "it.1",
+    "germany": "de.1",
+}
+_TEAM_SUFFIX_RE = re.compile(r"\s+(?:FC|AFC|CF|SC|AC|SV|BC|1899)$")
+_TEAM_PREFIX_RE = re.compile(r"^(?:AFC|FC|CF|SC|AC|SV|BC)\s+")
+_KICKOFF_RE = re.compile(r"^(\d{1,2}):(\d{2})$")
+
+
+def season_slug(when: datetime.date) -> str:
+    start = season_start(when)
+    return f"{start}-{str(start + 1)[2:]}"
+
+
+def tidy_team(name: str) -> str:
+    """'Manchester United FC' and 'AFC Bournemouth' read better without the suffix."""
+    name = clean_text(name)
+    name = _TEAM_SUFFIX_RE.sub("", name)
+    name = _TEAM_PREFIX_RE.sub("", name)
+    return name.strip()
+
+
+def _uk_offset(when: datetime.date) -> int:
+    """Hours the UK is ahead of UTC: 1 through British Summer Time, else 0."""
+    if 4 <= when.month <= 9:
+        return 1
+    if when.month == 3:
+        last_sunday = 31 - (datetime.date(when.year, 3, 31).weekday() + 1) % 7
+        return 1 if when.day >= last_sunday else 0
+    if when.month == 10:
+        last_sunday = 31 - (datetime.date(when.year, 10, 31).weekday() + 1) % 7
+        return 1 if when.day < last_sunday else 0
+    return 0
+
+
+def kickoff_at(when: datetime.date, clock: str | None):
+    """When a UK fixture starts, as a Hong Kong timestamp, or None without a time."""
+    match = _KICKOFF_RE.match((clock or "").strip())
+    if match is None:
+        return None
+    hour, minute = int(match.group(1)), int(match.group(2))
+    if hour > 23 or minute > 59:
+        return None
+    start = datetime.datetime(when.year, when.month, when.day, hour, minute, tzinfo=HK_TZ)
+    return start + datetime.timedelta(hours=8 - _uk_offset(when))
+
+
+def schedule_fixtures(areas: list[str], timeout: int) -> list[dict]:
+    """Every listed fixture of the running season for the areas in use."""
+    slug = season_slug(hk_today())
+    fixtures = []
+    for area in areas:
+        code = AREA_SCHEDULE.get(area)
+        if not code:
+            continue
+        url = f"{SCHEDULE_BASE}/{slug}/{code}.json"
+        try:
+            payload = fetch_json(url, timeout)
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+            print(f"warning: schedule for {area} failed ({error})", file=sys.stderr)
+            continue
+        for entry in (payload or {}).get("matches") or []:
+            try:
+                when = datetime.date.fromisoformat(entry.get("date") or "")
+            except ValueError:
+                continue
+            home, away = tidy_team(entry.get("team1") or ""), tidy_team(entry.get("team2") or "")
+            if not (home and away):
+                continue
+            fixtures.append(
+                {
+                    "area": area,
+                    "league": AREAS[area][0],
+                    "date": when.isoformat(),
+                    "kickoff": (
+                        kickoff_at(when, entry.get("time")).isoformat()
+                        if kickoff_at(when, entry.get("time"))
+                        else None
+                    ),
+                    "home": home,
+                    "away": away,
+                    "homeZh": home,
+                    "awayZh": away,
+                    "titleZh": None,
+                    "videoId": None,
+                    "nowtvUrl": None,
+                    "durationSeconds": None,
+                    "publishedAt": None,
+                    "youtube": [],
+                    "previews": [],
+                    "upcoming": True,
+                }
+            )
+    return fixtures
+
+
+def _pair_key(fixture: dict) -> tuple:
+    return (frozenset(tokenize(fixture["home"]) + tokenize(fixture["away"])), fixture.get("date"))
+
+
+def merge_schedule(fixtures: list[dict], scheduled: list[dict], days: int) -> int:
+    """Add the next `days` of fixtures and give the rest their kick-off time."""
+    today = hk_today()
+    horizon = today + datetime.timedelta(days=days)
+    known = {_pair_key(fixture) for fixture in fixtures}
+    added = 0
+    for entry in scheduled:
+        when = datetime.date.fromisoformat(entry["date"])
+        if not (today <= when <= horizon):
+            continue
+        if _pair_key(entry) in known:
+            continue
+        fixtures.append(entry)
+        known.add(_pair_key(entry))
+        added += 1
+    lookup = {_pair_key(entry): entry for entry in scheduled}
+    for fixture in fixtures:
+        if fixture.get("kickoff") or not fixture.get("date"):
+            continue
+        when = datetime.date.fromisoformat(fixture["date"])
+        for shift in (0, -1, 1):
+            key = (frozenset(tokenize(fixture["home"]) + tokenize(fixture["away"])), (when + datetime.timedelta(days=shift)).isoformat())
+            if key in lookup and lookup[key].get("kickoff"):
+                fixture["kickoff"] = lookup[key]["kickoff"]
+                break
+    return added
+
+
+def is_upcoming(fixture: dict) -> bool:
+    """True while a match has not started, so no replay can exist for it."""
+    kickoff = fixture.get("kickoff")
+    if kickoff:
+        return datetime.datetime.fromisoformat(kickoff) > datetime.datetime.now(HK_TZ)
+    when = fixture.get("date")
+    return bool(when and when > hk_today().isoformat())
+
+
+# ---------------------------------------------------------------------------
 # YouTube
 # ---------------------------------------------------------------------------
 
@@ -423,6 +575,45 @@ NOT_A_HIGHLIGHT_PHRASES = [
     "fc 26", "career mode", "master league",
 ]
 _LIVE_RE = re.compile(r"(?<![a-z])live(?![a-z])")
+
+# One query per kind of replay: a match with no cut highlights often still has a
+# full match, an extended cut or a club upload.
+REPLAY_QUERIES = (
+    "{home} vs {away} highlights",
+    "{home} vs {away} full match",
+)
+
+# A preview is about a match nobody has played yet, so the titles worth keeping
+# talk about the fixture rather than about a result.
+PREVIEW_REJECT_PHRASES = [
+    "highlight", "full match", "extended", "all goals", "goals &", "every goal",
+    "recap", "classic", "retro", "throwback", "rewind", "watch along",
+    "watchalong", "watch-along", "watch party", "fan cam", "fancam",
+    "reaction", "reacts", "simulation", "gameplay", "efootball", "e-football",
+    "pro evolution", "career mode", "master league", "streaming", "live stream",
+    "fifa 2", "fc 25", "fc 26", "pes 2", "pes2", "ps5", "ps4", "xbox",
+]
+
+# Wording that marks a video as fixture talk: broadcast build-up, club shows and
+# the fan channels that preview a game all use at least one of these.
+PREVIEW_SIGNALS = [
+    "preview", "predict", "team news", "press conference", "presser",
+    "build up", "build-up", "talking point", "line-up", "lineup", "line up",
+    "starting xi", "how to watch", "matchday", "match day", "countdown",
+    "what to expect", "pre match", "pre-match", "analysis", "breakdown",
+    "scout report", "combined xi", "injury news", "squad news", "derby day",
+    "head to head", "h2h", "big match", "key battles", "match pack",
+    "kick off", "kick-off", "preview show", "vs prediction", "preview &",
+]
+
+# Other teams wear the same name: a WSL, academy or reserve match is a different
+# fixture, and its score says nothing about the one being looked for.
+SIDE_COMPETITION_PHRASES = [
+    "women", "womens", "wsl", "nwsl", "uwcl", "femen", "feminine", "femenino",
+    "lioness", "academy", "youth", "u18", "u19", "u21", "u23", "under 18",
+    "under 19", "under 21", "under 23", "premier league 2", "pl2", "reserves",
+    "reserve team", "b team",
+]
 
 # Which competition the words in a title belong to, per NOW TV area. A title
 # naming a different competition is about a different match.
@@ -571,7 +762,7 @@ def yt_window_for(fixture_date, today=None):
 
 def not_a_highlight(raw_title: str) -> str | None:
     """The phrase showing this title is not a highlight, or None."""
-    folded = " " + ascii_fold(raw_title).lower() + " "
+    folded = " " + _flatten(ascii_fold(raw_title)).lower() + " "
     for phrase in NOT_A_HIGHLIGHT_PHRASES:
         if phrase in folded:
             return phrase
@@ -621,14 +812,178 @@ def stale_title(raw_title: str, fixture_date) -> str | None:
     return None
 
 
+def _flatten(value: str) -> str:
+    """Dashes and underscores read as spaces, so 'Pre - Match View' still matches."""
+    return re.sub(r"\s+", " ", re.sub(r"[-\u2013\u2014_]", " ", value))
+
+
+def _team_tokens(team: str) -> list[str]:
+    tokens = [token for token in tokenize(team) if token not in STOP_TOKENS]
+    return [token for token in tokens if len(token) >= 4] or tokens
+
+
+# "X vs Y", "X v Y", "X - Y", "X face Y": the two teams have to be named against
+# each other. Both names appearing somewhere in the title is not enough, or a
+# roundup that lists six clubs passes for a preview of any one of them.
+_H2H_SEPARATOR = (
+    r"(?:vs\.?|v\.?|versus|[-\u2013\u2014:]|face[sd]?|take[s]? on|host[s]?|"
+    r"visit[s]?|meet[s]?|against)"
+)
+
+
+def head_to_head(raw_title: str, fixture: dict, window: int = 30) -> bool:
+    """True when a title names one team against the other."""
+    text = _flatten(ascii_fold(raw_title)).lower()
+    for first, second in (
+        (_team_tokens(fixture["home"]), _team_tokens(fixture["away"])),
+        (_team_tokens(fixture["away"]), _team_tokens(fixture["home"])),
+    ):
+        left = "|".join(re.escape(token) for token in first)
+        right = "|".join(re.escape(token) for token in second)
+        if re.search(
+            rf"(?:{left}).{{0,{window}}}?{_H2H_SEPARATOR}.{{0,{window}}}?(?:{right})", text
+        ):
+            return True
+    return False
+
+
+def side_competition(raw_title: str, channel: str | None) -> str | None:
+    """Name the other competition when a title or channel belongs to it."""
+    folded = " " + _flatten(ascii_fold(f"{raw_title} {channel or ''}")).lower() + " "
+    for phrase in SIDE_COMPETITION_PHRASES:
+        if phrase in folded:
+            return phrase
+    return None
+
+
+def preview_signal(raw_title: str) -> str | None:
+    """The phrase marking this title as fixture talk, or None."""
+    folded = _flatten(ascii_fold(raw_title)).lower()
+    for phrase in PREVIEW_SIGNALS:
+        if phrase in folded:
+            return phrase
+    return None
+
+
+def preview_score(candidate: dict, fixture: dict) -> float:
+    """Rank previews: broadcasters first, then clubs, then fan channels."""
+    score = 0.0
+    raw = candidate["titleRaw"]
+    if _team_in_text(fixture["home"], raw):
+        score += 3.0
+    if _team_in_text(fixture["away"], raw):
+        score += 3.0
+    if preview_signal(raw):
+        score += 2.0
+    if head_to_head(raw, fixture, window=6):
+        score += 1.5
+    channel = (candidate["channel"] or "").lower()
+    if any(name in channel for name in PREFERRED_CHANNELS):
+        score += 4.0
+    elif _team_in_text(fixture["home"], channel) or _team_in_text(fixture["away"], channel):
+        score += 3.0
+    else:
+        score += 0.5
+    if _LIVE_RE.search(ascii_fold(raw).lower()):
+        score -= 2.0
+    duration = candidate["duration"]
+    if duration is not None and duration < 60:
+        score -= 2.0
+    elif duration is not None and duration > 5400:
+        score -= 1.0
+    score -= 0.5 * min(len(spoiler_hits(raw)), 3)
+    score += 0.35 * math.log10((candidate["views"] or 0) + 1)
+    return score
+
+
+def preview_reject(candidate: dict, fixture: dict, fixture_date) -> str | None:
+    """Why this candidate is not preview content for this fixture, or None."""
+    raw = candidate["titleRaw"]
+    side = side_competition(raw, candidate.get("channel"))
+    if side:
+        return f"another competition with the same names ({side})"
+    lowered = _flatten(ascii_fold(raw)).lower()
+    for phrase in PREVIEW_REJECT_PHRASES:
+        if phrase in lowered:
+            return f"not a preview ({phrase})"
+    if looks_like_score(raw):
+        return "title states the score"
+    mismatch = competition_mismatch(raw, fixture.get("area"))
+    if mismatch:
+        return mismatch
+    stale = stale_title(raw, fixture_date)
+    if stale:
+        return stale
+    if not head_to_head(raw, fixture):
+        return "title does not put the two teams head to head"
+    if (
+        preview_signal(raw) is None
+        and not trusted_channel(candidate, fixture)
+        and not _team_in_text(fixture["home"], candidate["channel"] or "")
+        and not _team_in_text(fixture["away"], candidate["channel"] or "")
+    ):
+        return "no preview wording and no club or broadcaster channel"
+    return None
+
+
+def attach_previews(fixture: dict, args) -> None:
+    """Collect fixture talk for a match that has not kicked off yet."""
+    query = f"{fixture['home']} vs {fixture['away']} preview"
+    fixture["previews"] = []
+    fixture_date = _fixture_date(fixture)
+    try:
+        candidates = yt_search(query, args.preview_search, args.timeout, window=args.preview_window)
+    except (FileNotFoundError, subprocess.TimeoutExpired) as error:
+        print(f"warning: preview lookup failed for {query} ({error})", file=sys.stderr)
+        return
+    verified = [
+        candidate
+        for candidate in candidates
+        if _team_in_text(fixture["home"], candidate["titleRaw"])
+        and _team_in_text(fixture["away"], candidate["titleRaw"])
+    ]
+    usable = []
+    for candidate in verified:
+        reason = preview_reject(candidate, fixture, fixture_date)
+        if reason is None:
+            usable.append(candidate)
+        elif args.debug:
+            print(
+                f"debug:   dropping preview {candidate['id']} ({reason}) "
+                f"channel={candidate['channel']!r} :: {candidate['titleRaw']}",
+                file=sys.stderr,
+            )
+    usable.sort(key=lambda candidate: preview_score(candidate, fixture), reverse=True)
+    if args.debug:
+        print(
+            f"debug: {query} [uploaded: {args.preview_window}] -> {len(candidates)} results, "
+            f"{len(verified)} verified, {len(usable)} usable",
+            file=sys.stderr,
+        )
+    fixture["previews"] = [
+        {
+            "id": candidate["id"],
+            "title": candidate["title"],
+            "channel": candidate["channel"],
+            "durationSeconds": candidate["duration"],
+        }
+        for candidate in usable[: args.preview_results]
+    ]
+
+
 def youtube_reject(candidate: dict, fixture: dict, fixture_date) -> str | None:
     """Why this candidate cannot be the highlight of this fixture, or None."""
     raw = candidate["titleRaw"]
+    side = side_competition(raw, candidate.get("channel"))
+    if side:
+        return f"another competition with the same names ({side})"
     phrase = not_a_highlight(raw)
     if phrase:
         return f"not a highlight ({phrase})"
     if looks_like_score(raw):
         return "title states the score"
+    if not head_to_head(raw, fixture):
+        return "title does not put the two teams head to head"
     mismatch = competition_mismatch(raw, fixture.get("area"))
     if mismatch:
         return mismatch
@@ -643,9 +998,14 @@ def _fixture_date(fixture: dict):
 
 
 def attach_youtube(fixture: dict, args) -> None:
+    """Replays for a match that has been played, previews for one that has not."""
     home, away = fixture["home"], fixture["away"]
     fixture["youtube"] = []
     fixture_date = _fixture_date(fixture)
+    if is_upcoming(fixture):
+        attach_previews(fixture, args)
+        return
+    fixture["previews"] = []
     window = args.yt_window
     if window == "auto":
         window = yt_window_for(fixture_date)
@@ -657,11 +1017,22 @@ def attach_youtube(fixture: dict, args) -> None:
                 file=sys.stderr,
             )
         return
-    query = f"{home} vs {away} highlights"
-    try:
-        candidates = yt_search(query, args.yt_search, args.timeout, window=window)
-    except (FileNotFoundError, subprocess.TimeoutExpired) as error:
-        print(f"warning: youtube lookup failed for {query} ({error})", file=sys.stderr)
+    candidates = []
+    seen: set[str] = set()
+    for template in REPLAY_QUERIES:
+        query = template.format(home=home, away=away)
+        try:
+            found = yt_search(query, args.yt_search, args.timeout, window=window)
+        except (FileNotFoundError, subprocess.TimeoutExpired) as error:
+            print(f"warning: youtube lookup failed for {query} ({error})", file=sys.stderr)
+            continue
+        for candidate in found:
+            if candidate["id"] in seen:
+                continue
+            seen.add(candidate["id"])
+            candidates.append(candidate)
+    query = REPLAY_QUERIES[0].format(home=home, away=away)
+    if not candidates:
         return
     verified = [
         candidate
@@ -725,6 +1096,36 @@ def build(args) -> dict:
     fixtures = nowtv_fixtures(args.areas, args.page_size, args.timeout)
     if args.limit:
         fixtures = fixtures[: args.limit]
+    for fixture in fixtures:
+        fixture["previews"] = []
+        fixture["upcoming"] = False
+    for index, fixture in enumerate(fixtures):
+        fixture["id"] = fixture.get("id") or f"nowtv-{fixture['videoId']}-{index}"
+
+    if not args.no_upcoming:
+        try:
+            scheduled = schedule_fixtures(args.areas, args.timeout)
+        except (urllib.error.URLError, TimeoutError, OSError) as error:
+            print(f"warning: schedule unavailable ({error})", file=sys.stderr)
+            scheduled = []
+        if scheduled:
+            added = merge_schedule(fixtures, scheduled, args.upcoming_days)
+            if added and args.debug:
+                print(f"debug: added {added} fixtures from the schedule", file=sys.stderr)
+            for index, fixture in enumerate(fixtures):
+                if not fixture.get("id"):
+                    fixture["id"] = f"schedule-{index}"
+
+    # the week ahead first, in kick-off order; then what has been played, newest
+    # first, keeping the order nowtv_fixtures already sorted
+    for fixture in fixtures:
+        # the list is a day or two stale by the time it is rendered, so the flag
+        # is decided here rather than when the fixture was written
+        fixture["upcoming"] = is_upcoming(fixture)
+    ahead = [fixture for fixture in fixtures if fixture["upcoming"]]
+    played = [fixture for fixture in fixtures if not fixture["upcoming"]]
+    ahead.sort(key=lambda fixture: (fixture.get("kickoff") or fixture.get("date") or "", fixture["home"]))
+    fixtures = ahead + played
 
     if not args.no_youtube and fixtures:
         for fixture in fixtures:
@@ -755,6 +1156,7 @@ def audit(payload: dict) -> int:
             match.get("titleZh"),
         ]
         fields += [video.get("title") for video in match.get("youtube") or []]
+        fields += [clip.get("title") for clip in match.get("previews") or []]
         hits = remaining_scores(*[field for field in fields if field])
         if hits:
             problems.append(f"nowtv-{match.get('videoId')}: {hits}")
@@ -770,7 +1172,24 @@ def parse_args(argv):
     parser.add_argument("--page-size", type=int, default=48, help="items requested per area")
     parser.add_argument("--no-youtube", action="store_true")
     parser.add_argument("--yt-search", type=int, default=8, help="YouTube results examined")
-    parser.add_argument("--yt-results", type=int, default=1, help="YouTube links kept")
+    parser.add_argument("--yt-results", type=int, default=3, help="YouTube links kept")
+    parser.add_argument(
+        "--upcoming-days",
+        type=int,
+        default=7,
+        help="how many days of fixtures to list ahead (default: 7)",
+    )
+    parser.add_argument(
+        "--no-upcoming", action="store_true", help="do not list fixtures that have not kicked off"
+    )
+    parser.add_argument("--preview-results", type=int, default=3, help="preview links kept")
+    parser.add_argument("--preview-search", type=int, default=12, help="preview results examined")
+    parser.add_argument(
+        "--preview-window",
+        choices=[*YT_WINDOWS],
+        default="week",
+        help="upload-date filter for previews (default: week)",
+    )
     parser.add_argument(
         "--yt-window",
         choices=["auto", *YT_WINDOWS],

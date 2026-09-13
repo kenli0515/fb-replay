@@ -6,7 +6,7 @@ const YT_EMBED = "https://www.youtube-nocookie.com/embed/";
 const NOW_EMBED = "https://sports.now.com/mobileweb/video#tvVideoId=";
 const NOW_CROP = { "crop-x": 20, "crop-y": 227, "frame-w": 700, "frame-h": 800, "crop-pad": 12, "box-w": 660, "box-h": 424 };
 
-const state = { matches: [], query: "", league: "all", mask: true, generatedAt: null };
+const state = { matches: [], query: "", league: "all", upcomingOnly: false, mask: true, generatedAt: null };
 
 /* ---------- helpers ---------- */
 
@@ -42,6 +42,22 @@ function formatDate(iso) {
   if (days === 1) return `昨日 · ${label}`;
   if (days > 1 && days < 7) return `${days} 日前 · ${label}`;
   return iso;
+}
+
+function formatKickoff(iso) {
+  if (!iso) return "";
+  const parts = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(iso);
+  if (!parts) return "";
+  const [, year, month, day, hour, minute] = parts.map(Number);
+  const weekday = ["週日", "週一", "週二", "週三", "週四", "週五", "週六"][
+    new Date(Date.UTC(year, month - 1, day)).getUTCDay()
+  ];
+  return `${weekday} ${month}月${day}日 ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+}
+
+function fixtureDate(match) {
+  if (match.upcoming && match.kickoff) return `開球 ${formatKickoff(match.kickoff)}`;
+  return formatDate(match.date);
 }
 
 function toast(message) {
@@ -132,37 +148,72 @@ function plainText(match) {
   const lines = [
     `${match.homeZh || match.home} vs ${match.awayZh || match.away}`,
     `${match.home} vs ${match.away}`,
-    [match.date, match.league].filter(Boolean).join(" · "),
+    [fixtureDate(match), match.league].filter(Boolean).join(" · "),
   ];
   for (const video of match.youtube || []) {
-    lines.push(`YouTube: https://www.youtube.com/watch?v=${video.id}`);
+    lines.push(`YouTube: https://www.youtube.com/watch?v=${video.id} (${video.channel || "?"})`);
+  }
+  for (const clip of match.previews || []) {
+    lines.push(`YouTube 預覽: https://www.youtube.com/watch?v=${clip.id} (${clip.channel || "?"})`);
   }
   if (match.nowtvUrl) lines.push(`NOW TV: ${match.nowtvUrl}`);
   return lines.join("\n");
 }
 
+function youtubeRow(video, card, sourceLabel) {
+  const bits = [video.channel, formatDuration(video.durationSeconds)].filter(Boolean);
+  const play = el("button", { class: "btn", type: "button", text: "▶ 內嵌播放" });
+  play.addEventListener("click", () =>
+    mountFrame(
+      card,
+      `${YT_EMBED}${video.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`,
+      sourceLabel,
+      true,
+    ),
+  );
+  const title = video.title || (video.titleHidden ? "原標題已收起，可能暗示賽果" : video.channel || "YouTube");
+  return el("div", { class: "yt-row" },
+    el("div", { class: "yt-row-text" },
+      el("strong", { text: title }),
+      el("span", { class: "meta", text: bits.join(" · ") }),
+    ),
+    play,
+    el("a", {
+      class: "ghost btn",
+      href: `https://www.youtube.com/watch?v=${video.id}`,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      text: "開啟 ↗",
+    }),
+  );
+}
+
 function createCard(match) {
   const card = el("article", { class: "card" });
-  const primary = (match.youtube || [])[0];
+  const youtube = match.youtube || [];
+  const previews = match.previews || [];
+  const upcoming = Boolean(match.upcoming);
+  const primary = youtube[0] || previews[0];
 
   const homeLabel = match.homeZh || match.home;
   const awayLabel = match.awayZh || match.away;
   const latin = match.homeZh ? `${match.home} vs ${match.away}` : "";
   const title = el("div", { class: "teams", text: `${homeLabel} vs ${awayLabel}` });
+  if (upcoming) title.append(el("span", { class: "badge live", text: "未開賽" }));
   if (latin) title.append(el("span", { class: "latin", text: latin }));
 
-  const metaBits = [formatDate(match.date), match.league];
+  const metaBits = [fixtureDate(match), match.league];
   if (match.durationSeconds) metaBits.push(formatDuration(match.durationSeconds));
   const meta = el("div", { class: "meta", text: metaBits.filter(Boolean).join(" · ") });
 
   const actions = el("div", { class: "actions" });
   if (primary) {
-    const play = el("button", { class: "primary", type: "button", text: "▶ 睇 YouTube 精華" });
+    const play = el("button", { class: "primary", type: "button", text: upcoming ? "▶ 睇賽前預覽" : "▶ 睇 YouTube 精華" });
     play.addEventListener("click", () =>
       mountFrame(
         card,
         `${YT_EMBED}${primary.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`,
-        "YouTube 精華",
+        upcoming ? "YouTube 賽前預覽" : "YouTube 精華",
         true,
       ),
     );
@@ -174,7 +225,7 @@ function createCard(match) {
       rel: "noopener noreferrer",
       text: "YouTube 開啟",
     }));
-  } else {
+  } else if (!upcoming) {
     actions.append(el("span", { class: "note warn", text: "YouTube 未搵到可靠精華" }));
   }
 
@@ -200,7 +251,14 @@ function createCard(match) {
   actions.append(copy);
 
   const notes = [];
-  if (primary) {
+  if (upcoming) {
+    notes.push(el("span", {
+      class: "warn",
+      text: previews.length
+        ? "未開賽：呢度只有賽前預覽，冇亦都唔需要比分。"
+        : "未開賽，YouTube 暫時搵唔到預覽內容，過一兩日再刷新。",
+    }));
+  } else if (primary) {
     notes.push(el("span", { text: [primary.channel, formatDuration(primary.durationSeconds)].filter(Boolean).join(" · ") }));
     if (primary.titleHidden) {
       notes.push(el("span", { class: "warn", text: "（原標題已收起，可能暗示賽果）" }));
@@ -208,12 +266,24 @@ function createCard(match) {
   }
   const noteLine = el("div", { class: "note" }, ...notes);
 
+  const extraRows = [];
+  for (const video of youtube.slice(1)) extraRows.push(youtubeRow(video, card, "YouTube 精華"));
+  for (const clip of previews) extraRows.push(youtubeRow(clip, card, "YouTube 賽前預覽"));
+
   const nowNote = el("div", { class: "note", text: "NOW TV 站內播放只露出播放器，比分同結果縮圖已經裁走；首次播放會彈出一次同意視窗，按 Consent 之後就唔會再問。" });
 
   card.append(
     el("header", {}, title, meta),
     actions,
     noteLine,
+    ...(extraRows.length
+      ? [el("div", { class: "yt-list" },
+          el("div", { class: "yt-list-title", text: upcoming
+            ? `賽前預覽（${previews.length} 個來源）`
+            : `更多 YouTube 來源（${youtube.length} 個）` }),
+          ...extraRows,
+        )]
+      : []),
     ...(match.nowtvUrl ? [nowNote] : []),
     el("div", { class: "stage" }),
   );
@@ -226,6 +296,7 @@ function visibleMatches() {
   const query = state.query.trim().toLowerCase();
   return state.matches.filter((match) => {
     if (state.league !== "all" && match.league !== state.league) return false;
+    if (state.upcomingOnly && !match.upcoming) return false;
     if (!query) return true;
     const haystack = [
       match.home, match.away, match.homeZh, match.awayZh, match.league, match.titleZh,
@@ -248,7 +319,12 @@ function render() {
     return;
   }
   status.className = "status";
-  status.textContent = `${matches.length} 場比賽 · 點「睇 YouTube 精華」即喺本頁播放`;
+  const ahead = matches.filter((match) => match.upcoming).length;
+  status.textContent = [
+    `${matches.length} 場比賽`,
+    ahead ? `${ahead} 場未開賽只有預覽` : "",
+    "點「內嵌播放」即喺本頁播放",
+  ].filter(Boolean).join(" · ");
   for (const match of matches) list.append(createCard(match));
 }
 
@@ -266,6 +342,19 @@ function renderLeagueChips() {
     });
     box.append(chip);
   }
+  const ahead = state.matches.filter((match) => match.upcoming).length;
+  const soon = el("button", {
+    class: "chip soon",
+    type: "button",
+    "aria-pressed": String(state.upcomingOnly),
+    text: `未來賽程（${ahead}）`,
+  });
+  soon.addEventListener("click", () => {
+    state.upcomingOnly = !state.upcomingOnly;
+    renderLeagueChips();
+    render();
+  });
+  box.append(soon);
 }
 
 async function init() {

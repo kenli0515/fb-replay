@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T14:50:17Z",
+  "generatedAt": "2026-09-13T15:13:35Z",
   "areas": [
     {
       "key": "england",
@@ -15,6 +15,300 @@
     "youtube"
   ],
   "matches": [
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-13",
+      "kickoff": "2026-09-13T23:30:00+08:00",
+      "home": "Manchester United",
+      "away": "Manchester City",
+      "homeZh": "Manchester United",
+      "awayZh": "Manchester City",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [
+        {
+          "id": "qLwwkdJPRcE",
+          "title": "MANCHESTER UNITED vs. MANCHESTER CITY: Premier League MATCH PREVIEW",
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 742.0
+        },
+        {
+          "id": "WMID1ECuldg",
+          "title": "We Can BEAT Them! Man United vs Man City Goldbridge Preview",
+          "channel": "The United Stand",
+          "durationSeconds": 1205.0
+        },
+        {
+          "id": "gv2Ev4OLtpg",
+          "title": "Manchester Derby Debate Gets HEATED! United v City Predictions | Big Game Preview with Gary Neville",
+          "channel": "The Overlap",
+          "durationSeconds": 4990.0
+        }
+      ],
+      "upcoming": true,
+      "id": "schedule-13"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-14",
+      "kickoff": "2026-09-15T03:00:00+08:00",
+      "home": "Leeds United",
+      "away": "Newcastle United",
+      "homeZh": "Leeds United",
+      "awayZh": "Newcastle United",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [
+        {
+          "id": "2BocgS7qWMM",
+          "title": "The Pre - Match View: Leeds United V Newcastle United",
+          "channel": "The Leeds View",
+          "durationSeconds": 934.0
+        },
+        {
+          "id": "Y8mYJOjQ6ls",
+          "title": "LEEDS UNITED VS NEWCASTLE UNITED MATCH PREVIEW & PREDICTED XI!",
+          "channel": "Leeds Bros",
+          "durationSeconds": 628.0
+        },
+        {
+          "id": "udgkVHRMdec",
+          "title": "NMECHA SHOCK EXIT!? 🚨 Newcastle MAJOR Injury Boost! | Leeds United vs Newcastle Preview",
+          "channel": "One Leeds",
+          "durationSeconds": 1845.0
+        }
+      ],
+      "upcoming": true,
+      "id": "schedule-14"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-18",
+      "kickoff": "2026-09-19T03:00:00+08:00",
+      "home": "Brentford",
+      "away": "Chelsea",
+      "homeZh": "Brentford",
+      "awayZh": "Chelsea",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [
+        {
+          "id": "LDaQbTFLQrw",
+          "title": "Brentford vs Chelsea ~ Predicted Line Up Chelsea Matchweek 5 Premier League Season 2026/2027",
+          "channel": "Lillah Update",
+          "durationSeconds": 122.0
+        }
+      ],
+      "upcoming": true,
+      "id": "schedule-15"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-19",
+      "kickoff": "2026-09-19T19:30:00+08:00",
+      "home": "Tottenham Hotspur",
+      "away": "Aston Villa",
+      "homeZh": "Tottenham Hotspur",
+      "awayZh": "Aston Villa",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": true,
+      "id": "schedule-16"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-19",
+      "kickoff": "2026-09-19T22:00:00+08:00",
+      "home": "Brighton & Hove Albion",
+      "away": "Arsenal",
+      "homeZh": "Brighton & Hove Albion",
+      "awayZh": "Arsenal",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [
+        {
+          "id": "Oy9Jfnk4New",
+          "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
+          "channel": "Football Tactics",
+          "durationSeconds": 2239.0
+        }
+      ],
+      "upcoming": true,
+      "id": "schedule-18"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-19",
+      "kickoff": "2026-09-19T22:00:00+08:00",
+      "home": "Everton",
+      "away": "Ipswich Town",
+      "homeZh": "Everton",
+      "awayZh": "Ipswich Town",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": true,
+      "id": "schedule-17"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-19",
+      "kickoff": "2026-09-19T22:00:00+08:00",
+      "home": "Newcastle United",
+      "away": "Hull City",
+      "homeZh": "Newcastle United",
+      "awayZh": "Hull City",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": true,
+      "id": "schedule-19"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-19",
+      "kickoff": "2026-09-20T00:30:00+08:00",
+      "home": "Nottingham Forest",
+      "away": "Coventry City",
+      "homeZh": "Nottingham Forest",
+      "awayZh": "Coventry City",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": true,
+      "id": "schedule-20"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-20",
+      "kickoff": "2026-09-20T21:00:00+08:00",
+      "home": "Bournemouth",
+      "away": "Liverpool",
+      "homeZh": "Bournemouth",
+      "awayZh": "Liverpool",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [
+        {
+          "id": "_9iG8inosHk",
+          "title": "Liverpool vs AFC Bournemouth Prediction | Sep 11",
+          "channel": "Daily Sports Prediction Analysis",
+          "durationSeconds": 85.0
+        }
+      ],
+      "upcoming": true,
+      "id": "schedule-21"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-20",
+      "kickoff": "2026-09-20T21:00:00+08:00",
+      "home": "Leeds United",
+      "away": "Crystal Palace",
+      "homeZh": "Leeds United",
+      "awayZh": "Crystal Palace",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": true,
+      "id": "schedule-22"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-20",
+      "kickoff": "2026-09-20T21:00:00+08:00",
+      "home": "Manchester City",
+      "away": "Sunderland",
+      "homeZh": "Manchester City",
+      "awayZh": "Sunderland",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [
+        {
+          "id": "rJeCX_Gj2iM",
+          "title": "EPL UNCENSORED ANALYSIS: Manchester Derby Clash! Man Utd vs Man City, Arsenal vs Sunderland",
+          "channel": "TFB SPORTS",
+          "durationSeconds": 3131.0
+        }
+      ],
+      "upcoming": true,
+      "id": "schedule-23"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-20",
+      "kickoff": "2026-09-20T23:30:00+08:00",
+      "home": "Fulham",
+      "away": "Manchester United",
+      "homeZh": "Fulham",
+      "awayZh": "Manchester United",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": true,
+      "id": "schedule-24"
+    },
     {
       "area": "england",
       "league": "英超",
@@ -35,9 +329,19 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 833.0
+        },
+        {
+          "id": "raKxbN4OND8",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 188.0
         }
       ],
-      "id": "nowtv-202608132156348-0"
+      "id": "nowtv-202608132156348-0",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-13T03:00:00+08:00"
     },
     {
       "area": "england",
@@ -59,9 +363,19 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 482.0
+        },
+        {
+          "id": "2vIfl_dQIZc",
+          "title": "TOTTENHAM v EVERTON | Premier League highlights",
+          "titleHidden": false,
+          "channel": "Everton Football Club",
+          "durationSeconds": 172.0
         }
       ],
-      "id": "nowtv-202608132156347-1"
+      "id": "nowtv-202608132156347-1",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-13T00:30:00+08:00"
     },
     {
       "area": "england",
@@ -83,9 +397,19 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 793.0
+        },
+        {
+          "id": "TKjue-fOAGg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 872.0
         }
       ],
-      "id": "nowtv-202608132156341-2"
+      "id": "nowtv-202608132156341-2",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-12T22:00:00+08:00"
     },
     {
       "area": "england",
@@ -107,9 +431,26 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 742.0
+        },
+        {
+          "id": "mXowPs48Eyk",
+          "title": "Chelsea v. Hull City | PREMIER LEAGUE HIGHLIGHTS | 09/12/2026| USA SPORTS",
+          "titleHidden": false,
+          "channel": "USA Sports",
+          "durationSeconds": 1063.0
+        },
+        {
+          "id": "_vpJ7BJuWd4",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 949.0
         }
       ],
-      "id": "nowtv-202608132156343-3"
+      "id": "nowtv-202608132156343-3",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-12T22:00:00+08:00"
     },
     {
       "area": "england",
@@ -131,9 +472,26 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 580.0
+        },
+        {
+          "id": "RvkO9B86jys",
+          "title": "Liverpool vs Fulham Highlights | Premier League Highlights 2027",
+          "titleHidden": false,
+          "channel": "Footballia",
+          "durationSeconds": 188.0
+        },
+        {
+          "id": "v_BdOQznk9Y",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 907.0
         }
       ],
-      "id": "nowtv-202608132156344-4"
+      "id": "nowtv-202608132156344-4",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-12T22:00:00+08:00"
     },
     {
       "area": "england",
@@ -155,9 +513,26 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 597.0
+        },
+        {
+          "id": "k-CEqgPpWU4",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 82.0
+        },
+        {
+          "id": "kk8lgeVX1vQ",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 893.0
         }
       ],
-      "id": "nowtv-202608132156340-5"
+      "id": "nowtv-202608132156340-5",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-12T22:00:00+08:00"
     },
     {
       "area": "england",
@@ -179,9 +554,19 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 647.0
+        },
+        {
+          "id": "KRyuaZDRnw0",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 899.0
         }
       ],
-      "id": "nowtv-202608132156342-6"
+      "id": "nowtv-202608132156342-6",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-12T22:00:00+08:00"
     },
     {
       "area": "ucl",
@@ -198,14 +583,30 @@
       "publishedAt": "2026-09-11T00:00:00+08:00",
       "youtube": [
         {
-          "id": "RfU1_7JIDso",
-          "title": "Como 1907 - RB Leipzig | Highlights | UEFA Champions League",
-          "titleHidden": false,
-          "channel": "RB Leipzig",
-          "durationSeconds": 159.0
+          "id": "CPE5kdgkOA4",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 607.0
+        },
+        {
+          "id": "N8T3k3U3Euo",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 703.0
+        },
+        {
+          "id": "tKQT6CahLmg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA",
+          "durationSeconds": 920.0
         }
       ],
-      "id": "nowtv-202608132156332-7"
+      "id": "nowtv-202608132156332-7",
+      "previews": [],
+      "upcoming": false
     },
     {
       "area": "ucl",
@@ -227,9 +628,25 @@
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
           "durationSeconds": 623.0
+        },
+        {
+          "id": "Onxn_VhQYnQ",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA",
+          "durationSeconds": 1520.0
+        },
+        {
+          "id": "0FbblY-Wz_M",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA and ViX",
+          "durationSeconds": 921.0
         }
       ],
-      "id": "nowtv-202609072162710-8"
+      "id": "nowtv-202609072162710-8",
+      "previews": [],
+      "upcoming": false
     },
     {
       "area": "ucl",
@@ -245,7 +662,9 @@
       "durationSeconds": 180,
       "publishedAt": "2026-09-11T00:00:00+08:00",
       "youtube": [],
-      "id": "nowtv-202608132156330-9"
+      "id": "nowtv-202608132156330-9",
+      "previews": [],
+      "upcoming": false
     },
     {
       "area": "ucl",
@@ -267,9 +686,25 @@
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
           "durationSeconds": 585.0
+        },
+        {
+          "id": "Q_9REPCUjFk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Footballia",
+          "durationSeconds": 310.0
+        },
+        {
+          "id": "K-K69INZ-l8",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA",
+          "durationSeconds": 1519.0
         }
       ],
-      "id": "nowtv-202608132156333-10"
+      "id": "nowtv-202608132156333-10",
+      "previews": [],
+      "upcoming": false
     },
     {
       "area": "ucl",
@@ -293,7 +728,28 @@
           "durationSeconds": 566.0
         }
       ],
-      "id": "nowtv-202608132156334-11"
+      "id": "nowtv-202608132156334-11",
+      "previews": [],
+      "upcoming": false
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-13",
+      "kickoff": "2026-09-13T21:00:00+08:00",
+      "home": "Coventry City",
+      "away": "Brighton & Hove Albion",
+      "homeZh": "Coventry City",
+      "awayZh": "Brighton & Hove Albion",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "previews": [],
+      "upcoming": false,
+      "id": "schedule-12"
     }
   ]
 }

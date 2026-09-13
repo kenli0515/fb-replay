@@ -68,6 +68,8 @@ code { background: #1d2732; padding: 1px 5px; border-radius: 5px; font-size: 13p
   cursor: pointer;
   font-size: 13px;
 }
+.chip.soon { border-style: dashed; }
+.chip.soon[aria-pressed="true"] { background: #2a2410; border-color: #4a3c17; color: #ffe6b0; }
 .chip[aria-pressed="true"] { background: #123a2a; border-color: #2a6b4c; color: #b9f5d1; }
 
 .switch { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; }
@@ -113,6 +115,16 @@ button:hover, .btn:hover { border-color: #3a4a5a; text-decoration: none; }
 
 .note { color: var(--muted); font-size: 12.5px; }
 .warn { color: var(--warn); }
+
+/* 額外 YouTube 來源與賽前預覽：一行一個來源，按「內嵌播放」就喺本頁播 */
+.yt-list { border-top: 1px solid var(--line); padding-top: 9px; display: flex; flex-direction: column; gap: 7px; }
+.yt-list-title { color: var(--muted); font-size: 12.5px; }
+.yt-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.yt-row-text { flex: 1 1 220px; min-width: 0; }
+.yt-row-text strong { display: block; font-weight: 500; font-size: 13px; line-height: 1.35; }
+.yt-row .btn, .yt-row button { font-size: 12.5px; padding: 5px 9px; }
+.badge { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 7px; }
+.badge.live { background: #2a2410; border-color: #4a3c17; color: #ffe6b0; margin-left: 8px; vertical-align: 2px; }
 
 .stage { display: none; }
 .stage.on { display: block; }
