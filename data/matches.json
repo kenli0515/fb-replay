@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T15:13:35Z",
+  "generatedAt": "2026-09-13T15:16:17Z",
   "areas": [
     {
       "key": "england",
@@ -39,7 +39,7 @@
         },
         {
           "id": "WMID1ECuldg",
-          "title": "We Can BEAT Them! Man United vs Man City Goldbridge Preview",
+          "title": "They are SCARED of Us! Man United vs Man City Derby Preview",
           "channel": "The United Stand",
           "durationSeconds": 1205.0
         },
@@ -151,14 +151,7 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "Oy9Jfnk4New",
-          "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
-          "channel": "Football Tactics",
-          "durationSeconds": 2239.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
       "id": "schedule-18"
     },
@@ -329,13 +322,6 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 833.0
-        },
-        {
-          "id": "raKxbN4OND8",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 188.0
         }
       ],
       "id": "nowtv-202608132156348-0",
@@ -590,18 +576,18 @@
           "durationSeconds": 607.0
         },
         {
-          "id": "N8T3k3U3Euo",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 703.0
-        },
-        {
           "id": "tKQT6CahLmg",
           "title": null,
           "titleHidden": true,
           "channel": "TUDN USA",
           "durationSeconds": 920.0
+        },
+        {
+          "id": "2Snqq06qO4s",
+          "title": "Como vs. RB Leipzig - Condensed Game",
+          "titleHidden": false,
+          "channel": "TUDN USA",
+          "durationSeconds": 1513.0
         }
       ],
       "id": "nowtv-202608132156332-7",
