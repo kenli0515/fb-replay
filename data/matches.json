@@ -1,0 +1,307 @@
+{
+  "generatedAt": "2026-09-13T03:39:05Z",
+  "areas": [
+    {
+      "key": "england",
+      "name": "英超"
+    },
+    {
+      "key": "ucl",
+      "name": "歐聯"
+    }
+  ],
+  "sources": [
+    "nowtv",
+    "youtube"
+  ],
+  "matches": [
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-13",
+      "home": "Sunderland",
+      "away": "Arsenal",
+      "homeZh": "新特蘭",
+      "awayZh": "阿仙奴",
+      "titleZh": "【英超】新特蘭 vs 阿仙奴",
+      "videoId": "202608132156348",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156348&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-13T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "aTYTfso6kro",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TNT Sports Football",
+          "durationSeconds": 180.0
+        }
+      ],
+      "id": "nowtv-202608132156348-0"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-13",
+      "home": "Tottenham Hotspur",
+      "away": "Everton",
+      "homeZh": "熱刺",
+      "awayZh": "愛華頓",
+      "titleZh": "【英超】熱刺 vs 愛華頓",
+      "videoId": "202608132156347",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156347&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-13T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "2vIfl_dQIZc",
+          "title": "TOTTENHAM v EVERTON | Premier League highlights",
+          "titleHidden": false,
+          "channel": "Everton Football Club",
+          "durationSeconds": 172.0
+        }
+      ],
+      "id": "nowtv-202608132156347-1"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-12",
+      "home": "Bournemouth",
+      "away": "Brentford",
+      "homeZh": "般尼茅夫",
+      "awayZh": "賓福特",
+      "titleZh": "【英超】般尼茅夫 vs 賓福特",
+      "videoId": "202608132156341",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156341&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-12T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "82dHG2i3-nk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Sky Sports Premier League and Sky Sports News",
+          "durationSeconds": 192.0
+        }
+      ],
+      "id": "nowtv-202608132156341-2"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-12",
+      "home": "Chelsea",
+      "away": "Hull City",
+      "homeZh": "車路士",
+      "awayZh": "侯城",
+      "titleZh": "【英超】車路士 vs 侯城",
+      "videoId": "202608132156343",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156343&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-12T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "J42n6v_Nhac",
+          "title": "Chelsea vs Hull City | HIGHLIGHTS | Premier League 2026/27",
+          "titleHidden": false,
+          "channel": "Chelsea Football Club",
+          "durationSeconds": 129.0
+        }
+      ],
+      "id": "nowtv-202608132156343-3"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-12",
+      "home": "Liverpool",
+      "away": "Fulham",
+      "homeZh": "利物浦",
+      "awayZh": "富咸",
+      "titleZh": "【英超】利物浦 vs 富咸",
+      "videoId": "202608132156344",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156344&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-12T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "xeWi5SkDP0A",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Sky Sports Premier League",
+          "durationSeconds": 171.0
+        }
+      ],
+      "id": "nowtv-202608132156344-4"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-12",
+      "home": "Crystal Palace",
+      "away": "Ipswich Town",
+      "homeZh": "水晶宮",
+      "awayZh": "葉士域治",
+      "titleZh": "【英超】水晶宮 vs 葉士域治",
+      "videoId": "202608132156340",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156340&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-12T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "ojLgWcx1-LQ",
+          "title": "Match Highlights | Crystal Palace vs Ipswich Town | Premier League",
+          "titleHidden": false,
+          "channel": "Crystal Palace FC",
+          "durationSeconds": 147.0
+        }
+      ],
+      "id": "nowtv-202608132156340-5"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-12",
+      "home": "Aston Villa",
+      "away": "Nottingham Forest",
+      "homeZh": "阿士東維拉",
+      "awayZh": "諾定咸森林",
+      "titleZh": "【英超】阿士東維拉 vs 諾定咸森林",
+      "videoId": "202608132156342",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156342&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-12T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "AVPzUb6Ssv0",
+          "title": "Highlights: Villa vs Forest (28.11.18.)",
+          "titleHidden": false,
+          "channel": "Nottingham Forest FC",
+          "durationSeconds": 128.0
+        }
+      ],
+      "id": "nowtv-202608132156342-6"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-09-11",
+      "home": "Como",
+      "away": "Leipzig",
+      "homeZh": "科木",
+      "awayZh": "萊比錫",
+      "titleZh": "【歐聯】科木 vs 萊比錫",
+      "videoId": "202608132156332",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156332&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-11T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "RfU1_7JIDso",
+          "title": "Como 1907 - RB Leipzig | Highlights | UEFA Champions League",
+          "titleHidden": false,
+          "channel": "RB Leipzig",
+          "durationSeconds": 159.0
+        }
+      ],
+      "id": "nowtv-202608132156332-7"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-09-11",
+      "home": "Slavia",
+      "away": "Lens",
+      "homeZh": "布拉格斯拉維亞",
+      "awayZh": "朗斯",
+      "titleZh": "【歐聯】布拉格斯拉維亞 vs 朗斯",
+      "videoId": "202609072162710",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609072162710&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-11T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "12WZEO94kqU",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TNT Sports Football",
+          "durationSeconds": 340.0
+        }
+      ],
+      "id": "nowtv-202609072162710-8"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-09-11",
+      "home": "PSV Eindhoven",
+      "away": "Shakhtar Donetsk",
+      "homeZh": "燕豪芬",
+      "awayZh": "薩克達",
+      "titleZh": "【歐聯】燕豪芬 vs 薩克達",
+      "videoId": "202608132156330",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156330&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-11T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "Fy7486gQLFY",
+          "title": "PSV Eindhoven - Shakhtar Donetsk | vs | Highlights | UEFA Champions League 2026/27 | shakhtar psv",
+          "titleHidden": false,
+          "channel": "CHEFON FF",
+          "durationSeconds": 155.0
+        }
+      ],
+      "id": "nowtv-202608132156330-9"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-09-11",
+      "home": "Bayern Munchen",
+      "away": "Bodo/Glimt",
+      "homeZh": "拜仁慕尼黑",
+      "awayZh": "博德基林",
+      "titleZh": "【歐聯】拜仁慕尼黑 vs 博德基林",
+      "videoId": "202608132156333",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156333&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-11T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "ZMLSwLQreXk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TNT Sports Football",
+          "durationSeconds": 313.0
+        }
+      ],
+      "id": "nowtv-202608132156333-10"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-09-11",
+      "home": "Manchester United",
+      "away": "Sabah",
+      "homeZh": "曼聯",
+      "awayZh": "沙巴",
+      "titleZh": "【歐聯】曼聯 vs 沙巴",
+      "videoId": "202608132156334",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156334&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-11T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "v2DHdi6hjKo",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TNT Sports Football",
+          "durationSeconds": 273.0
+        }
+      ],
+      "id": "nowtv-202608132156334-11"
+    }
+  ]
+}

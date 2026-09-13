@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>Football Replays · 無劇透回放</title>
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <h1>Football Replays</h1>
+  <p class="tagline">無劇透嘅足球精華索引 · NOW TV 官方精華（香港合法來源）+ YouTube 集錦</p>
+</header>
+
+<section class="toolbar">
+  <input id="search" type="search" placeholder="搵球隊，例如 阿仙奴 / arsenal / real madrid" autocomplete="off" />
+  <div id="leagues" class="chips" role="group" aria-label="賽事篩選"></div>
+  <label class="switch">
+    <input id="mask" type="checkbox" checked />
+    <span>遮住影片標題欄（防劇透）</span>
+  </label>
+  <span id="stamp" class="stamp"></span>
+</section>
+
+<main>
+  <div id="status" class="status">正在載入 <code>data/matches.json</code> …</div>
+  <div id="list" class="grid"></div>
+</main>
+
+<footer class="footer">
+  <p>本頁只做連結索引：影片由 NOW TV（PCCW）與 YouTube 提供，版權屬原持有人，內容與本站無關。</p>
+  <p>NOW TV 頁面本身會顯示比分同結果縮圖，如果想完全避開，請只用 YouTube 內嵌播放。</p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
