@@ -106,6 +106,17 @@ _SCORE_COLON_CJK_RE = re.compile(
 )
 _ANY_SCORE_RES = (_SCORE_DASH_RE, _SCORE_COLON_RE, _SCORE_COLON_CJK_RE)
 _BOUNDED_DATE_RE = re.compile(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)")
+_NUMERIC_DATE_RE = re.compile(r"(?<!\w)\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}(?!\w)")
+_TEXT_DATE_RE = re.compile(r"(?<!\w)(\d{1,2})\s+([A-Za-z]{3,9})\.?\s+(\d{4})(?!\w)")
+_SEASON_RE = re.compile(r"(?<![\d/])\d{2,4}[/-]\d{2}(?![\d/])")
+_YEAR_RE = re.compile(r"(?<![\d/])(20\d{2})(?![\d/])")
+_MONTHS = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+    "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+# Dates and season markers are stripped before scores are looked for, so that
+# "9/12/2026" is not mistaken for a result and "2 - 1" is not mistaken for a date.
+_DATE_RES = (_BOUNDED_DATE_RE, _NUMERIC_DATE_RE, _TEXT_DATE_RE, _SEASON_RE)
 _RESULT_WORD_RE = re.compile(
     r"^\s*(win|wins|defeat|defeats|loss|draw|draws|victory|beat|beats|edge|"
     r"thrash|thrashes|humiliat\w*|stun\w*|comeback|equaliser|equalizer)",
@@ -189,6 +200,50 @@ def editorial_words(raw_title: str, home: str, away: str) -> list[str]:
         for token in set(tokenize(raw_title))
         if len(token) >= 3 and not token.isdigit() and token not in allowed
     )
+
+
+def season_start(when: datetime.date) -> int:
+    """First year of the season a date belongs to (July is the boundary)."""
+    return when.year if when.month >= 7 else when.year - 1
+
+
+def title_dates(value: str) -> list[datetime.date]:
+    """Every date a title might be stating, read day-first and month-first."""
+    found: list[datetime.date] = []
+    for match in _BOUNDED_DATE_RE.finditer(value):
+        try:
+            found.append(datetime.date.fromisoformat(match.group(0)))
+        except ValueError:
+            continue
+    for match in _NUMERIC_DATE_RE.finditer(value):
+        first, second, year = (int(part) for part in re.split(r"[-/.]", match.group(0)))
+        if year < 100:
+            year += 2000
+        for day, month in ((first, second), (second, first)):
+            try:
+                found.append(datetime.date(year, month, day))
+            except ValueError:
+                continue
+    for match in _TEXT_DATE_RE.finditer(value):
+        month = _MONTHS.get(match.group(2)[:3].lower())
+        if not month:
+            continue
+        try:
+            found.append(datetime.date(int(match.group(3)), month, int(match.group(1))))
+        except ValueError:
+            continue
+    return found
+
+
+def looks_like_score(value: str) -> bool:
+    """True when the text states a result, even without a separator: 'CITY 3 ALBION 0'."""
+    if remaining_scores(value):
+        return True
+    stripped = value
+    for pattern in _DATE_RES:
+        stripped = pattern.sub(" ", stripped)
+    numbers = [token for token in tokenize(stripped) if token.isdigit() and len(token) <= 2]
+    return len(numbers) >= 2
 
 
 def remaining_scores(*values: str) -> list[str]:
@@ -339,6 +394,59 @@ PREFERRED_CHANNELS = [
     "fox sports", "paramount+", "liga", "serie a", "bundesliga",
 ]
 
+# YouTube's own upload-date filters, applied through the `sp` query parameter.
+# Filtering server-side keeps last season's meeting out of the result set; a
+# plain keyword search cannot, and the old fixture outranks a preview of a match
+# that has not kicked off yet.
+YT_WINDOWS = {
+    "hour": "EgIIAA%3D%3D",
+    "day": "EgIIAQ%3D%3D",
+    "week": "EgIIAw%3D%3D",
+    "month": "EgIIBA%3D%3D",
+    "year": "EgIIBQ%3D%3D",
+}
+YT_RESULTS_URL = "https://www.youtube.com/results?search_query={query}&sp={window}"
+
+# Live shows, previews and reaction videos are not highlights. A fixture that
+# has not been played yet can only ever produce these, so they are dropped
+# outright rather than merely ranked low.
+NOT_A_HIGHLIGHT_PHRASES = [
+    "countdown", "kick off", "kick-off", "matchday live", "match day live",
+    "watch along", "watchalong", "watch-along", "watch party", "preview",
+    "prediction", "predictions", "team news", "line up", "line-up", "lineup",
+    "starting xi", "confirmed team", "press conference", "presser",
+    "fan cam", "fancam", "fan reaction", "live stream", "live match",
+    "warm up", "vlog", "simulation", "top 10", "reaction", "podcast",
+    "pre-match", "pre match", "talking points", "how to watch",
+    # game footage is never the match itself
+    "efootball", "e-football", "gameplay", "pro evolution", "fifa 2", "fc 25",
+    "fc 26", "career mode", "master league",
+]
+_LIVE_RE = re.compile(r"(?<![a-z])live(?![a-z])")
+
+# Which competition the words in a title belong to, per NOW TV area. A title
+# naming a different competition is about a different match.
+AREA_COMPETITIONS = {
+    "england": "premier league",
+    "ucl": "champions league",
+    "uel": "europa league",
+    "uecl": "conference league",
+    "spain": "la liga",
+    "italy": "serie a",
+    "germany": "bundesliga",
+    "worldcup2026": "world cup",
+}
+COMPETITION_ALIASES = {
+    "premier league": ("premier league", "epl"),
+    "champions league": ("champions league", "ucl"),
+    "europa league": ("europa league", "uel"),
+    "conference league": ("conference league", "uecl"),
+    "la liga": ("la liga", "laliga"),
+    "serie a": ("serie a",),
+    "bundesliga": ("bundesliga",),
+    "world cup": ("world cup",),
+}
+
 
 def _word_in_text(word: str, text: str) -> bool:
     folded = ascii_fold(text).lower()
@@ -360,12 +468,18 @@ def _to_number(value):
         return None
 
 
-def yt_search(query: str, count: int, timeout: int) -> list[dict]:
+def yt_search(query: str, count: int, timeout: int, window: str | None = None) -> list[dict]:
+    if window in YT_WINDOWS:
+        target = YT_RESULTS_URL.format(
+            query=urllib.parse.quote_plus(query), window=YT_WINDOWS[window]
+        )
+    else:
+        target = f"ytsearch{count}:{query}"
     command = [
         "yt-dlp", "--ignore-config", "--no-warnings", "--flat-playlist",
         "--skip-download", "--socket-timeout", "15",
         "--playlist-end", str(count), "--print", YT_PRINT,
-        f"ytsearch{count}:{query}",
+        target,
     ]
     completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout * 3)
     results = []
@@ -428,21 +542,165 @@ def _yt_score(candidate: dict, fixture: dict) -> float:
     return score
 
 
-def attach_youtube(fixture: dict, search_size: int, timeout: int, keep: int) -> None:
+def hk_today() -> datetime.date:
+    """Today in Hong Kong, the day a European fixture is filed under."""
+    return datetime.datetime.now(HK_TZ).date()
+
+
+def yt_window_for(fixture_date, today=None):
+    """Upload-date filter that fits the fixture's age, or None to skip YouTube.
+
+    A fixture that has not kicked off has no highlight, and every result YouTube
+    can offer for it belongs to an earlier meeting.
+    """
+    today = today or hk_today()
+    if fixture_date is None:
+        return "week"
+    age = (today - fixture_date).days
+    if age < 0:
+        return None
+    # YouTube's "today" filter means "today in California", not "the last 24
+    # hours", so a highlight posted hours after a late kick-off falls outside it.
+    # A week is used instead, and the guards below keep last week's meeting out.
+    if age <= 7:
+        return "week"
+    if age <= 31:
+        return "month"
+    return "year"
+
+
+def not_a_highlight(raw_title: str) -> str | None:
+    """The phrase showing this title is not a highlight, or None."""
+    folded = " " + ascii_fold(raw_title).lower() + " "
+    for phrase in NOT_A_HIGHLIGHT_PHRASES:
+        if phrase in folded:
+            return phrase
+    if _LIVE_RE.search(folded):
+        return "live"
+    return None
+
+
+def trusted_channel(candidate: dict, fixture: dict) -> bool:
+    """True when a broadcaster or one of the two clubs posted the video."""
+    channel = (candidate["channel"] or "").lower()
+    if any(name in channel for name in PREFERRED_CHANNELS):
+        return True
+    return _team_in_text(fixture["home"], channel) or _team_in_text(fixture["away"], channel)
+
+
+def competition_mismatch(raw_title: str, area: str | None) -> str | None:
+    """Name the competition a title belongs to when it is not this fixture's."""
+    expected = AREA_COMPETITIONS.get(area or "")
+    if not expected:
+        return None
+    folded = ascii_fold(raw_title).lower()
+    if any(alias in folded for alias in COMPETITION_ALIASES[expected]):
+        return None
+    for name, aliases in COMPETITION_ALIASES.items():
+        if any(alias in folded for alias in aliases):
+            return f"names another competition ({name})"
+    return None
+
+
+def stale_title(raw_title: str, fixture_date) -> str | None:
+    """Point at the mismatch when a title names a date or season that is not this fixture."""
+    if fixture_date is None:
+        return None
+    found = title_dates(raw_title)
+    if found and all(abs((item - fixture_date).days) > 3 for item in found):
+        return f"title dates another meeting ({found[0].isoformat()})"
+    season = season_start(fixture_date)
+    for match in _SEASON_RE.finditer(raw_title):
+        head = match.group(0).replace("-", "/").split("/")[0]
+        year = int(head) + (2000 if len(head) == 2 else 0)
+        if year < season:
+            return f"previous season ({head})"
+    for match in _YEAR_RE.finditer(raw_title):
+        if int(match.group(1)) < season:
+            return f"previous season ({match.group(1)})"
+    return None
+
+
+def youtube_reject(candidate: dict, fixture: dict, fixture_date) -> str | None:
+    """Why this candidate cannot be the highlight of this fixture, or None."""
+    raw = candidate["titleRaw"]
+    phrase = not_a_highlight(raw)
+    if phrase:
+        return f"not a highlight ({phrase})"
+    if looks_like_score(raw):
+        return "title states the score"
+    mismatch = competition_mismatch(raw, fixture.get("area"))
+    if mismatch:
+        return mismatch
+    return stale_title(raw, fixture_date)
+
+
+def _fixture_date(fixture: dict):
+    try:
+        return datetime.date.fromisoformat(fixture["date"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def attach_youtube(fixture: dict, args) -> None:
     home, away = fixture["home"], fixture["away"]
+    fixture["youtube"] = []
+    fixture_date = _fixture_date(fixture)
+    window = args.yt_window
+    if window == "auto":
+        window = yt_window_for(fixture_date)
+    if window is None:
+        if args.debug:
+            print(
+                f"debug: youtube skipped for {home} vs {away}: "
+                f"{fixture['date']} has not kicked off yet",
+                file=sys.stderr,
+            )
+        return
     query = f"{home} vs {away} highlights"
     try:
-        candidates = yt_search(query, search_size, timeout)
+        candidates = yt_search(query, args.yt_search, args.timeout, window=window)
     except (FileNotFoundError, subprocess.TimeoutExpired) as error:
         print(f"warning: youtube lookup failed for {query} ({error})", file=sys.stderr)
-        fixture["youtube"] = []
         return
     verified = [
         candidate
         for candidate in candidates
         if _team_in_text(home, candidate["titleRaw"]) and _team_in_text(away, candidate["titleRaw"])
     ]
-    verified.sort(key=lambda candidate: _yt_score(candidate, fixture), reverse=True)
+    usable = []
+    for candidate in verified:
+        reason = youtube_reject(candidate, fixture, fixture_date)
+        if reason is None:
+            usable.append(candidate)
+        elif args.debug:
+            print(
+                f"debug:   dropping {candidate['id']} ({reason}) "
+                f"channel={candidate['channel']!r} :: {candidate['titleRaw']}",
+                file=sys.stderr,
+            )
+    if fixture_date and fixture_date >= hk_today():
+        # A fixture dated today may not have kicked off yet, so a recent upload is
+        # only believable from a broadcaster or one of the two clubs.
+        trusted = []
+        for candidate in usable:
+            if trusted_channel(candidate, fixture):
+                trusted.append(candidate)
+            elif args.debug:
+                print(
+                    f"debug:   dropping {candidate['id']} (untrusted channel for a fixture "
+                    f"dated today) channel={candidate['channel']!r} :: {candidate['titleRaw']}",
+                    file=sys.stderr,
+                )
+        usable = trusted
+    usable.sort(key=lambda candidate: _yt_score(candidate, fixture), reverse=True)
+    if args.debug:
+        print(
+            f"debug: {query} [uploaded: {window}] -> {len(candidates)} results, "
+            f"{len(verified)} verified, {len(usable)} usable",
+            file=sys.stderr,
+        )
+    verified = usable
     fixture["youtube"] = [
         {
             "id": candidate["id"],
@@ -452,9 +710,9 @@ def attach_youtube(fixture: dict, search_size: int, timeout: int, keep: int) -> 
             "channel": candidate["channel"],
             "durationSeconds": candidate["duration"],
         }
-        for candidate in verified[:keep]
+        for candidate in verified[: args.yt_results]
     ]
-    for (entry, candidate) in zip(fixture["youtube"], verified[:keep]):
+    for (entry, candidate) in zip(fixture["youtube"], verified[: args.yt_results]):
         if entry["titleHidden"]:
             entry["title"] = None
 
@@ -470,7 +728,7 @@ def build(args) -> dict:
 
     if not args.no_youtube and fixtures:
         for fixture in fixtures:
-            attach_youtube(fixture, args.yt_search, args.timeout, args.yt_results)
+            attach_youtube(fixture, args)
     else:
         for fixture in fixtures:
             fixture["youtube"] = []
@@ -513,7 +771,14 @@ def parse_args(argv):
     parser.add_argument("--no-youtube", action="store_true")
     parser.add_argument("--yt-search", type=int, default=8, help="YouTube results examined")
     parser.add_argument("--yt-results", type=int, default=1, help="YouTube links kept")
+    parser.add_argument(
+        "--yt-window",
+        choices=["auto", *YT_WINDOWS],
+        default="auto",
+        help="only consider videos uploaded in this window; auto picks by fixture age (default)",
+    )
     parser.add_argument("--timeout", type=int, default=25)
+    parser.add_argument("--debug", action="store_true", help="explain why videos are dropped")
     parser.add_argument("--out", default=str(ROOT / "data" / "matches.json"))
     return parser.parse_args(argv)
 

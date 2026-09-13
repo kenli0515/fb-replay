@@ -40,7 +40,8 @@ jobs:
           set +e
           python3 scripts/build_data.py \
             --areas "${{ github.event.inputs.areas || 'england,ucl' }}" \
-            --limit "${{ github.event.inputs.limit || '12' }}"
+            --limit "${{ github.event.inputs.limit || '12' }}" \
+            --debug
           code=$?
           # 1 = nothing fetched, keep the previous data file
           if [ "$code" -ne 0 ] && [ "$code" -ne 1 ]; then exit "$code"; fi

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T13:48:32Z",
+  "generatedAt": "2026-09-13T14:49:35Z",
   "areas": [
     {
       "key": "england",
@@ -54,11 +54,11 @@
       "publishedAt": "2026-09-13T00:00:00+08:00",
       "youtube": [
         {
-          "id": "iD8CM8PWkTk",
-          "title": "Everton v. Tottenham Hotspur | PREMIER LEAGUE HIGHLIGHTS | 10/26/2025 | NBC Sports",
+          "id": "HQh-DHi2iOY",
+          "title": "Tottenham Hotspur v. Everton | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
           "titleHidden": false,
           "channel": "NBC Sports",
-          "durationSeconds": 604.0
+          "durationSeconds": 482.0
         }
       ],
       "id": "nowtv-202608132156347-1"
@@ -126,11 +126,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "a-Zt9QGl5O4",
-          "title": "Liverpool v. Fulham | PREMIER LEAGUE HIGHLIGHTS | 4/11/2026 | NBC Sports",
+          "id": "lhlRY_fCebQ",
+          "title": "Liverpool v. Fulham | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
           "titleHidden": false,
           "channel": "NBC Sports",
-          "durationSeconds": 670.0
+          "durationSeconds": 580.0
         }
       ],
       "id": "nowtv-202608132156344-4"
@@ -150,11 +150,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "ChGZUj9OUyE",
-          "title": "Ipswich Town v. Crystal Palace | PREMIER LEAGUE HIGHLIGHTS | 12/3/2024 | NBC Sports",
+          "id": "PZYCxiepQ_o",
+          "title": "Crystal Palace v. Ipswich Town | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
           "titleHidden": false,
           "channel": "NBC Sports",
-          "durationSeconds": 591.0
+          "durationSeconds": 597.0
         }
       ],
       "id": "nowtv-202608132156340-5"
@@ -174,11 +174,11 @@
       "publishedAt": "2026-09-12T00:00:00+08:00",
       "youtube": [
         {
-          "id": "WZlViwalxzo",
-          "title": "Nottingham Forest v. Aston Villa | PREMIER LEAGUE HIGHLIGHTS | 4/12/2026 | NBC Sports",
+          "id": "ZlKJpot0SLY",
+          "title": "Aston Villa v. Nottingham Forest | PREMIER LEAGUE HIGHLIGHTS | 9/12/2026 | NBC Sports",
           "titleHidden": false,
           "channel": "NBC Sports",
-          "durationSeconds": 756.0
+          "durationSeconds": 647.0
         }
       ],
       "id": "nowtv-202608132156342-6"
@@ -244,15 +244,7 @@
       "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156330&type=ucl",
       "durationSeconds": 180,
       "publishedAt": "2026-09-11T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "bYkS2fSkzfI",
-          "title": "HIGHLIGHTS - PSV Eindhoven vs Shakhtar | UEFA Champions League 24/25 | TUDN",
-          "titleHidden": false,
-          "channel": "TUDN USA",
-          "durationSeconds": 913.0
-        }
-      ],
+      "youtube": [],
       "id": "nowtv-202608132156330-9"
     },
     {
