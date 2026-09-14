@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T16:56:32Z",
+  "generatedAt": "2026-09-14T06:01:03Z",
   "areas": [
     {
       "key": "england",
@@ -38,16 +38,16 @@
           "durationSeconds": 934.0
         },
         {
-          "id": "Y8mYJOjQ6ls",
-          "title": "LEEDS UNITED VS NEWCASTLE UNITED MATCH PREVIEW & PREDICTED XI!",
-          "channel": "Leeds Bros",
-          "durationSeconds": 628.0
-        },
-        {
           "id": "udgkVHRMdec",
           "title": "NMECHA SHOCK EXIT!? 🚨 Newcastle MAJOR Injury Boost! | Leeds United vs Newcastle Preview",
           "channel": "One Leeds",
           "durationSeconds": 1845.0
+        },
+        {
+          "id": "Ih32bE2FVo4",
+          "title": "Time to focus back on the league! Leeds United vs Newcastle United preview",
+          "channel": "MatLeeds",
+          "durationSeconds": 608.0
         }
       ],
       "upcoming": true,
@@ -74,12 +74,6 @@
           "title": "Brentford vs Chelsea ~ Predicted Line Up Chelsea Matchweek 5 Premier League Season 2026/2027",
           "channel": "Lillah Update",
           "durationSeconds": 122.0
-        },
-        {
-          "id": "8v5H9tQYZQg",
-          "title": "Brentford vs Chelsea: The centre-back pass triggers the trap | Tactical Breakdown",
-          "channel": "Tactical Edge Football",
-          "durationSeconds": 339.0
         }
       ],
       "upcoming": true,
@@ -119,14 +113,7 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "Oy9Jfnk4New",
-          "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
-          "channel": "Football Tactics",
-          "durationSeconds": 2239.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
       "id": "schedule-16"
     },
@@ -183,7 +170,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "5pXu5dsPsz4",
+          "title": "NFFC v COVENTRY CITY 🔴⚪ | MATCH PREVIEW | CAN FOREST MAKE IT BACK-TO-BACK WINS?",
+          "channel": "Talk Forest TV",
+          "durationSeconds": 113.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-18"
     },
@@ -273,9 +267,63 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "xYmCJkRS8hI",
+          "title": "PREMIER LEAGUE PREDICTIONS *WEEK 4* | MAN UNITED vs MAN CITY & LIVERPOOL vs FULHAM",
+          "channel": "FC Sean Predictz",
+          "durationSeconds": 1147.0
+        },
+        {
+          "id": "8rdUU5_oIME",
+          "title": "EPL Weekend Preview: Man United vs Man City, Chelsea vs Hull City, Liverpool vs Fulham & More",
+          "channel": "Supporters Arena",
+          "durationSeconds": 477.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-22"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-13",
+      "home": "Manchester United",
+      "away": "Manchester City",
+      "homeZh": "曼聯",
+      "awayZh": "曼城",
+      "titleZh": "【英超】曼聯 vs 曼城",
+      "videoId": "202608132156356",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156356&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-13T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "AIBC0fJMgLA",
+          "title": "Manchester United v. Manchester City | PREMIER LEAGUE HIGHLIGHTS | 9/13/2026 | NBC Sports",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 799.0
+        },
+        {
+          "id": "QuHzJIkxxsY",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 910.0
+        },
+        {
+          "id": "Lsiy7oy07UI",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Footballia",
+          "durationSeconds": 225.0
+        }
+      ],
+      "id": "nowtv-202608132156356-0",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-13T23:30:00+08:00"
     },
     {
       "area": "england",
@@ -292,28 +340,28 @@
       "publishedAt": "2026-09-13T00:00:00+08:00",
       "youtube": [
         {
+          "id": "HZO6C-XMnp8",
+          "title": "Coventry City v. Brighton | PREMIER LEAGUE HIGHLIGHTS | 9/13/2026 | NBC Sports",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 816.0
+        },
+        {
+          "id": "sEl7LMraWaE",
+          "title": "HIGHLIGHTS | Coventry v Brighton | Premier League",
+          "titleHidden": false,
+          "channel": "Official Brighton & Hove Albion FC",
+          "durationSeconds": 133.0
+        },
+        {
           "id": "CwvCS1xsI8I",
           "title": "Coventry City Football Club v. Brighton | PREMIER LEAGUE HIGHLIGHTS | 09/13/2026 | USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1070.0
-        },
-        {
-          "id": "TFqgsUCJj0E",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 889.0
-        },
-        {
-          "id": "GOezuNZH_8U",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Sabula Ug",
-          "durationSeconds": 70.0
         }
       ],
-      "id": "nowtv-202608132156353-0",
+      "id": "nowtv-202608132156353-1",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T21:00:00+08:00"
@@ -340,21 +388,21 @@
           "durationSeconds": 833.0
         },
         {
-          "id": "raKxbN4OND8",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 188.0
-        },
-        {
           "id": "sgMBgXRdndg",
           "title": "Sunderland v. Arsenal | PREMIER LEAGUE HIGHLIGHTS | 09/12/2026 | USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1079.0
+        },
+        {
+          "id": "zgNP6J3FRag",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 936.0
         }
       ],
-      "id": "nowtv-202608132156348-1",
+      "id": "nowtv-202608132156348-2",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T03:00:00+08:00"
@@ -395,7 +443,7 @@
           "durationSeconds": 850.0
         }
       ],
-      "id": "nowtv-202608132156347-2",
+      "id": "nowtv-202608132156347-3",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T00:30:00+08:00"
@@ -429,7 +477,7 @@
           "durationSeconds": 872.0
         }
       ],
-      "id": "nowtv-202608132156341-3",
+      "id": "nowtv-202608132156341-4",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -470,7 +518,7 @@
           "durationSeconds": 949.0
         }
       ],
-      "id": "nowtv-202608132156343-4",
+      "id": "nowtv-202608132156343-5",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -504,7 +552,7 @@
           "durationSeconds": 907.0
         }
       ],
-      "id": "nowtv-202608132156344-5",
+      "id": "nowtv-202608132156344-6",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -545,7 +593,7 @@
           "durationSeconds": 893.0
         }
       ],
-      "id": "nowtv-202608132156340-6",
+      "id": "nowtv-202608132156340-7",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -579,7 +627,7 @@
           "durationSeconds": 899.0
         }
       ],
-      "id": "nowtv-202608132156342-7",
+      "id": "nowtv-202608132156342-8",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -620,7 +668,7 @@
           "durationSeconds": 920.0
         }
       ],
-      "id": "nowtv-202608132156332-8",
+      "id": "nowtv-202608132156332-9",
       "previews": [],
       "upcoming": false
     },
@@ -660,7 +708,7 @@
           "durationSeconds": 921.0
         }
       ],
-      "id": "nowtv-202609072162710-9",
+      "id": "nowtv-202609072162710-10",
       "previews": [],
       "upcoming": false
     },
@@ -677,56 +725,8 @@
       "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156330&type=ucl",
       "durationSeconds": 180,
       "publishedAt": "2026-09-11T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "UraJD1J68dk",
-          "title": "PSV Eindhoven vs Shakhtar Donetsk | 2026 Champions League | Match Highlights",
-          "titleHidden": false,
-          "channel": "Y football",
-          "durationSeconds": 196.0
-        }
-      ],
-      "id": "nowtv-202608132156330-10",
-      "previews": [],
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-09-11",
-      "home": "Bayern Munchen",
-      "away": "Bodo/Glimt",
-      "homeZh": "拜仁慕尼黑",
-      "awayZh": "博德基林",
-      "titleZh": "【歐聯】拜仁慕尼黑 vs 博德基林",
-      "videoId": "202608132156333",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156333&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-09-11T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "DW68WzlQ2l4",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 585.0
-        },
-        {
-          "id": "Q_9REPCUjFk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Footballia",
-          "durationSeconds": 310.0
-        },
-        {
-          "id": "K-K69INZ-l8",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 1519.0
-        }
-      ],
-      "id": "nowtv-202608132156333-11",
+      "youtube": [],
+      "id": "nowtv-202608132156330-11",
       "previews": [],
       "upcoming": false
     }
