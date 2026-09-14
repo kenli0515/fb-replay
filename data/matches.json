@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T06:01:03Z",
+  "generatedAt": "2026-09-14T18:30:48Z",
   "areas": [
     {
       "key": "england",
@@ -15,44 +15,6 @@
     "youtube"
   ],
   "matches": [
-    {
-      "area": "england",
-      "league": "英超",
-      "date": "2026-09-14",
-      "kickoff": "2026-09-15T03:00:00+08:00",
-      "home": "Leeds United",
-      "away": "Newcastle United",
-      "homeZh": "Leeds United",
-      "awayZh": "Newcastle United",
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "previews": [
-        {
-          "id": "2BocgS7qWMM",
-          "title": "The Pre - Match View: Leeds United V Newcastle United",
-          "channel": "The Leeds View",
-          "durationSeconds": 934.0
-        },
-        {
-          "id": "udgkVHRMdec",
-          "title": "NMECHA SHOCK EXIT!? 🚨 Newcastle MAJOR Injury Boost! | Leeds United vs Newcastle Preview",
-          "channel": "One Leeds",
-          "durationSeconds": 1845.0
-        },
-        {
-          "id": "Ih32bE2FVo4",
-          "title": "Time to focus back on the league! Leeds United vs Newcastle United preview",
-          "channel": "MatLeeds",
-          "durationSeconds": 608.0
-        }
-      ],
-      "upcoming": true,
-      "id": "schedule-12"
-    },
     {
       "area": "england",
       "league": "英超",
@@ -74,10 +36,16 @@
           "title": "Brentford vs Chelsea ~ Predicted Line Up Chelsea Matchweek 5 Premier League Season 2026/2027",
           "channel": "Lillah Update",
           "durationSeconds": 122.0
+        },
+        {
+          "id": "zZkdrPq21jI",
+          "title": "BRENTFORD VS CHELSEA SCORE PREDICTION: WHO DOES THE \"TURTLE GOD\" ALI 33 PICK?",
+          "channel": "Báo Bóng Đá Quốc Tế",
+          "durationSeconds": 120.0
         }
       ],
       "upcoming": true,
-      "id": "schedule-13"
+      "id": "schedule-12"
     },
     {
       "area": "england",
@@ -96,7 +64,7 @@
       "youtube": [],
       "previews": [],
       "upcoming": true,
-      "id": "schedule-14"
+      "id": "schedule-13"
     },
     {
       "area": "england",
@@ -115,7 +83,7 @@
       "youtube": [],
       "previews": [],
       "upcoming": true,
-      "id": "schedule-16"
+      "id": "schedule-15"
     },
     {
       "area": "england",
@@ -134,7 +102,7 @@
       "youtube": [],
       "previews": [],
       "upcoming": true,
-      "id": "schedule-15"
+      "id": "schedule-14"
     },
     {
       "area": "england",
@@ -153,7 +121,7 @@
       "youtube": [],
       "previews": [],
       "upcoming": true,
-      "id": "schedule-17"
+      "id": "schedule-16"
     },
     {
       "area": "england",
@@ -179,7 +147,7 @@
         }
       ],
       "upcoming": true,
-      "id": "schedule-18"
+      "id": "schedule-17"
     },
     {
       "area": "england",
@@ -196,16 +164,9 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "_9iG8inosHk",
-          "title": "Liverpool vs AFC Bournemouth Prediction | Sep 11",
-          "channel": "Daily Sports Prediction Analysis",
-          "durationSeconds": 85.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
-      "id": "schedule-19"
+      "id": "schedule-18"
     },
     {
       "area": "england",
@@ -224,7 +185,7 @@
       "youtube": [],
       "previews": [],
       "upcoming": true,
-      "id": "schedule-20"
+      "id": "schedule-19"
     },
     {
       "area": "england",
@@ -250,7 +211,7 @@
         }
       ],
       "upcoming": true,
-      "id": "schedule-21"
+      "id": "schedule-20"
     },
     {
       "area": "england",
@@ -267,22 +228,9 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "xYmCJkRS8hI",
-          "title": "PREMIER LEAGUE PREDICTIONS *WEEK 4* | MAN UNITED vs MAN CITY & LIVERPOOL vs FULHAM",
-          "channel": "FC Sean Predictz",
-          "durationSeconds": 1147.0
-        },
-        {
-          "id": "8rdUU5_oIME",
-          "title": "EPL Weekend Preview: Man United vs Man City, Chelsea vs Hull City, Liverpool vs Fulham & More",
-          "channel": "Supporters Arena",
-          "durationSeconds": 477.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
-      "id": "schedule-22"
+      "id": "schedule-21"
     },
     {
       "area": "england",
@@ -313,11 +261,11 @@
           "durationSeconds": 910.0
         },
         {
-          "id": "Lsiy7oy07UI",
+          "id": "IXGhM_ucRI0",
           "title": null,
           "titleHidden": true,
           "channel": "Footballia",
-          "durationSeconds": 225.0
+          "durationSeconds": 496.0
         }
       ],
       "id": "nowtv-202608132156356-0",
@@ -475,6 +423,13 @@
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 872.0
+        },
+        {
+          "id": "eANxehiv0cU",
+          "title": "Bournemouth vs Brentford",
+          "titleHidden": false,
+          "channel": "Armchair Soccer Federation",
+          "durationSeconds": 1437.0
         }
       ],
       "id": "nowtv-202608132156341-4",
@@ -618,6 +573,13 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 647.0
+        },
+        {
+          "id": "2xQverI58Kg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Aston Villa Football Club",
+          "durationSeconds": 330.0
         },
         {
           "id": "KRyuaZDRnw0",
