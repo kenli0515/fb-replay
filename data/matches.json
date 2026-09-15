@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T18:30:48Z",
+  "generatedAt": "2026-09-15T06:00:50Z",
   "areas": [
     {
       "key": "england",
@@ -62,7 +62,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "gxA3iV6UOPo",
+          "title": "Kalau Degradasi Mending Aston Villa Atau Tottenham ?",
+          "channel": "Skena Liga Inggris",
+          "durationSeconds": 325.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-13"
     },
@@ -164,7 +171,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "_9iG8inosHk",
+          "title": "Liverpool vs AFC Bournemouth Prediction | Sep 11",
+          "channel": "Daily Sports Prediction Analysis",
+          "durationSeconds": 85.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-18"
     },
@@ -228,9 +242,43 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "xYmCJkRS8hI",
+          "title": "PREMIER LEAGUE PREDICTIONS *WEEK 4* | MAN UNITED vs MAN CITY & LIVERPOOL vs FULHAM",
+          "channel": "FC Sean Predictz",
+          "durationSeconds": 1147.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-21"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-09-15",
+      "home": "Leeds",
+      "away": "Newcastle United",
+      "homeZh": "列斯聯",
+      "awayZh": "紐卡素",
+      "titleZh": "【英超】列斯聯 vs 紐卡素",
+      "videoId": "202608132156362",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156362&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-09-15T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "3o5LJWz8euw",
+          "title": "Leeds United v. Newcastle United | PREMIER LEAGUE HIGHLIGHTS | 9/14/2026 | NBC Sports",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 702.0
+        }
+      ],
+      "id": "nowtv-202608132156362-0",
+      "previews": [],
+      "upcoming": false,
+      "kickoff": "2026-09-15T03:00:00+08:00"
     },
     {
       "area": "england",
@@ -268,7 +316,7 @@
           "durationSeconds": 496.0
         }
       ],
-      "id": "nowtv-202608132156356-0",
+      "id": "nowtv-202608132156356-1",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T23:30:00+08:00"
@@ -295,21 +343,21 @@
           "durationSeconds": 816.0
         },
         {
+          "id": "VcWCVawzyfk",
+          "title": "EXTENDED HIGHLIGHTS | Coventry v Brighton | Premier League",
+          "titleHidden": false,
+          "channel": "Official Brighton & Hove Albion FC",
+          "durationSeconds": 611.0
+        },
+        {
           "id": "sEl7LMraWaE",
           "title": "HIGHLIGHTS | Coventry v Brighton | Premier League",
           "titleHidden": false,
           "channel": "Official Brighton & Hove Albion FC",
           "durationSeconds": 133.0
-        },
-        {
-          "id": "CwvCS1xsI8I",
-          "title": "Coventry City Football Club v. Brighton | PREMIER LEAGUE HIGHLIGHTS | 09/13/2026 | USA SPORTS",
-          "titleHidden": false,
-          "channel": "USA Sports",
-          "durationSeconds": 1070.0
         }
       ],
-      "id": "nowtv-202608132156353-1",
+      "id": "nowtv-202608132156353-2",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T21:00:00+08:00"
@@ -350,7 +398,7 @@
           "durationSeconds": 936.0
         }
       ],
-      "id": "nowtv-202608132156348-2",
+      "id": "nowtv-202608132156348-3",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T03:00:00+08:00"
@@ -384,14 +432,14 @@
           "durationSeconds": 172.0
         },
         {
-          "id": "9wiRkqg24mw",
+          "id": "QsYNd-QOxto",
           "title": null,
           "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 850.0
+          "channel": "Everton Football Club",
+          "durationSeconds": 566.0
         }
       ],
-      "id": "nowtv-202608132156347-3",
+      "id": "nowtv-202608132156347-4",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-13T00:30:00+08:00"
@@ -425,14 +473,14 @@
           "durationSeconds": 872.0
         },
         {
-          "id": "eANxehiv0cU",
-          "title": "Bournemouth vs Brentford",
-          "titleHidden": false,
-          "channel": "Armchair Soccer Federation",
-          "durationSeconds": 1437.0
+          "id": "CyCRvtMvGQY",
+          "title": null,
+          "titleHidden": true,
+          "channel": "BRADD",
+          "durationSeconds": 3219.0
         }
       ],
-      "id": "nowtv-202608132156341-4",
+      "id": "nowtv-202608132156341-5",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -473,7 +521,7 @@
           "durationSeconds": 949.0
         }
       ],
-      "id": "nowtv-202608132156343-5",
+      "id": "nowtv-202608132156343-6",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -505,9 +553,16 @@
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 907.0
+        },
+        {
+          "id": "bKtkzyg-qm0",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Ultimate clasico",
+          "durationSeconds": 690.0
         }
       ],
-      "id": "nowtv-202608132156344-6",
+      "id": "nowtv-202608132156344-7",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -548,7 +603,7 @@
           "durationSeconds": 893.0
         }
       ],
-      "id": "nowtv-202608132156340-7",
+      "id": "nowtv-202608132156340-8",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -589,7 +644,7 @@
           "durationSeconds": 899.0
         }
       ],
-      "id": "nowtv-202608132156342-8",
+      "id": "nowtv-202608132156342-9",
       "previews": [],
       "upcoming": false,
       "kickoff": "2026-09-12T22:00:00+08:00"
@@ -630,7 +685,7 @@
           "durationSeconds": 920.0
         }
       ],
-      "id": "nowtv-202608132156332-9",
+      "id": "nowtv-202608132156332-10",
       "previews": [],
       "upcoming": false
     },
@@ -670,25 +725,7 @@
           "durationSeconds": 921.0
         }
       ],
-      "id": "nowtv-202609072162710-10",
-      "previews": [],
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-09-11",
-      "home": "PSV Eindhoven",
-      "away": "Shakhtar Donetsk",
-      "homeZh": "燕豪芬",
-      "awayZh": "薩克達",
-      "titleZh": "【歐聯】燕豪芬 vs 薩克達",
-      "videoId": "202608132156330",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202608132156330&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-09-11T00:00:00+08:00",
-      "youtube": [],
-      "id": "nowtv-202608132156330-11",
+      "id": "nowtv-202609072162710-11",
       "previews": [],
       "upcoming": false
     }
