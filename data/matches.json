@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T17:37:44Z",
+  "generatedAt": "2026-09-16T05:51:56Z",
   "areas": [
     {
       "key": "england",
@@ -38,16 +38,16 @@
           "durationSeconds": 122.0
         },
         {
+          "id": "OJdY13cGadw",
+          "title": "Can Chelsea handle Brentford's PHYSICAL BATTLE? 🔥 | Brentford vs Chelsea Preview",
+          "channel": "PBTalks",
+          "durationSeconds": 635.0
+        },
+        {
           "id": "zZkdrPq21jI",
           "title": "BRENTFORD VS CHELSEA SCORE PREDICTION: WHO DOES THE \"TURTLE GOD\" ALI 33 PICK?",
           "channel": "Báo Bóng Đá Quốc Tế",
           "durationSeconds": 120.0
-        },
-        {
-          "id": "UdSM8IgVpTQ",
-          "title": "🚨🔵 Friday night football in West London. 🔜 Brentford vs Chelsea Lineup and Prediction.#CFC",
-          "channel": "Howdy Blues",
-          "durationSeconds": 919.0
         }
       ],
       "upcoming": true,
@@ -68,7 +68,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "Uvik1PGNS7E",
+          "title": "ASTON VILLA 🆚 TOTTENHAM HOTSPUR| MATCHWEEK 4 PREDICTION ⚽🔥 | Who Will Win! #premierleague",
+          "channel": "MATCH RUSH",
+          "durationSeconds": 65.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-13"
     },
@@ -93,6 +100,12 @@
           "title": "PREMIER LEAGUE PREDICTIONS WEEK 5 | ARSENAL VS BRIGHTON 🔥 KFC DAD MAYAN & WESLEY 🐶⚽",
           "channel": "Mayan The Silver Fox",
           "durationSeconds": 1593.0
+        },
+        {
+          "id": "Oy9Jfnk4New",
+          "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
+          "channel": "Football Tactics",
+          "durationSeconds": 2239.0
         }
       ],
       "upcoming": true,
@@ -215,7 +228,20 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "AjARIAuy4H8",
+          "title": "Sunderland vs Arsenal, Man Utd vs Man City, Liverpool vs Fulham, Premier League Preview",
+          "channel": "Muweesi Sports",
+          "durationSeconds": 1287.0
+        },
+        {
+          "id": "rJeCX_Gj2iM",
+          "title": "EPL UNCENSORED ANALYSIS: Manchester Derby Clash! Man Utd vs Man City, Arsenal vs Sunderland",
+          "channel": "TFB SPORTS",
+          "durationSeconds": 3131.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-20"
     },
@@ -234,7 +260,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "xYmCJkRS8hI",
+          "title": "PREMIER LEAGUE PREDICTIONS *WEEK 4* | MAN UNITED vs MAN CITY & LIVERPOOL vs FULHAM",
+          "channel": "FC Sean Predictz",
+          "durationSeconds": 1147.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-21"
     },
@@ -306,13 +339,6 @@
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 910.0
-        },
-        {
-          "id": "IXGhM_ucRI0",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Footballia",
-          "durationSeconds": 496.0
         }
       ],
       "id": "nowtv-202608132156356-1",
@@ -431,11 +457,11 @@
           "durationSeconds": 172.0
         },
         {
-          "id": "di_eRMZ4jk0",
-          "title": "Tottenham vs Everton Highlights | Premier League Highlights 2027",
-          "titleHidden": false,
-          "channel": "StarkoZatioN",
-          "durationSeconds": 95.0
+          "id": "QsYNd-QOxto",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Everton Football Club",
+          "durationSeconds": 566.0
         }
       ],
       "id": "nowtv-202608132156347-4",
@@ -506,18 +532,18 @@
           "durationSeconds": 742.0
         },
         {
+          "id": "RsDdqq-ZI40",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 81.0
+        },
+        {
           "id": "mXowPs48Eyk",
           "title": "Chelsea v. Hull City | PREMIER LEAGUE HIGHLIGHTS | 09/12/2026| USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1063.0
-        },
-        {
-          "id": "_vpJ7BJuWd4",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 949.0
         }
       ],
       "id": "nowtv-202608132156343-6",
@@ -629,18 +655,18 @@
           "durationSeconds": 647.0
         },
         {
-          "id": "2xQverI58Kg",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Aston Villa Football Club",
-          "durationSeconds": 330.0
-        },
-        {
           "id": "KRyuaZDRnw0",
           "title": null,
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 899.0
+        },
+        {
+          "id": "t-5ogvoRxIg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "BRADD",
+          "durationSeconds": 2928.0
         }
       ],
       "id": "nowtv-202608132156342-9",
