@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T05:51:56Z",
+  "generatedAt": "2026-09-16T17:36:08Z",
   "areas": [
     {
       "key": "england",
@@ -32,6 +32,12 @@
       "youtube": [],
       "previews": [
         {
+          "id": "ChDDmL2hAks",
+          "title": "🚨 GUSTO OUT! ❌ BRENTFORD vs CHELSEA SCARIEST XI ft. CAICEDO, BARCO & PALMER 😱 | ALONSO’S EPL MD5 XI",
+          "channel": "Iconic Chelsea XI Hub",
+          "durationSeconds": 351.0
+        },
+        {
           "id": "LDaQbTFLQrw",
           "title": "Brentford vs Chelsea ~ Predicted Line Up Chelsea Matchweek 5 Premier League Season 2026/2027",
           "channel": "Lillah Update",
@@ -42,12 +48,6 @@
           "title": "Can Chelsea handle Brentford's PHYSICAL BATTLE? 🔥 | Brentford vs Chelsea Preview",
           "channel": "PBTalks",
           "durationSeconds": 635.0
-        },
-        {
-          "id": "zZkdrPq21jI",
-          "title": "BRENTFORD VS CHELSEA SCORE PREDICTION: WHO DOES THE \"TURTLE GOD\" ALI 33 PICK?",
-          "channel": "Báo Bóng Đá Quốc Tế",
-          "durationSeconds": 120.0
         }
       ],
       "upcoming": true,
@@ -70,10 +70,10 @@
       "youtube": [],
       "previews": [
         {
-          "id": "Uvik1PGNS7E",
-          "title": "ASTON VILLA 🆚 TOTTENHAM HOTSPUR| MATCHWEEK 4 PREDICTION ⚽🔥 | Who Will Win! #premierleague",
-          "channel": "MATCH RUSH",
-          "durationSeconds": 65.0
+          "id": "shx10FJwoGw",
+          "title": "MATCH PREVIEW | TOTTENHAM VS ASTON VILLA | CRUCIAL GAME BEFORE THE INTERNATIONAL BREAK!",
+          "channel": "Villa4Ever Podcast",
+          "durationSeconds": null
         }
       ],
       "upcoming": true,
@@ -106,6 +106,12 @@
           "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
           "channel": "Football Tactics",
           "durationSeconds": 2239.0
+        },
+        {
+          "id": "LCMnIocrKd4",
+          "title": "Brighton vs Arsenal ~ Predicted line up Arsenal Matchweek 5 Premier League Season 2026/2027",
+          "channel": "Ahmad Aufal",
+          "durationSeconds": 123.0
         }
       ],
       "upcoming": true,
@@ -165,6 +171,12 @@
       "publishedAt": null,
       "youtube": [],
       "previews": [
+        {
+          "id": "SYviRLvAesM",
+          "title": "🌳 NOTTINGHAM FOREST v COVENTRY CITY | MATCH PREVIEW",
+          "channel": "Talking Reds: a Nottingham Forest podcast",
+          "durationSeconds": null
+        },
         {
           "id": "5pXu5dsPsz4",
           "title": "NFFC v COVENTRY CITY 🔴⚪ | MATCH PREVIEW | CAN FOREST MAKE IT BACK-TO-BACK WINS?",
@@ -228,20 +240,7 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "AjARIAuy4H8",
-          "title": "Sunderland vs Arsenal, Man Utd vs Man City, Liverpool vs Fulham, Premier League Preview",
-          "channel": "Muweesi Sports",
-          "durationSeconds": 1287.0
-        },
-        {
-          "id": "rJeCX_Gj2iM",
-          "title": "EPL UNCENSORED ANALYSIS: Manchester Derby Clash! Man Utd vs Man City, Arsenal vs Sunderland",
-          "channel": "TFB SPORTS",
-          "durationSeconds": 3131.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
       "id": "schedule-20"
     },
@@ -260,14 +259,7 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "xYmCJkRS8hI",
-          "title": "PREMIER LEAGUE PREDICTIONS *WEEK 4* | MAN UNITED vs MAN CITY & LIVERPOOL vs FULHAM",
-          "channel": "FC Sean Predictz",
-          "durationSeconds": 1147.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
       "id": "schedule-21"
     },
@@ -409,18 +401,18 @@
           "durationSeconds": 833.0
         },
         {
+          "id": "raKxbN4OND8",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 188.0
+        },
+        {
           "id": "sgMBgXRdndg",
           "title": "Sunderland v. Arsenal | PREMIER LEAGUE HIGHLIGHTS | 09/12/2026 | USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1079.0
-        },
-        {
-          "id": "zgNP6J3FRag",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 936.0
         }
       ],
       "id": "nowtv-202608132156348-3",
@@ -614,18 +606,18 @@
           "durationSeconds": 597.0
         },
         {
-          "id": "k-CEqgPpWU4",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 82.0
-        },
-        {
           "id": "kk8lgeVX1vQ",
           "title": null,
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 893.0
+        },
+        {
+          "id": "H8vvqRfpSZg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Alex Griffin",
+          "durationSeconds": 1315.0
         }
       ],
       "id": "nowtv-202608132156340-8",
@@ -655,18 +647,18 @@
           "durationSeconds": 647.0
         },
         {
+          "id": "Yh-hXuNTxV8",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 96.0
+        },
+        {
           "id": "KRyuaZDRnw0",
           "title": null,
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 899.0
-        },
-        {
-          "id": "t-5ogvoRxIg",
-          "title": null,
-          "titleHidden": true,
-          "channel": "BRADD",
-          "durationSeconds": 2928.0
         }
       ],
       "id": "nowtv-202608132156342-9",
