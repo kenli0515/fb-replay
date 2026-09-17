@@ -750,6 +750,19 @@ KOL_CHANNEL_WORDS = {
     "reacts", "ultras", "fanzone",
 }
 
+# A broadcaster name has to stand on its own: matching it as a bare substring
+# lets "The Fanatic Stand" pass for "The FA".
+PREVIEW_CHANNEL_RE = re.compile(
+    r"(?<![a-z0-9])(?:"
+    + "|".join(re.escape(name) for name in PREVIEW_CHANNELS)
+    + r")(?![a-z0-9])"
+)
+
+
+def broadcaster_channel(channel: str) -> bool:
+    """True when the channel is one of the broadcasters or the competitions."""
+    return PREVIEW_CHANNEL_RE.search(channel) is not None
+
 # YouTube's own upload-date filters, applied through the `sp` query parameter.
 # Filtering server-side keeps last season's meeting out of the result set; a
 # plain keyword search cannot, and the old fixture outranks a preview of a match
@@ -1012,7 +1025,7 @@ def official_channel(candidate: dict, fixture: dict) -> bool:
     channel = _flatten(ascii_fold(candidate.get("channel") or "")).lower()
     if not channel or set(tokenize(channel)) & KOL_CHANNEL_WORDS:
         return False
-    if any(name in channel for name in PREVIEW_CHANNELS):
+    if broadcaster_channel(channel):
         return True
     return any(
         _club_channel(team, channel) for team in (fixture["home"], fixture["away"])
@@ -1117,8 +1130,8 @@ def preview_score(candidate: dict, fixture: dict) -> float:
         score += 2.0
     if head_to_head(raw, fixture, window=6):
         score += 1.5
-    channel = (candidate["channel"] or "").lower()
-    if any(name in channel for name in PREVIEW_CHANNELS):
+    channel = _flatten(ascii_fold(candidate["channel"] or "")).lower()
+    if broadcaster_channel(channel):
         score += 4.0
     elif _club_channel(fixture["home"], channel) or _club_channel(fixture["away"], channel):
         score += 3.0
