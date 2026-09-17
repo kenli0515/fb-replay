@@ -757,6 +757,9 @@ KOL_CHANNEL_WORDS = {
     "reacts", "ultras", "fanzone",
 }
 
+# The only words a club may add to its own name on its own channel.
+CHANNEL_EXTRA_WORDS = {"official", "tv", "channel", "media", "hd"}
+
 # A broadcaster name has to stand on its own: matching it as a bare substring
 # lets "The Fanatic Stand" pass for "The FA". Digits still count as part of the
 # name, so "BBC One" and "ITV1" are the broadcasters they look like.
@@ -1015,9 +1018,11 @@ def trusted_channel(candidate: dict, fixture: dict) -> bool:
 def _club_channel(team: str, channel: str) -> bool:
     """True when a channel is the club's own, judged from the front of the name.
 
-    Anchoring at the front matters because fan channels like to end with the
-    club they follow ("Mario's Chelsea Diary", "Villa4Ever Podcast"), while a
-    club's own channel is the club's name and little else.
+    The club has to lead, and nothing but a channel word may follow it, so a fan
+    channel that starts with the club ("Chelsea Explained") or ends with it
+    ("Villa4Ever Podcast") is not mistaken for the club itself. A channel that
+    is only the front of the club's name still counts, because clubs shorten
+    their own name ("Wolves" for Wolverhampton Wanderers, "Man City").
     """
     wanted = _team_words(team)
     spoken = _team_words(channel)
@@ -1025,7 +1030,9 @@ def _club_channel(team: str, channel: str) -> bool:
         return False
     if spoken[0] == "official":
         spoken = spoken[1:]
-    return spoken[: len(wanted)] == wanted or wanted[: len(spoken)] == spoken
+    if spoken[: len(wanted)] == wanted:
+        return all(word in CHANNEL_EXTRA_WORDS for word in spoken[len(wanted) :])
+    return wanted[: len(spoken)] == spoken
 
 
 def official_channel(candidate: dict, fixture: dict) -> bool:
