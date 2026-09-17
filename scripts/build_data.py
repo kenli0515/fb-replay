@@ -1123,11 +1123,11 @@ CUP_SIDE_COMPETITIONS = (
 )
 
 # A flat playlist does not report upload dates, and a cup tie has no schedule to
-# read one from, so these lookups open the full page for every result.
-CUP_YT_PRINT = YT_SEPARATOR.join(
-    ["%(upload_date)s", "%(title)s", "%(id)s", "%(channel)s", "%(duration)s", "%(view_count)s"]
-)
-
+# read one from. Asking yt-dlp for the full video is not an option either: it
+# needs a player request, which YouTube refuses from a shared runner address and
+# which is what the flat search avoids. The watch page carries the date in its
+# JSON-LD instead, so it is read straight over HTTPS.
+_UPLOAD_DATE_RE = re.compile(r'"uploadDate"\s*:\s*"(\d{4}-\d{2}-\d{2})')
 # Words a cup title wraps around the club names: "EXTENDED HIGHLIGHTS | Man United
 # v Brighton | Carabao Cup" has to leave "Man United" and "Brighton" behind.
 CUP_FILLER_RE = re.compile(
@@ -1148,45 +1148,15 @@ _EMOJI_RE = re.compile(
 )
 
 
-def cup_search(query: str, count: int, timeout: int, window: str | None) -> list[dict]:
-    """YouTube results carrying their upload date, which --flat-playlist omits."""
-    if window in YT_WINDOWS:
-        target = YT_RESULTS_URL.format(
-            query=urllib.parse.quote_plus(query), window=YT_WINDOWS[window]
-        )
-    else:
-        target = f"https://www.youtube.com/results?search_query={urllib.parse.quote_plus(query)}"
-    command = [
-        "yt-dlp", "--ignore-config", "--no-warnings", "--skip-download",
-        "--socket-timeout", "15", "--playlist-end", str(count), "--print", CUP_YT_PRINT, target,
-    ]
-    completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout * 6)
-    results = []
-    for line in completed.stdout.splitlines():
-        parts = line.split(YT_SEPARATOR)
-        if len(parts) < 6:
-            continue
-        upload_date, title, video_id, channel, duration, views = (
-            part.strip() for part in parts[:6]
-        )
-        if not video_id or video_id == "NA":
-            continue
-        results.append(
-            {
-                "titleRaw": title,
-                "title": sanitize(title),
-                "id": video_id,
-                "channel": sanitize(channel) if channel != "NA" else None,
-                "duration": _to_number(duration),
-                "views": _to_number(views),
-                "uploadDate": (
-                    f"{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}"
-                    if re.fullmatch(r"\d{8}", upload_date)
-                    else None
-                ),
-            }
-        )
-    return results
+def cup_upload_date(video_id: str, timeout: int) -> str | None:
+    """The day a video went up, read from the watch page's JSON-LD."""
+    request = urllib.request.Request(
+        f"https://www.youtube.com/watch?v={video_id}", headers={"User-Agent": USER_AGENT}
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        page = response.read().decode("utf-8", "replace")
+    match = _UPLOAD_DATE_RE.search(page)
+    return match.group(1) if match else None
 
 
 def _cup_team(value: str) -> str | None:
@@ -1279,8 +1249,6 @@ def cup_reject(candidate: dict, cup: str) -> str | None:
     duration = candidate["duration"]
     if duration is not None and duration < 60:
         return "too short to be a match highlight"
-    if not candidate["uploadDate"]:
-        return "no upload date"
     return None
 
 
@@ -1290,7 +1258,7 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
     for key in cup_keys:
         cup = CUPS[key]
         try:
-            candidates = cup_search(cup["query"], args.cup_search, args.timeout, args.cup_window)
+            candidates = yt_search(cup["query"], args.cup_search, args.timeout, args.cup_window)
         except (FileNotFoundError, subprocess.TimeoutExpired) as error:
             print(f"warning: cup lookup failed for {cup['query']} ({error})", file=sys.stderr)
             continue
@@ -1311,14 +1279,24 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
                         file=sys.stderr,
                     )
                 continue
-            fixture = _find_cup_fixture(fixtures, home, away, candidate["uploadDate"])
+            try:
+                uploaded = cup_upload_date(candidate["id"], args.timeout)
+            except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+                print(
+                    f"warning: no upload date for {candidate['id']} ({error})",
+                    file=sys.stderr,
+                )
+                continue
+            if not uploaded:
+                continue
+            fixture = _find_cup_fixture(fixtures, home, away, uploaded)
             if fixture is None:
                 fixture = {
                     "id": f"cup-{key}-{len(fixtures)}",
                     "cup": key,
                     "area": None,
                     "league": cup["name"],
-                    "date": candidate["uploadDate"],
+                    "date": uploaded,
                     "kickoff": None,
                     "home": home,
                     "away": away,
@@ -1335,7 +1313,7 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
                 }
                 fixtures.append(fixture)
             # the earliest upload is the one closest to kick-off
-            fixture["date"] = min(fixture["date"], candidate["uploadDate"])
+            fixture["date"] = min(fixture["date"], uploaded)
             fixture["youtube"].append(candidate)
 
     for fixture in fixtures:
@@ -1368,6 +1346,9 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
             continue
         per_cup[fixture["cup"]] = used + 1
         limited.append(fixture)
+    for key in cup_keys:
+        if not any(fixture["cup"] == key for fixture in limited):
+            print(f"warning: no fixtures found for the {key}", file=sys.stderr)
     return limited
 
 
