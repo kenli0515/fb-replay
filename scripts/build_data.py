@@ -744,6 +744,7 @@ PREFERRED_CHANNELS = [
 PREVIEW_CHANNELS = [
     *PREFERRED_CHANNELS,
     "now tv", "nowtv", "now sports", "itv", "channel 4", "channel 5",
+    "itvx",
     "talksport", "talk sport", "the fa", "emirates fa cup", "efl", "carabao",
     "champions league", "europa league", "conference league", "supersport",
     "astro", "sport tv", "tvb", "hktv", "viutv", "cable tv",
@@ -757,11 +758,12 @@ KOL_CHANNEL_WORDS = {
 }
 
 # A broadcaster name has to stand on its own: matching it as a bare substring
-# lets "The Fanatic Stand" pass for "The FA".
+# lets "The Fanatic Stand" pass for "The FA". Digits still count as part of the
+# name, so "BBC One" and "ITV1" are the broadcasters they look like.
 PREVIEW_CHANNEL_RE = re.compile(
     r"(?<![a-z0-9])(?:"
     + "|".join(re.escape(name) for name in PREVIEW_CHANNELS)
-    + r")(?![a-z0-9])"
+    + r")(?![a-z])"
 )
 
 
