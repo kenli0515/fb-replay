@@ -1136,7 +1136,19 @@ CUP_SIDE_COMPETITIONS = (
 # which is what the flat search avoids. The watch page carries the date in its
 # JSON-LD instead, so it is read straight over HTTPS.
 _UPLOAD_DATE_RE = re.compile(r'"uploadDate"\s*:\s*"(\d{4}-\d{2}-\d{2})')
-_PAGE_FLAGS = ("ytInitialData", "consent", "datePublished", "uploadDate")
+# Not every watch page ships the JSON-LD block, but the page data still dates the
+# video: "18 May 2026" for anything old, "3 days ago" for anything new.
+_DATE_TEXT_RE = re.compile(r'"(?:dateText|publishDate)":.{0,200}?"simpleText":"([^"]{3,40})"', re.S)
+_RELATIVE_DATE_RE = re.compile(r"(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago", re.I)
+_RELATIVE_DAYS = {
+    "second": 0, "minute": 0, "hour": 0, "day": 1, "week": 7, "month": 30, "year": 365,
+}
+# "Sep 16, 2026" as well as "16 Sep 2026"
+_US_TEXT_DATE_RE = re.compile(r"([A-Za-z]{3,9})\.?\s+(\d{1,2}),?\s+(\d{4})")
+_PAGE_FLAGS = (
+    "ytInitialData", "videoPrimaryInfoRenderer", "publishDate", "dateText",
+    "relativeDateText", "datePublished", "uploadDate", "consent",
+)
 CUP_WATCH_URLS = (
     "https://www.youtube.com/watch?v={video_id}&hl=en&gl=US",
     "https://m.youtube.com/watch?v={video_id}&hl=en&gl=US",
@@ -1153,6 +1165,35 @@ def page_fingerprint(page: str) -> str:
     """What a fetched page looks like, for a check annotation when it has no date."""
     found = ",".join(flag for flag in _PAGE_FLAGS if flag in page) or "none"
     return f"{len(page)} bytes, markers: {found}"
+
+
+def _date_text(value: str) -> str | None:
+    """'18 May 2026' or '3 days ago' read off a watch page, as an ISO day."""
+    found = _DATE_TEXT_RE.search(value)
+    if not found:
+        return None
+    text = found.group(1)
+    named = _TEXT_DATE_RE.search(text)
+    if named:
+        month = _MONTHS.get(named.group(2)[:3].lower())
+        if month:
+            try:
+                return datetime.date(int(named.group(3)), month, int(named.group(1))).isoformat()
+            except ValueError:
+                return None
+    named = _US_TEXT_DATE_RE.search(text)
+    if named:
+        month = _MONTHS.get(named.group(1)[:3].lower())
+        if month:
+            try:
+                return datetime.date(int(named.group(3)), month, int(named.group(2))).isoformat()
+            except ValueError:
+                return None
+    relative = _RELATIVE_DATE_RE.search(text)
+    if relative:
+        days = _RELATIVE_DAYS[relative.group(2).lower()] * int(relative.group(1))
+        return (hk_today() - datetime.timedelta(days=days)).isoformat()
+    return None
 # Words a cup title wraps around the club names: "EXTENDED HIGHLIGHTS | Man United
 # v Brighton | Carabao Cup" has to leave "Man United" and "Brighton" behind.
 CUP_FILLER_RE = re.compile(
@@ -1219,6 +1260,9 @@ def cup_upload_date(video_id: str, channel_id: str | None, timeout: int) -> str 
         match = _UPLOAD_DATE_RE.search(page)
         if match:
             return match.group(1)
+        found = _date_text(page)
+        if found:
+            return found
         gha_warning(f"{url} had no upload date ({page_fingerprint(page)})")
     if channel_id:
         return _channel_dates(channel_id, timeout).get(video_id)
