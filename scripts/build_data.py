@@ -495,15 +495,19 @@ def _pair_key(fixture: dict) -> tuple:
     return (frozenset(tokenize(fixture["home"]) + tokenize(fixture["away"])), fixture.get("date"))
 
 
-def merge_schedule(fixtures: list[dict], scheduled: list[dict], days: int) -> int:
-    """Add the next `days` of fixtures and give the rest their kick-off time."""
+def merge_schedule(fixtures: list[dict], scheduled: list[dict], days: int | None) -> int:
+    """Add the next `days` of fixtures and give the rest their kick-off time.
+
+    `days=None` takes everything handed over, which is what the cup rounds need:
+    a round sits weeks away, so a window of a few days would always be empty.
+    """
     today = hk_today()
-    horizon = today + datetime.timedelta(days=days)
+    horizon = today + datetime.timedelta(days=days) if days is not None else None
     known = {_pair_key(fixture) for fixture in fixtures}
     added = 0
     for entry in scheduled:
         when = datetime.date.fromisoformat(entry["date"])
-        if not (today <= when <= horizon):
+        if when < today or (horizon is not None and when > horizon):
             continue
         if _pair_key(entry) in known:
             continue
@@ -532,6 +536,181 @@ def is_upcoming(fixture: dict) -> bool:
     return bool(when and when > hk_today().isoformat())
 
 
+# openfootball carries no European or cup season files, so the cup rounds come
+# from the competition article on Wikipedia. Every tie there is written as a
+# {{Football box}} template whose score stays blank until the match is played,
+# and a blank score is the only kind read here, so no result can leak in.
+WIKI_API = "https://en.wikipedia.org/w/api.php"
+WIKI_PAGES = {
+    "ucl": "{season} UEFA Champions League league phase",
+    "carabao-cup": "{season} EFL Cup",
+    "fa-cup": "{season} FA Cup",
+}
+WIKI_BOX_RE = re.compile(
+    r"\{\{(?:#invoke:\s*)?Football box(?: collapsible)?(?:\|main)?\s*\|(.*?)\n\s*\}\}",
+    re.S,
+)
+WIKI_LINK_RE = re.compile(r"\[\[(?:[^\]|\n]*\|)?([^\]|\n]*)\]\]")
+WIKI_STAMP_RE = re.compile(r"(?:(\d{1,2})/)?(\d{1,2})\s+([A-Z][a-z]+)\s+(\d{4})")
+WIKI_START_RE = re.compile(r"\{\{\s*Start date\s*\|\s*(\d{4})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})", re.I)
+WIKI_CLOCK_RE = re.compile(r"\b(\d{1,2}:\d{2})\b")
+WIKI_VENUE_RE = re.compile(r"\{\{\s*small\s*\|\s*\((.*?)\)\s*\}\}", re.S)
+WIKI_UTC_RE = re.compile(r"UTC\s*([+-])(\d{1,2}):(\d{2})")
+WIKI_TIER_RE = re.compile(r"\s*\(\d+\)\s*$")
+# a round lands on two or three consecutive dates, and the next round is weeks later
+WIKI_ROUND_DAYS = 4
+
+
+def wiki_page(key: str, when: datetime.date) -> str:
+    start = season_start(when)
+    return WIKI_PAGES[key].format(season=f"{start}\u2013{str(start + 1)[2:]}")
+
+
+def _wiki_params(block: str) -> dict[str, str]:
+    """The named parameters of a {{Football box}} template."""
+    params = {}
+    for line in block.split("\n"):
+        match = re.match(r"\s*\|?\s*([A-Za-z0-9_]+)\s*=\s*(.*)$", line)
+        if match:
+            params[match.group(1).lower()] = match.group(2).strip()
+    return params
+
+
+def _wiki_team(value: str) -> str | None:
+    """The club a team= parameter names, without links or tier markers."""
+    if not value:
+        return None
+    value = re.sub(r"'''|<ref.*?</ref>|<ref[^>]*/>", "", value, flags=re.S)
+    value = re.sub(r"\{\{[^{}]*\}\}", " ", value)
+    value = WIKI_TIER_RE.sub("", WIKI_LINK_RE.sub(r"\1", value))
+    name = tidy_team(clean_text(value))
+    if not 2 <= len(name) <= 32 or re.search(r"\d", name):
+        return None
+    return name
+
+
+def _wiki_date(value: str) -> datetime.date | None:
+    start = WIKI_START_RE.search(value or "")
+    if start:
+        try:
+            return datetime.date(*(int(part) for part in start.groups()))
+        except ValueError:
+            return None
+    match = WIKI_STAMP_RE.search(value or "")
+    if match is None:
+        return None
+    try:
+        return datetime.datetime.strptime(
+            f"{int(match.group(1) or match.group(2))} {match.group(3)} {match.group(4)}",
+            "%d %B %Y",
+        ).date()
+    except ValueError:
+        return None
+
+
+def _wiki_kickoff(when: datetime.date, value: str):
+    """The kick-off as a Hong Kong timestamp, or None when the page omits it.
+
+    The Champions League boxing page gives the venue's own clock next to its UTC
+    offset ("19:45 UTC+3"), while the English cups give a UK clock, which the
+    shared helper already knows how to place.
+    """
+    venue = WIKI_VENUE_RE.search(value or "")
+    if venue:
+        zone = WIKI_UTC_RE.search(venue.group(1))
+        clock = WIKI_CLOCK_RE.search(venue.group(1))
+        if zone and clock:
+            hour, minute = (int(part) for part in clock.group(1).split(":"))
+            offset = int(zone.group(2)) * (1 if zone.group(1) == "+" else -1)
+            local = datetime.datetime(
+                when.year, when.month, when.day, hour, minute, tzinfo=datetime.timezone.utc
+            )
+            return (local - datetime.timedelta(hours=offset)).astimezone(HK_TZ)
+    clock = WIKI_CLOCK_RE.search(value or "")
+    return kickoff_at(when, clock.group(1)) if clock else None
+
+
+def wiki_fixtures(keys: list[str], timeout: int) -> list[dict]:
+    """The cup ties nobody has played yet, read from the competition article."""
+    fixtures = []
+    for key in keys:
+        page = wiki_page(key, hk_today())
+        url = (
+            f"{WIKI_API}?action=parse&format=json&formatversion=2&redirects=1"
+            f"&prop=wikitext&page={urllib.parse.quote(page)}"
+        )
+        try:
+            payload = fetch_json(url, timeout)
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+            gha_warning(f"wiki {page}: {error}")
+            continue
+        wikitext = ((payload or {}).get("parse") or {}).get("wikitext") or ""
+        found = 0
+        for block in WIKI_BOX_RE.findall(wikitext):
+            params = _wiki_params(block)
+            if (params.get("score") or "").strip():
+                continue
+            when = _wiki_date(params.get("date") or "")
+            home = _wiki_team(params.get("team1") or "")
+            away = _wiki_team(params.get("team2") or "")
+            if not (when and home and away):
+                continue
+            start = _wiki_kickoff(when, params.get("time") or "")
+            fixtures.append(
+                {
+                    "area": key,
+                    "league": AREAS[key][0] if key in AREAS else CUPS[key]["name"],
+                    "date": when.isoformat(),
+                    "kickoff": start.isoformat() if start else None,
+                    "home": home,
+                    "away": away,
+                    "homeZh": None,
+                    "awayZh": None,
+                    "titleZh": None,
+                    "videoId": None,
+                    "nowtvUrl": None,
+                    "durationSeconds": None,
+                    "publishedAt": None,
+                    "youtube": [],
+                    "previews": [],
+                    "upcoming": True,
+                }
+            )
+            found += 1
+        if not found:
+            gha_warning(f"wiki {page}: no unplayed ties")
+    # a tie whose score has not been filled in yet can still have been played
+    return [fixture for fixture in fixtures if is_upcoming(fixture)]
+
+
+def next_round(fixtures: list[dict]) -> list[dict]:
+    """The next round of each cup: the round after that waits for a later build.
+
+    A round fills a few consecutive dates with several ties, while a tie whose
+    score has not been written up yet can sit on a date of its own, so the
+    earliest cluster that is more than a single tie is the one that is kept.
+    """
+    rounds = []
+    for key in dict.fromkeys(fixture["area"] for fixture in fixtures):
+        dated = sorted(
+            fixture["date"]
+            for fixture in fixtures
+            if fixture["area"] == key and fixture.get("date")
+        )
+        for date in sorted(set(dated)):
+            edge = (
+                datetime.date.fromisoformat(date) + datetime.timedelta(days=WIKI_ROUND_DAYS)
+            ).isoformat()
+            if sum(1 for other in dated if date <= other <= edge) > 1:
+                rounds.extend(
+                    fixture
+                    for fixture in fixtures
+                    if fixture["area"] == key and date <= (fixture.get("date") or "") <= edge
+                )
+                break
+    return rounds
+
+
 # ---------------------------------------------------------------------------
 # YouTube
 # ---------------------------------------------------------------------------
@@ -552,6 +731,24 @@ PREFERRED_CHANNELS = [
     "dazn", "bein sports", "nbc sports", "amazon prime", "bbc", "canal+",
     "fox sports", "paramount+", "liga", "serie a", "bundesliga",
 ]
+
+# Previews have to come from television: a broadcaster, the competition itself or
+# one of the two clubs. The fixture search is otherwise dominated by fan channels
+# and podcasts, which do not belong on the page.
+PREVIEW_CHANNELS = [
+    *PREFERRED_CHANNELS,
+    "now tv", "nowtv", "now sports", "itv", "channel 4", "channel 5",
+    "talksport", "talk sport", "the fa", "emirates fa cup", "efl", "carabao",
+    "champions league", "europa league", "conference league", "supersport",
+    "astro", "sport tv", "tvb", "hktv", "viutv", "cable tv",
+]
+
+# Wording that gives a fan channel away, so one that spells out a club's name
+# ("... An Aston Villa Fan Channel ...") still does not count as the club.
+KOL_CHANNEL_WORDS = {
+    "fan", "fans", "podcast", "podcasts", "vlog", "vlogs", "reaction",
+    "reacts", "ultras", "fanzone",
+}
 
 # YouTube's own upload-date filters, applied through the `sp` query parameter.
 # Filtering server-side keeps last season's meeting out of the result set; a
@@ -601,6 +798,9 @@ PREVIEW_REJECT_PHRASES = [
     "fifa 2", "fc 25", "fc 26", "pes 2", "pes2", "ps5", "ps4", "xbox",
 ]
 
+# A preview only appears in the days before kick-off.
+PREVIEW_HORIZON_DAYS = 12
+
 # Wording that marks a video as fixture talk: broadcast build-up, club shows and
 # the fan channels that preview a game all use at least one of these.
 PREVIEW_SIGNALS = [
@@ -633,6 +833,8 @@ AREA_COMPETITIONS = {
     "italy": "serie a",
     "germany": "bundesliga",
     "worldcup2026": "world cup",
+    "fa-cup": "fa cup",
+    "carabao-cup": "efl cup",
 }
 COMPETITION_ALIASES = {
     "premier league": ("premier league", "epl"),
@@ -643,6 +845,8 @@ COMPETITION_ALIASES = {
     "serie a": ("serie a",),
     "bundesliga": ("bundesliga",),
     "world cup": ("world cup",),
+    "fa cup": ("fa cup", "facup"),
+    "efl cup": ("carabao cup", "carabao", "efl cup", "league cup"),
 }
 
 
@@ -787,6 +991,34 @@ def trusted_channel(candidate: dict, fixture: dict) -> bool:
     return _team_in_text(fixture["home"], channel) or _team_in_text(fixture["away"], channel)
 
 
+def _club_channel(team: str, channel: str) -> bool:
+    """True when a channel is the club's own, judged from the front of the name.
+
+    Anchoring at the front matters because fan channels like to end with the
+    club they follow ("Mario's Chelsea Diary", "Villa4Ever Podcast"), while a
+    club's own channel is the club's name and little else.
+    """
+    wanted = _team_words(team)
+    spoken = _team_words(channel)
+    if not wanted or not spoken:
+        return False
+    if spoken[0] == "official":
+        spoken = spoken[1:]
+    return spoken[: len(wanted)] == wanted or wanted[: len(spoken)] == spoken
+
+
+def official_channel(candidate: dict, fixture: dict) -> bool:
+    """True only for a broadcaster, the competition or one of the two clubs."""
+    channel = _flatten(ascii_fold(candidate.get("channel") or "")).lower()
+    if not channel or set(tokenize(channel)) & KOL_CHANNEL_WORDS:
+        return False
+    if any(name in channel for name in PREVIEW_CHANNELS):
+        return True
+    return any(
+        _club_channel(team, channel) for team in (fixture["home"], fixture["away"])
+    )
+
+
 def competition_mismatch(raw_title: str, area: str | None) -> str | None:
     """Name the competition a title belongs to when it is not this fixture's."""
     expected = AREA_COMPETITIONS.get(area or "")
@@ -886,9 +1118,9 @@ def preview_score(candidate: dict, fixture: dict) -> float:
     if head_to_head(raw, fixture, window=6):
         score += 1.5
     channel = (candidate["channel"] or "").lower()
-    if any(name in channel for name in PREFERRED_CHANNELS):
+    if any(name in channel for name in PREVIEW_CHANNELS):
         score += 4.0
-    elif _team_in_text(fixture["home"], channel) or _team_in_text(fixture["away"], channel):
+    elif _club_channel(fixture["home"], channel) or _club_channel(fixture["away"], channel):
         score += 3.0
     else:
         score += 0.5
@@ -924,13 +1156,10 @@ def preview_reject(candidate: dict, fixture: dict, fixture_date) -> str | None:
         return stale
     if not head_to_head(raw, fixture):
         return "title does not put the two teams head to head"
-    if (
-        preview_signal(raw) is None
-        and not trusted_channel(candidate, fixture)
-        and not _team_in_text(fixture["home"], candidate["channel"] or "")
-        and not _team_in_text(fixture["away"], candidate["channel"] or "")
-    ):
-        return "no preview wording and no club or broadcaster channel"
+    if preview_signal(raw) is None:
+        return "no preview wording"
+    if not official_channel(candidate, fixture):
+        return "not a broadcaster, the competition or one of the two clubs"
     return None
 
 
@@ -939,6 +1168,10 @@ def attach_previews(fixture: dict, args) -> None:
     query = f"{fixture['home']} vs {fixture['away']} preview"
     fixture["previews"] = []
     fixture_date = _fixture_date(fixture)
+    # previews only go out in the days before kick-off, so a match further out
+    # than this is left for a later build instead of searched every time
+    if fixture_date and (fixture_date - hk_today()).days > PREVIEW_HORIZON_DAYS:
+        return
     try:
         candidates = yt_search(query, args.preview_search, args.timeout, window=args.preview_window)
     except (FileNotFoundError, subprocess.TimeoutExpired) as error:
@@ -1519,13 +1752,25 @@ def build(args) -> dict:
         except (urllib.error.URLError, TimeoutError, OSError) as error:
             print(f"warning: schedule unavailable ({error})", file=sys.stderr)
             scheduled = []
-        if scheduled:
-            added = merge_schedule(fixtures, scheduled, args.upcoming_days)
-            if added and args.debug:
-                print(f"debug: added {added} fixtures from the schedule", file=sys.stderr)
-            for index, fixture in enumerate(fixtures):
-                if not fixture.get("id"):
-                    fixture["id"] = f"schedule-{index}"
+        added = merge_schedule(fixtures, scheduled, args.upcoming_days)
+        if added and args.debug:
+            print(f"debug: added {added} fixtures from the schedule", file=sys.stderr)
+        # cup rounds sit weeks outside the week the leagues are listed for, so
+        # they come from their own source and are not held to the same horizon
+        wiki_keys = [key for key in args.cups if key in WIKI_PAGES]
+        if "ucl" in args.areas:
+            wiki_keys.append("ucl")
+        try:
+            rounds = wiki_fixtures(wiki_keys, args.timeout)
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+            print(f"warning: cup rounds unavailable ({error})", file=sys.stderr)
+            rounds = []
+        added = merge_schedule(fixtures, next_round(rounds), None)
+        if added and args.debug:
+            print(f"debug: added {added} cup fixtures from Wikipedia", file=sys.stderr)
+        for index, fixture in enumerate(fixtures):
+            if not fixture.get("id"):
+                fixture["id"] = f"schedule-{index}"
 
     if cups:
         fixtures.extend(cups)
