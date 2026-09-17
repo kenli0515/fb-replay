@@ -507,7 +507,11 @@ def merge_schedule(fixtures: list[dict], scheduled: list[dict], days: int | None
     added = 0
     for entry in scheduled:
         when = datetime.date.fromisoformat(entry["date"])
-        if when < today or (horizon is not None and when > horizon):
+        if horizon is not None and when > horizon:
+            continue
+        # a match dated yesterday in the UK can still be kicking off today in
+        # Hong Kong, so the date on its own is not enough to call it played
+        if when < today and not is_upcoming(entry):
             continue
         if _pair_key(entry) in known:
             continue
@@ -688,7 +692,9 @@ def next_round(fixtures: list[dict]) -> list[dict]:
 
     A round fills a few consecutive dates with several ties, while a tie whose
     score has not been written up yet can sit on a date of its own, so the
-    earliest cluster that is more than a single tie is the one that is kept.
+    earliest cluster that is more than a single tie sets the end of the round.
+    Every tie up to that end is kept, which leaves such a lone tie in place
+    instead of hiding the match that is about to kick off.
     """
     rounds = []
     for key in dict.fromkeys(fixture["area"] for fixture in fixtures):
@@ -705,7 +711,7 @@ def next_round(fixtures: list[dict]) -> list[dict]:
                 rounds.extend(
                     fixture
                     for fixture in fixtures
-                    if fixture["area"] == key and date <= (fixture.get("date") or "") <= edge
+                    if fixture["area"] == key and (fixture.get("date") or "") <= edge
                 )
                 break
     return rounds
