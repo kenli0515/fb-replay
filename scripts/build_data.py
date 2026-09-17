@@ -1089,11 +1089,295 @@ def attach_youtube(fixture: dict, args) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Cups (YouTube only)
+# ---------------------------------------------------------------------------
+
+# NOW TV carries neither English cup, and openfootball keeps no cup season file,
+# so the fixture list has to come from somewhere. It comes from YouTube as well:
+# each competition's own channel posts one upload per tie, and that upload
+# supplies the two clubs, the date and the video. Nothing on the page points at a
+# third-party replay site.
+CUPS = {
+    "fa-cup": {"name": "足總盃", "query": "Emirates FA Cup extended highlights"},
+    "carabao-cup": {"name": "聯賽盃", "query": "Carabao Cup extended highlights"},
+}
+DEFAULT_CUPS = ["fa-cup", "carabao-cup"]
+
+# An upload only counts when it says which cup it is, or comes from the cup's own
+# channel. Without that gate a search for one competition happily returns league
+# matches between the same clubs ("NINE GOAL CLASSIC! | Chelsea v Leeds United
+# extended highlights" is a Carabao tie, but nothing in the title says so).
+CUP_ALIASES = {
+    "fa-cup": ("fa cup", "facup"),
+    "carabao-cup": ("carabao cup", "carabao", "efl cup", "league cup"),
+}
+CUP_CHANNELS = {
+    "fa-cup": ("the emirates fa cup",),
+    # the EFL channel covers every EFL competition, so only its titles count
+    "carabao-cup": (),
+}
+# Other versions of the same cup: a different competition for this page.
+CUP_SIDE_COMPETITIONS = (
+    "amputee", "disability", "walking football", "powerchair", "futsal", "socca",
+    "esports", "efootball", "e-football",
+)
+
+# A flat playlist does not report upload dates, and a cup tie has no schedule to
+# read one from, so these lookups open the full page for every result.
+CUP_YT_PRINT = YT_SEPARATOR.join(
+    ["%(upload_date)s", "%(title)s", "%(id)s", "%(channel)s", "%(duration)s", "%(view_count)s"]
+)
+
+# Words a cup title wraps around the club names: "EXTENDED HIGHLIGHTS | Man United
+# v Brighton | Carabao Cup" has to leave "Man United" and "Brighton" behind.
+CUP_FILLER_RE = re.compile(
+    r"\b(?:extended|highlights?|full|match|matches|key|moments?|goals?|all|recap|"
+    r"round|final|semi|quarter|third|fourth|first|second|leg|cup|tie|vs?|versus)\b",
+    re.I,
+)
+# An upload about a different competition that happens to have the same clubs.
+CUP_OTHER_COMPETITIONS = (
+    "community shield", "super cup", "world cup", "premier league", "champions league",
+    "europa league", "conference league", "la liga", "serie a", "bundesliga",
+    "ligue 1", "championship", "league one", "league two", "efl trophy", "vertu",
+)
+_CUP_SCORE_BRACKET_RE = re.compile(r"[\(\[]\s*(\d{1,2}\s*[-\u2013\u2014]\s*\d{1,2})\s*[\)\]]")
+_CUP_SCORE_TAIL_RE = re.compile(r"\s*\(?\b\d{1,2}\s*[-\u2013\u2014]\s*\d{1,2}\b\)?\s*$")
+_EMOJI_RE = re.compile(
+    "[\U0001F000-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF\u2190-\u21FF\uFE0F\u200d]"
+)
+
+
+def cup_search(query: str, count: int, timeout: int, window: str | None) -> list[dict]:
+    """YouTube results carrying their upload date, which --flat-playlist omits."""
+    if window in YT_WINDOWS:
+        target = YT_RESULTS_URL.format(
+            query=urllib.parse.quote_plus(query), window=YT_WINDOWS[window]
+        )
+    else:
+        target = f"https://www.youtube.com/results?search_query={urllib.parse.quote_plus(query)}"
+    command = [
+        "yt-dlp", "--ignore-config", "--no-warnings", "--skip-download",
+        "--socket-timeout", "15", "--playlist-end", str(count), "--print", CUP_YT_PRINT, target,
+    ]
+    completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout * 6)
+    results = []
+    for line in completed.stdout.splitlines():
+        parts = line.split(YT_SEPARATOR)
+        if len(parts) < 6:
+            continue
+        upload_date, title, video_id, channel, duration, views = (
+            part.strip() for part in parts[:6]
+        )
+        if not video_id or video_id == "NA":
+            continue
+        results.append(
+            {
+                "titleRaw": title,
+                "title": sanitize(title),
+                "id": video_id,
+                "channel": sanitize(channel) if channel != "NA" else None,
+                "duration": _to_number(duration),
+                "views": _to_number(views),
+                "uploadDate": (
+                    f"{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}"
+                    if re.fullmatch(r"\d{8}", upload_date)
+                    else None
+                ),
+            }
+        )
+    return results
+
+
+def _cup_team(value: str) -> str | None:
+    """Trim a title fragment down to a club name, or None when it is not one."""
+    value = _CUP_SCORE_TAIL_RE.sub("", value)
+    value = CUP_FILLER_RE.split(value)[0]
+    value = value.strip(" \t\u00a0-\u2013\u2014|:,.'\"&()[]")
+    if not 2 <= len(value) <= 32 or re.search(r"\d", value):
+        return None
+    if any(word in value.lower() for word in JUNK_TEAM_WORDS):
+        return None
+    if not 1 <= len(tokenize(value)) <= 4:
+        return None
+    return tidy_team(value)
+
+
+def _same_team(first: str, second: str) -> bool:
+    """True for 'Man Utd' and 'Man United', false for two clubs that merely
+    share a word: 'Leicester City' is not 'Manchester City'."""
+    left, right = ascii_fold(first).lower(), ascii_fold(second).lower()
+    if left == right or left.startswith(right) or right.startswith(left):
+        return True
+    shared = set(tokenize(left)) & set(tokenize(right)) - STOP_TOKENS
+    return any(len(token) >= 4 for token in shared) or (
+        len(left) >= 3 and right.startswith(left[:3])
+    )
+
+
+def _find_cup_fixture(fixtures: list[dict], home: str, away: str, when: str) -> dict | None:
+    """The card an upload belongs to: the same two clubs a day either side."""
+    day = datetime.date.fromisoformat(when)
+    for fixture in fixtures:
+        if abs((datetime.date.fromisoformat(fixture["date"]) - day).days) > 1:
+            continue
+        if (_same_team(fixture["home"], home) and _same_team(fixture["away"], away)) or (
+            _same_team(fixture["home"], away) and _same_team(fixture["away"], home)
+        ):
+            return fixture
+    return None
+
+
+def cup_pair(raw_title: str) -> tuple[str | None, str | None]:
+    """The two clubs a cup highlight title names, or (None, None)."""
+    text = _EMOJI_RE.sub(" ", clean_text(raw_title))
+    # "(4-0)" and "[2-1]" are scores too: make them readable to the score regex
+    text = _CUP_SCORE_BRACKET_RE.sub(r" \1 ", text)
+    for segment in text.split("|"):
+        segment = segment.strip()
+        if not segment:
+            continue
+        parts = _VS_RE.split(segment, maxsplit=1)
+        if len(parts) == 2:
+            home, away = _cup_team(parts[0]), _cup_team(parts[1])
+            if home and away:
+                return home, away
+        match = _NAME_SCORE_RE.search(segment)
+        if match:
+            home, away = _cup_team(match.group(1)), _cup_team(match.group(2))
+            if home and away:
+                return home, away
+    match = _NAME_SCORE_RE.search(text)
+    if match:
+        home, away = _cup_team(match.group(1)), _cup_team(match.group(2))
+        if home and away:
+            return home, away
+    return None, None
+
+
+def cup_reject(candidate: dict, cup: str) -> str | None:
+    """Why this upload cannot be a match of this cup, or None."""
+    raw = candidate["titleRaw"]
+    lowered = _flatten(ascii_fold(raw)).lower()
+    channel = (candidate.get("channel") or "").lower()
+    named = any(alias in lowered for alias in CUP_ALIASES[cup])
+    official = any(name in channel for name in CUP_CHANNELS[cup])
+    if not (named or official):
+        return "does not say which cup it is"
+    for other in CUP_SIDE_COMPETITIONS:
+        if other in lowered:
+            return f"another version of the game ({other})"
+    for other in CUP_OTHER_COMPETITIONS:
+        if other in lowered:
+            return f"another competition ({other})"
+    side = side_competition(raw, candidate.get("channel"))
+    if side:
+        return f"another competition with the same names ({side})"
+    phrase = not_a_highlight(raw)
+    if phrase:
+        return f"not a highlight ({phrase})"
+    duration = candidate["duration"]
+    if duration is not None and duration < 60:
+        return "too short to be a match highlight"
+    if not candidate["uploadDate"]:
+        return "no upload date"
+    return None
+
+
+def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
+    """One card per cup tie, built from the competition's own YouTube uploads."""
+    fixtures: list[dict] = []
+    for key in cup_keys:
+        cup = CUPS[key]
+        try:
+            candidates = cup_search(cup["query"], args.cup_search, args.timeout, args.cup_window)
+        except (FileNotFoundError, subprocess.TimeoutExpired) as error:
+            print(f"warning: cup lookup failed for {cup['query']} ({error})", file=sys.stderr)
+            continue
+        if args.debug:
+            print(f"debug: cup {key} -> {len(candidates)} results", file=sys.stderr)
+        for candidate in candidates:
+            reason = cup_reject(candidate, key)
+            home = away = None
+            if reason is None:
+                home, away = cup_pair(candidate["titleRaw"])
+                if not home:
+                    reason = "no two clubs in the title"
+            if reason:
+                if args.debug:
+                    print(
+                        f"debug: cup {key}: dropping {candidate['id']} ({reason}) "
+                        f":: {candidate['titleRaw']}",
+                        file=sys.stderr,
+                    )
+                continue
+            fixture = _find_cup_fixture(fixtures, home, away, candidate["uploadDate"])
+            if fixture is None:
+                fixture = {
+                    "id": f"cup-{key}-{len(fixtures)}",
+                    "cup": key,
+                    "area": None,
+                    "league": cup["name"],
+                    "date": candidate["uploadDate"],
+                    "kickoff": None,
+                    "home": home,
+                    "away": away,
+                    "homeZh": None,
+                    "awayZh": None,
+                    "titleZh": None,
+                    "videoId": None,
+                    "nowtvUrl": None,
+                    "durationSeconds": None,
+                    "publishedAt": None,
+                    "youtube": [],
+                    "previews": [],
+                    "upcoming": False,
+                }
+                fixtures.append(fixture)
+            # the earliest upload is the one closest to kick-off
+            fixture["date"] = min(fixture["date"], candidate["uploadDate"])
+            fixture["youtube"].append(candidate)
+
+    for fixture in fixtures:
+        fixture["youtube"].sort(key=lambda item: _yt_score(item, fixture), reverse=True)
+        fixture["youtube"] = [
+            {
+                "id": candidate["id"],
+                "title": candidate["title"],
+                "titleHidden": (
+                    looks_like_score(candidate["titleRaw"])
+                    or bool(spoiler_hits(candidate["titleRaw"]))
+                    or len(
+                        editorial_words(candidate["titleRaw"], fixture["home"], fixture["away"])
+                    ) >= 3
+                ),
+                "channel": candidate["channel"],
+                "durationSeconds": candidate["duration"],
+            }
+            for candidate in fixture["youtube"][: args.yt_results]
+        ]
+        for entry in fixture["youtube"]:
+            if entry["titleHidden"]:
+                entry["title"] = None
+    fixtures.sort(key=lambda fixture: fixture["date"], reverse=True)
+    per_cup: dict[str, int] = {}
+    limited = []
+    for fixture in fixtures:
+        used = per_cup.get(fixture["cup"], 0)
+        if used >= args.cup_results:
+            continue
+        per_cup[fixture["cup"]] = used + 1
+        limited.append(fixture)
+    return limited
+
+
+# ---------------------------------------------------------------------------
 # Output
 # ---------------------------------------------------------------------------
 
 def build(args) -> dict:
     fixtures = nowtv_fixtures(args.areas, args.page_size, args.timeout)
+    cups = [] if args.no_youtube else cup_fixtures(args.cups, args)
     if args.limit:
         fixtures = fixtures[: args.limit]
     for fixture in fixtures:
@@ -1116,6 +1400,9 @@ def build(args) -> dict:
                 if not fixture.get("id"):
                     fixture["id"] = f"schedule-{index}"
 
+    if cups:
+        fixtures.extend(cups)
+
     # the week ahead first, in kick-off order; then what has been played, newest
     # first, keeping the order nowtv_fixtures already sorted
     for fixture in fixtures:
@@ -1125,10 +1412,15 @@ def build(args) -> dict:
     ahead = [fixture for fixture in fixtures if fixture["upcoming"]]
     played = [fixture for fixture in fixtures if not fixture["upcoming"]]
     ahead.sort(key=lambda fixture: (fixture.get("kickoff") or fixture.get("date") or "", fixture["home"]))
+    # a stable sort keeps the order NOW TV handed over for the league matches
+    played.sort(key=lambda fixture: fixture.get("date") or "", reverse=True)
     fixtures = ahead + played
 
     if not args.no_youtube and fixtures:
         for fixture in fixtures:
+            # cup cards already carry the videos the fixture was read from
+            if fixture.get("cup"):
+                continue
             attach_youtube(fixture, args)
     else:
         for fixture in fixtures:
@@ -1171,6 +1463,19 @@ def parse_args(argv):
     parser.add_argument("--limit", type=int, default=12, help="max matches to publish")
     parser.add_argument("--page-size", type=int, default=48, help="items requested per area")
     parser.add_argument("--no-youtube", action="store_true")
+    parser.add_argument(
+        "--cups",
+        default=",".join(DEFAULT_CUPS),
+        help=f"cup competitions listed from YouTube (default: {','.join(DEFAULT_CUPS)}, '' to skip)",
+    )
+    parser.add_argument("--cup-results", type=int, default=4, help="max matches kept per cup")
+    parser.add_argument("--cup-search", type=int, default=20, help="YouTube results examined per cup")
+    parser.add_argument(
+        "--cup-window",
+        choices=["all", *YT_WINDOWS],
+        default="year",
+        help="upload-date filter for cup uploads (default: year)",
+    )
     parser.add_argument("--yt-search", type=int, default=8, help="YouTube results examined")
     parser.add_argument("--yt-results", type=int, default=3, help="YouTube links kept")
     parser.add_argument(
@@ -1209,6 +1514,13 @@ def main(argv=None) -> int:
         print(f"error: --areas must contain one of {', '.join(AREAS)}", file=sys.stderr)
         return 2
     args.areas = areas
+    cups = [cup.strip() for cup in args.cups.split(",") if cup.strip() in CUPS]
+    if args.cups.strip() and not cups:
+        print(
+            f"warning: --cups must contain one of {', '.join(CUPS)}; skipping the cups",
+            file=sys.stderr,
+        )
+    args.cups = cups
 
     payload = build(args)
     if not payload["matches"]:

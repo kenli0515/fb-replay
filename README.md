@@ -1,16 +1,22 @@
 # fb-replay
 
-無劇透嘅足球精華索引頁，資料來自三個公開來源：
+無劇透嘅足球精華索引頁，影片只會嚟自以下兩個來源：
 
 | 來源 | 內容 | 備註 |
 | --- | --- | --- |
 | **NOW TV**（PCCW，香港） | 官方免費精華，每場約 3 分鐘 | 有廣東話隊名；可以喺本頁 iframe 直接播（裁切到只剩播放器） |
 | **YouTube** | 球會／電視台官方精華、全場、加長版 | 每場最多 3 條，可以喺本頁 iframe 直接播 |
 | **openfootball** | 未來 7 日賽程（英超） | 只為未開賽嘅比賽而設：提供開球時間同賽前預覽，未打嘅比賽本身冇比分 |
+| **英格蘭兩項盃賽** | 足總盃、聯賽盃（每個盃賽最多 4 場） | 賽程同影片都嚟自盃賽官方頻道喺 YouTube 嘅上載，唔會連去第三方回放網站 |
 
 未開賽嘅比賽只會出現賽前預覽（電視台、球會或者球迷頻道），開球時間以香港時間顯示。
 判斷一場比賽「未開賽」係靠 openfootball 嘅賽程：淨係用日期唔夠，因為同日較後開波嘅
 比賽會被誤當成已經打完，然後夾硬配上對上一次對賽嘅精華。
+
+NOW TV 冇英格蘭兩個盃賽，openfootball 亦都冇盃賽賽程，所以盃賽嘅賽程係由 YouTube 反過嚟砌：
+每個盃賽官方頻道每場波都會上載一條「extended highlights」／「FULL MATCH」，憑標題拎到兩隊波，
+憑上載日期拎到比賽日期。為咗唔會撈亂，標題一定要寫明係邊個盃賽（或者條片上載者就係盃賽官方頻道），
+標題寫住比數嘅話就照收但會收起標題（`titleHidden`）。
 
 頁面唔會出現任何比分、勝負或入球提示。NOW TV 嘅中文標題本身寫住賽果
 （例如「【英超】新特蘭0:2阿仙奴」），所以 `scripts/build_data.py` 會先洗走比分再寫入
@@ -45,6 +51,8 @@ python3 -m http.server 8765
 python3 scripts/build_data.py                                   # 英超 + 歐聯，12 場
 python3 scripts/build_data.py --areas england,ucl,spain --limit 20
 python3 scripts/build_data.py --no-youtube --limit 40            # 只抓 NOW TV，快好多
+python3 scripts/build_data.py --cups carabao-cup --cup-results 6  # 只要聯賽盃，每邊 6 場
+python3 scripts/build_data.py --cups ""                           # 唔要盃賽
 ```
 
 需要 Python 3.10+（用 `zoneinfo`）同 [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
