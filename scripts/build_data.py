@@ -1136,6 +1136,23 @@ CUP_SIDE_COMPETITIONS = (
 # which is what the flat search avoids. The watch page carries the date in its
 # JSON-LD instead, so it is read straight over HTTPS.
 _UPLOAD_DATE_RE = re.compile(r'"uploadDate"\s*:\s*"(\d{4}-\d{2}-\d{2})')
+_PAGE_FLAGS = ("ytInitialData", "consent", "datePublished", "uploadDate")
+CUP_WATCH_URLS = (
+    "https://www.youtube.com/watch?v={video_id}&hl=en&gl=US",
+    "https://m.youtube.com/watch?v={video_id}&hl=en&gl=US",
+)
+CUP_PAGE_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "identity",
+}
+
+
+def page_fingerprint(page: str) -> str:
+    """What a fetched page looks like, for a check annotation when it has no date."""
+    found = ",".join(flag for flag in _PAGE_FLAGS if flag in page) or "none"
+    return f"{len(page)} bytes, markers: {found}"
 # Words a cup title wraps around the club names: "EXTENDED HIGHLIGHTS | Man United
 # v Brighton | Carabao Cup" has to leave "Man United" and "Brighton" behind.
 CUP_FILLER_RE = re.compile(
@@ -1185,21 +1202,24 @@ def cup_upload_date(video_id: str, channel_id: str | None, timeout: int) -> str 
     """The day a video went up.
 
     A flat search reports no dates, and asking yt-dlp for the whole video needs a
-    player request that YouTube refuses from a shared runner address. The watch
-    page carries the date in its JSON-LD, and the channel feed is the backup.
+    player request that YouTube refuses from a shared runner address, so the date
+    is read from the watch page over plain HTTPS. The channel feed is the backup,
+    although it only lists the newest fifteen uploads. None means "unknown": the
+    card is still worth showing without a date.
     """
-    try:
-        request = urllib.request.Request(
-            f"https://www.youtube.com/watch?v={video_id}", headers={"User-Agent": USER_AGENT}
-        )
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            page = response.read().decode("utf-8", "replace")
+    for template in CUP_WATCH_URLS:
+        url = template.format(video_id=video_id)
+        try:
+            request = urllib.request.Request(url, headers=CUP_PAGE_HEADERS)
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                page = response.read().decode("utf-8", "replace")
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+            gha_warning(f"{url} failed ({error})")
+            continue
         match = _UPLOAD_DATE_RE.search(page)
         if match:
             return match.group(1)
-        gha_warning(f"watch page {video_id} carried no upload date")
-    except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
-        gha_warning(f"watch page {video_id} failed ({error})")
+        gha_warning(f"{url} had no upload date ({page_fingerprint(page)})")
     if channel_id:
         return _channel_dates(channel_id, timeout).get(video_id)
     return None
@@ -1231,12 +1251,16 @@ def _same_team(first: str, second: str) -> bool:
     )
 
 
-def _find_cup_fixture(fixtures: list[dict], home: str, away: str, when: str) -> dict | None:
+def _find_cup_fixture(
+    fixtures: list[dict], home: str, away: str, when: str | None
+) -> dict | None:
     """The card an upload belongs to: the same two clubs a day either side."""
-    day = datetime.date.fromisoformat(when)
+    day = datetime.date.fromisoformat(when) if when else None
     for fixture in fixtures:
-        if abs((datetime.date.fromisoformat(fixture["date"]) - day).days) > 1:
-            continue
+        if day and fixture["date"]:
+            gap = abs((datetime.date.fromisoformat(fixture["date"]) - day).days)
+            if gap > 1:
+                continue
         if (_same_team(fixture["home"], home) and _same_team(fixture["away"], away)) or (
             _same_team(fixture["home"], away) and _same_team(fixture["away"], home)
         ):
@@ -1332,13 +1356,8 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
                     candidate["id"], candidate.get("channelId"), args.timeout
                 )
             except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
-                print(
-                    f"warning: no upload date for {candidate['id']} ({error})",
-                    file=sys.stderr,
-                )
-                continue
-            if not uploaded:
-                continue
+                print(f"warning: no upload date for {candidate['id']} ({error})", file=sys.stderr)
+                uploaded = None
             fixture = _find_cup_fixture(fixtures, home, away, uploaded)
             if fixture is None:
                 fixture = {
@@ -1363,7 +1382,8 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
                 }
                 fixtures.append(fixture)
             # the earliest upload is the one closest to kick-off
-            fixture["date"] = min(fixture["date"], uploaded)
+            if uploaded:
+                fixture["date"] = min(fixture["date"], uploaded) if fixture["date"] else uploaded
             fixture["youtube"].append(candidate)
 
     for fixture in fixtures:
@@ -1387,7 +1407,8 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
         for entry in fixture["youtube"]:
             if entry["titleHidden"]:
                 entry["title"] = None
-    fixtures.sort(key=lambda fixture: fixture["date"], reverse=True)
+    # keep YouTube's own order while trimming, so an unknown upload date cannot
+    # push a whole competition out of the list
     per_cup: dict[str, int] = {}
     limited = []
     for fixture in fixtures:
@@ -1396,6 +1417,8 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
             continue
         per_cup[fixture["cup"]] = used + 1
         limited.append(fixture)
+    # for display: dated cards newest first, then whatever had no date
+    limited.sort(key=lambda fixture: (fixture["date"] or "", bool(fixture["date"])), reverse=True)
     for key in cup_keys:
         if not any(fixture["cup"] == key for fixture in limited):
             print(f"warning: no fixtures found for the {key}", file=sys.stderr)
