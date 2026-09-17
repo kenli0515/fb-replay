@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T17:36:08Z",
+  "generatedAt": "2026-09-17T05:58:50Z",
   "areas": [
     {
       "key": "england",
@@ -32,22 +32,22 @@
       "youtube": [],
       "previews": [
         {
-          "id": "ChDDmL2hAks",
-          "title": "🚨 GUSTO OUT! ❌ BRENTFORD vs CHELSEA SCARIEST XI ft. CAICEDO, BARCO & PALMER 😱 | ALONSO’S EPL MD5 XI",
-          "channel": "Iconic Chelsea XI Hub",
-          "durationSeconds": 351.0
-        },
-        {
-          "id": "LDaQbTFLQrw",
-          "title": "Brentford vs Chelsea ~ Predicted Line Up Chelsea Matchweek 5 Premier League Season 2026/2027",
-          "channel": "Lillah Update",
-          "durationSeconds": 122.0
-        },
-        {
           "id": "OJdY13cGadw",
           "title": "Can Chelsea handle Brentford's PHYSICAL BATTLE? 🔥 | Brentford vs Chelsea Preview",
           "channel": "PBTalks",
           "durationSeconds": 635.0
+        },
+        {
+          "id": "CpWT5qY_64o",
+          "title": "Brentford vs Chelsea + Tottenham vs Aston Villa | Premier League GW5 Preview & Predictions",
+          "channel": "NEVERMIND THE BUMBLECOCKS and Every Week We Follow | An Aston Villa Fan Channel",
+          "durationSeconds": 3646.0
+        },
+        {
+          "id": "48O6De-mtCM",
+          "title": "📋 Brentford vs Chelsea preview (18 Sep) | H2H, Form and Key Stats",
+          "channel": "Footee",
+          "durationSeconds": 105.0
         }
       ],
       "upcoming": true,
@@ -68,14 +68,7 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "shx10FJwoGw",
-          "title": "MATCH PREVIEW | TOTTENHAM VS ASTON VILLA | CRUCIAL GAME BEFORE THE INTERNATIONAL BREAK!",
-          "channel": "Villa4Ever Podcast",
-          "durationSeconds": null
-        }
-      ],
+      "previews": [],
       "upcoming": true,
       "id": "schedule-13"
     },
@@ -102,16 +95,16 @@
           "durationSeconds": 1593.0
         },
         {
-          "id": "Oy9Jfnk4New",
-          "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
-          "channel": "Football Tactics",
-          "durationSeconds": 2239.0
-        },
-        {
           "id": "LCMnIocrKd4",
           "title": "Brighton vs Arsenal ~ Predicted line up Arsenal Matchweek 5 Premier League Season 2026/2027",
           "channel": "Ahmad Aufal",
           "durationSeconds": 123.0
+        },
+        {
+          "id": "Oy9Jfnk4New",
+          "title": "Brighton vs Arsenal Preview | Will Arsenal Remain Unbeaten? Mikel Arteta Press Conference",
+          "channel": "Football Tactics",
+          "durationSeconds": 2239.0
         }
       ],
       "upcoming": true,
@@ -151,7 +144,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "osRdV580Z5w",
+          "title": "💥Big Match Preview Newcastle United Vs Hull City with @HullCityFanCentral 🐯​",
+          "channel": "LOADED MAG NUFC",
+          "durationSeconds": null
+        }
+      ],
       "upcoming": true,
       "id": "schedule-16"
     },
@@ -175,13 +175,7 @@
           "id": "SYviRLvAesM",
           "title": "🌳 NOTTINGHAM FOREST v COVENTRY CITY | MATCH PREVIEW",
           "channel": "Talking Reds: a Nottingham Forest podcast",
-          "durationSeconds": null
-        },
-        {
-          "id": "5pXu5dsPsz4",
-          "title": "NFFC v COVENTRY CITY 🔴⚪ | MATCH PREVIEW | CAN FOREST MAKE IT BACK-TO-BACK WINS?",
-          "channel": "Talk Forest TV",
-          "durationSeconds": 113.0
+          "durationSeconds": 5007.0
         }
       ],
       "upcoming": true,
@@ -259,7 +253,14 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [],
+      "previews": [
+        {
+          "id": "xYmCJkRS8hI",
+          "title": "PREMIER LEAGUE PREDICTIONS *WEEK 4* | MAN UNITED vs MAN CITY & LIVERPOOL vs FULHAM",
+          "channel": "FC Sean Predictz",
+          "durationSeconds": 1147.0
+        }
+      ],
       "upcoming": true,
       "id": "schedule-21"
     },
@@ -324,13 +325,6 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 799.0
-        },
-        {
-          "id": "QuHzJIkxxsY",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 910.0
         }
       ],
       "id": "nowtv-202608132156356-1",
@@ -488,13 +482,6 @@
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 872.0
-        },
-        {
-          "id": "CyCRvtMvGQY",
-          "title": null,
-          "titleHidden": true,
-          "channel": "BRADD",
-          "durationSeconds": 3219.0
         }
       ],
       "id": "nowtv-202608132156341-5",
@@ -524,18 +511,18 @@
           "durationSeconds": 742.0
         },
         {
-          "id": "RsDdqq-ZI40",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 81.0
-        },
-        {
           "id": "mXowPs48Eyk",
           "title": "Chelsea v. Hull City | PREMIER LEAGUE HIGHLIGHTS | 09/12/2026| USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1063.0
+        },
+        {
+          "id": "_vpJ7BJuWd4",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 949.0
         }
       ],
       "id": "nowtv-202608132156343-6",
@@ -606,18 +593,18 @@
           "durationSeconds": 597.0
         },
         {
+          "id": "k-CEqgPpWU4",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 82.0
+        },
+        {
           "id": "kk8lgeVX1vQ",
           "title": null,
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 893.0
-        },
-        {
-          "id": "H8vvqRfpSZg",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Alex Griffin",
-          "durationSeconds": 1315.0
         }
       ],
       "id": "nowtv-202608132156340-8",
@@ -654,11 +641,11 @@
           "durationSeconds": 96.0
         },
         {
-          "id": "KRyuaZDRnw0",
+          "id": "2xQverI58Kg",
           "title": null,
           "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 899.0
+          "channel": "Aston Villa Football Club",
+          "durationSeconds": 330.0
         }
       ],
       "id": "nowtv-202608132156342-9",
@@ -695,11 +682,11 @@
           "durationSeconds": 703.0
         },
         {
-          "id": "tKQT6CahLmg",
+          "id": "VAEM8teZMBo",
           "title": null,
           "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 920.0
+          "channel": "Retro Footy TV",
+          "durationSeconds": 135.0
         }
       ],
       "id": "nowtv-202608132156332-10",
