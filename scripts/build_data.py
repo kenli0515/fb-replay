@@ -1111,6 +1111,10 @@ CUPS = {
 }
 DEFAULT_CUPS = ["fa-cup", "carabao-cup"]
 
+# Uploads of the same tie can land a couple of days apart, while cup rounds sit
+# weeks apart, so a small window merges the uploads without fusing two rounds.
+CUP_TIE_DAYS = 3
+
 # An upload only counts when it says which cup it is, or comes from the cup's own
 # channel. Without that gate a search for one competition happily returns league
 # matches between the same clubs ("NINE GOAL CLASSIC! | Chelsea v Leeds United
@@ -1285,25 +1289,49 @@ def _cup_team(value: str) -> str | None:
 
 def _same_team(first: str, second: str) -> bool:
     """True for 'Man Utd' and 'Man United', false for two clubs that merely
-    share a word: 'Leicester City' is not 'Manchester City'."""
-    left, right = ascii_fold(first).lower(), ascii_fold(second).lower()
-    if left == right or left.startswith(right) or right.startswith(left):
-        return True
-    shared = set(tokenize(left)) & set(tokenize(right)) - STOP_TOKENS
-    return any(len(token) >= 4 for token in shared) or (
-        len(left) >= 3 and right.startswith(left[:3])
+    share a word: 'Leicester City' is not 'Manchester City'.
+
+    Every word of the shorter name has to be accounted for, so a shared 'city'
+    or 'united' is never enough on its own.
+    """
+    left, right = _team_words(first), _team_words(second)
+    if not left or not right:
+        return False
+    shorter, longer = sorted((left, right), key=len)
+    return all(
+        any(word == other or word[:3] == other[:3] for other in longer) for word in shorter
     )
+
+
+def _team_words(name: str) -> list[str]:
+    words = []
+    for token in tokenize(name):
+        if token in STOP_TOKENS:
+            continue
+        words.append(_NICKNAMES.get(token, token))
+    return words
+
+
+# A handful of clubs are routinely named two ways in the same round.
+_NICKNAMES = {
+    "spurs": "tottenham",
+    "utd": "united",
+    "wolves": "wolverhampton",
+    "man": "manchester",
+    "newcastle": "newcastle",
+    "st": "saint",
+}
 
 
 def _find_cup_fixture(
     fixtures: list[dict], home: str, away: str, when: str | None
 ) -> dict | None:
-    """The card an upload belongs to: the same two clubs a day either side."""
+    """The card an upload belongs to: the same two clubs a few days either side."""
     day = datetime.date.fromisoformat(when) if when else None
     for fixture in fixtures:
         if day and fixture["date"]:
             gap = abs((datetime.date.fromisoformat(fixture["date"]) - day).days)
-            if gap > 1:
+            if gap > CUP_TIE_DAYS:
                 continue
         if (_same_team(fixture["home"], home) and _same_team(fixture["away"], away)) or (
             _same_team(fixture["home"], away) and _same_team(fixture["away"], home)
@@ -1567,8 +1595,8 @@ def parse_args(argv):
         default=",".join(DEFAULT_CUPS),
         help=f"cup competitions listed from YouTube (default: {','.join(DEFAULT_CUPS)}, '' to skip)",
     )
-    parser.add_argument("--cup-results", type=int, default=4, help="max matches kept per cup")
-    parser.add_argument("--cup-search", type=int, default=20, help="YouTube results examined per cup")
+    parser.add_argument("--cup-results", type=int, default=6, help="max matches kept per cup")
+    parser.add_argument("--cup-search", type=int, default=30, help="YouTube results examined per cup")
     parser.add_argument(
         "--cup-window",
         choices=["all", *YT_WINDOWS],
