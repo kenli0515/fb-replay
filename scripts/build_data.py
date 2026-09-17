@@ -22,6 +22,7 @@ import datetime
 import html
 import json
 import math
+import os
 import re
 import subprocess
 import sys
@@ -537,8 +538,14 @@ def is_upcoming(fixture: dict) -> bool:
 
 YT_SEPARATOR = "\x1f"
 YT_PRINT = YT_SEPARATOR.join(
-    ["%(title)s", "%(id)s", "%(channel)s", "%(duration)s", "%(view_count)s"]
+    ["%(title)s", "%(id)s", "%(channel)s", "%(duration)s", "%(view_count)s", "%(channel_id)s"]
 )
+
+
+def gha_warning(message: str) -> None:
+    """Report a problem as a check annotation when running on GitHub Actions."""
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"::warning::{message}")
 
 PREFERRED_CHANNELS = [
     "sky sports", "tnt sports", "premier league", "uefa", "espn", "cbs sports",
@@ -689,6 +696,7 @@ def yt_search(query: str, count: int, timeout: int, window: str | None = None) -
                 "channel": sanitize(channel) if channel != "NA" else None,
                 "duration": _to_number(duration),
                 "views": _to_number(views),
+                "channelId": parts[5].strip() if len(parts) > 5 and parts[5].strip() != "NA" else None,
             }
         )
     return results
@@ -1148,15 +1156,53 @@ _EMOJI_RE = re.compile(
 )
 
 
-def cup_upload_date(video_id: str, timeout: int) -> str | None:
-    """The day a video went up, read from the watch page's JSON-LD."""
-    request = urllib.request.Request(
-        f"https://www.youtube.com/watch?v={video_id}", headers={"User-Agent": USER_AGENT}
-    )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        page = response.read().decode("utf-8", "replace")
-    match = _UPLOAD_DATE_RE.search(page)
-    return match.group(1) if match else None
+_FEED_CACHE: dict[str, dict[str, str]] = {}
+
+
+def _channel_dates(channel_id: str, timeout: int) -> dict[str, str]:
+    """video id -> upload day, from the channel's public Atom feed."""
+    if channel_id not in _FEED_CACHE:
+        dates: dict[str, str] = {}
+        try:
+            request = urllib.request.Request(
+                f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}",
+                headers={"User-Agent": USER_AGENT},
+            )
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                feed = response.read().decode("utf-8", "replace")
+            for entry in re.findall(r"<entry>(.*?)</entry>", feed, re.S):
+                video = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", entry)
+                published = re.search(r"<published>(\d{4}-\d{2}-\d{2})", entry)
+                if video and published:
+                    dates[video.group(1)] = published.group(1)
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+            gha_warning(f"channel feed {channel_id} failed ({error})")
+        _FEED_CACHE[channel_id] = dates
+    return _FEED_CACHE[channel_id]
+
+
+def cup_upload_date(video_id: str, channel_id: str | None, timeout: int) -> str | None:
+    """The day a video went up.
+
+    A flat search reports no dates, and asking yt-dlp for the whole video needs a
+    player request that YouTube refuses from a shared runner address. The watch
+    page carries the date in its JSON-LD, and the channel feed is the backup.
+    """
+    try:
+        request = urllib.request.Request(
+            f"https://www.youtube.com/watch?v={video_id}", headers={"User-Agent": USER_AGENT}
+        )
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            page = response.read().decode("utf-8", "replace")
+        match = _UPLOAD_DATE_RE.search(page)
+        if match:
+            return match.group(1)
+        gha_warning(f"watch page {video_id} carried no upload date")
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
+        gha_warning(f"watch page {video_id} failed ({error})")
+    if channel_id:
+        return _channel_dates(channel_id, timeout).get(video_id)
+    return None
 
 
 def _cup_team(value: str) -> str | None:
@@ -1264,6 +1310,8 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
             continue
         if args.debug:
             print(f"debug: cup {key} -> {len(candidates)} results", file=sys.stderr)
+        if not candidates:
+            gha_warning(f"cup {key}: the YouTube search for {cup['query']!r} returned nothing")
         for candidate in candidates:
             reason = cup_reject(candidate, key)
             home = away = None
@@ -1280,7 +1328,9 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
                     )
                 continue
             try:
-                uploaded = cup_upload_date(candidate["id"], args.timeout)
+                uploaded = cup_upload_date(
+                    candidate["id"], candidate.get("channelId"), args.timeout
+                )
             except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
                 print(
                     f"warning: no upload date for {candidate['id']} ({error})",
@@ -1349,6 +1399,7 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
     for key in cup_keys:
         if not any(fixture["cup"] == key for fixture in limited):
             print(f"warning: no fixtures found for the {key}", file=sys.stderr)
+            gha_warning(f"cup {key}: no fixtures survived")
     return limited
 
 
