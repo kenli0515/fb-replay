@@ -1119,8 +1119,15 @@ def side_competition(raw_title: str, channel: str | None) -> str | None:
     """Name the other competition when a title or channel belongs to it."""
     folded = " " + _flatten(ascii_fold(f"{raw_title} {channel or ''}")).lower() + " "
     for phrase in SIDE_COMPETITION_PHRASES:
-        if phrase in folded:
-            return phrase
+        start = folded.find(phrase)
+        while start != -1:
+            end = start + len(phrase)
+            following = folded[end:end + 1]
+            # A phrase ending in a number must not be the head of a longer
+            # number: "premier league 2" is not "premier league 2026/27".
+            if not phrase[-1].isdigit() or not (following.isdigit() or following == "/"):
+                return phrase
+            start = folded.find(phrase, start + 1)
     return None
 
 
