@@ -10,7 +10,7 @@
 <body>
 <header class="topbar">
   <h1>Football Replays</h1>
-  <p class="tagline">無劇透嘅足球精華索引 + 未來 7 日賽前預覽 · NOW TV 官方精華（香港合法來源）+ YouTube</p>
+  <p class="tagline">無劇透嘅足球精華索引 · NOW TV 官方精華（香港合法來源）+ YouTube · 另附未開賽賽程</p>
 </header>
 
 <section class="toolbar">
@@ -25,13 +25,20 @@
 
 <main>
   <div id="status" class="status">正在載入 <code>data/matches.json</code> …</div>
-  <div id="list" class="grid"></div>
+  <section id="schedule-section" class="section" hidden>
+    <h2 class="section-title">未開賽賽程 <span id="schedule-count" class="count"></span></h2>
+    <ul id="schedule" class="fixtures"></ul>
+  </section>
+  <section id="replay-section" class="section" hidden>
+    <h2 class="section-title">精華重播 <span id="replay-count" class="count"></span></h2>
+    <div id="list" class="grid"></div>
+  </section>
 </main>
 
 <footer class="footer">
   <p>本頁只做連結索引：影片由 NOW TV（PCCW）與 YouTube 提供，版權屬原持有人，內容與本站無關。</p>
   <p>NOW TV 站內播放會裁走播放器以外嘅內容，比分同結果縮圖唔會出現；首次播放 NOW TV 會要求同意一次，按 Consent 之後就唔會再問。</p>
-  <p>未開賽嘅比賽只有賽前預覽（電視台、球會或球迷頻道），賽程同開球時間嚟自 openfootball 嘅公開賽季資料。</p>
+  <p>未開賽嘅比賽只列賽程同開球時間，唔會附影片；賽程嚟自 openfootball 同 Wikipedia 嘅公開賽季資料。</p>
   <p>足總盃同聯賽盃嘅賽程同影片都嚟自該項賽事官方頻道喺 YouTube 嘅上載。</p>
 </footer>
 
