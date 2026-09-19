@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T05:00:23Z",
+  "generatedAt": "2026-09-19T05:41:10Z",
   "areas": [
     {
       "key": "england",
@@ -122,12 +122,6 @@
       "youtube": [],
       "previews": [
         {
-          "id": "9dQK6klT0WA",
-          "title": "Oliver Glasner Press Conference 🎙️ | Nottingham Forest vs Coventry City | Premier League",
-          "channel": "Nottingham Forest FC",
-          "durationSeconds": 1560.0
-        },
-        {
           "id": "sTXgy2WBMDU",
           "title": "Frank Lampard Pre-Match Press Conference | Nottingham Forest vs Coventry City | Premier League",
           "channel": "Coventry City FC",
@@ -152,14 +146,7 @@
       "durationSeconds": null,
       "publishedAt": null,
       "youtube": [],
-      "previews": [
-        {
-          "id": "Dbty9-CDmbQ",
-          "title": "Press Conference: Bournemouth vs Liverpool | Volley or not? Team news & Araujo | Andoni Iraola",
-          "channel": "Liverpool FC",
-          "durationSeconds": 756.0
-        }
-      ],
+      "previews": [],
       "upcoming": true,
       "id": "schedule-17"
     },
@@ -184,6 +171,12 @@
           "title": "Daniel Farke pre-match press conference | Leeds United v Crystal Palace | Premier League",
           "channel": "Leeds United Official",
           "durationSeconds": 2416.0
+        },
+        {
+          "id": "3rpDw-Vle-I",
+          "title": "Matchday Live | Leeds United v Crystal Palace",
+          "channel": "Leeds United Official",
+          "durationSeconds": null
         }
       ],
       "upcoming": true,
@@ -762,7 +755,7 @@
       "kickoff": "2026-09-19T03:00:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-17",
+      "id": "cup-carabao-cup-14",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -797,7 +790,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-18",
+      "id": "cup-carabao-cup-15",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -832,7 +825,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-22",
+      "id": "cup-carabao-cup-18",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -908,14 +901,14 @@
       "kickoff": "2026-09-15T03:00:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-19",
+      "id": "cup-carabao-cup-16",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
       "date": "2026-09-15",
       "kickoff": null,
       "home": "Liverpool",
-      "away": "Tottenham Hotspur",
+      "away": "Tottenham",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -950,7 +943,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-20",
+      "id": "cup-carabao-cup-17",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -978,7 +971,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-21",
+      "id": "cup-carabao-cup-19",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1032,6 +1025,13 @@
           "titleHidden": false,
           "channel": "NBC Sports",
           "durationSeconds": 799.0
+        },
+        {
+          "id": "QuHzJIkxxsY",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 910.0
         }
       ],
       "id": "nowtv-202608132156356-2",
@@ -1102,18 +1102,18 @@
           "durationSeconds": 833.0
         },
         {
-          "id": "raKxbN4OND8",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 188.0
-        },
-        {
           "id": "sgMBgXRdndg",
           "title": "Sunderland v. Arsenal | PREMIER LEAGUE HIGHLIGHTS | 09/12/2026 | USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1079.0
+        },
+        {
+          "id": "zgNP6J3FRag",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 936.0
         }
       ],
       "id": "nowtv-202608132156348-4",
@@ -1401,7 +1401,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-0",
+      "id": "cup-fa-cup-1",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1471,7 +1471,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-1",
+      "id": "cup-fa-cup-0",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1513,7 +1513,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-2",
+      "id": "cup-fa-cup-5",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1555,35 +1555,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-5",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-02-15",
-      "kickoff": null,
-      "home": "Liverpool",
-      "away": "Brighton and Hove Albion",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "RDLry7ST-4k",
-          "title": null,
-          "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 379.0
-        }
-      ],
-      "previews": [],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-3",
+      "id": "cup-fa-cup-2",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1605,6 +1577,41 @@
           "titleHidden": false,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 5832.0
+        }
+      ],
+      "previews": [],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-3",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": "2026-01-11",
+      "kickoff": null,
+      "home": "Man City",
+      "away": "Exeter City",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "I1g3etLad3M",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Man City",
+          "durationSeconds": 547.0
+        },
+        {
+          "id": "hlacrrstovk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "The Emirates FA Cup",
+          "durationSeconds": 5833.0
         }
       ],
       "previews": [],
