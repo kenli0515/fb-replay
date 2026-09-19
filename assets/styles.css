@@ -100,7 +100,9 @@ section[hidden] { display: none; }
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  overflow: hidden;
+  /* 賽程可以有幾十場，封頂之後自己捲，唔會將精華卡推到好低 */
+  max-height: 434px;
+  overflow: hidden auto;
 }
 .fixture {
   display: grid;
