@@ -16,7 +16,7 @@ on:
         description: NOW TV areas (england,ucl,spain,uel,uecl,local,otherSoccer,worldcup2026)
         default: "england,ucl"
       limit:
-        description: max matches to publish
+        description: max NOW TV matches per competition
         default: "12"
 
 permissions:

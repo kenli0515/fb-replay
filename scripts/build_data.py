@@ -365,7 +365,9 @@ def parse_nowtv_item(item: dict, area: str) -> dict | None:
     }
 
 
-def nowtv_fixtures(areas: list[str], page_size: int, timeout: int) -> list[dict]:
+def nowtv_fixtures(
+    areas: list[str], page_size: int, timeout: int, limit: int | None = None
+) -> list[dict]:
     fixtures = []
     for area in areas:
         name, tag = AREAS[area]
@@ -375,10 +377,15 @@ def nowtv_fixtures(areas: list[str], page_size: int, timeout: int) -> list[dict]
         except (urllib.error.URLError, TimeoutError, OSError, ValueError) as error:
             print(f"warning: NOW TV area {name} failed ({error})", file=sys.stderr)
             continue
+        found = []
         for item in items or []:
             fixture = parse_nowtv_item(item, area)
             if fixture:
-                fixtures.append(fixture)
+                found.append(fixture)
+        # Each competition keeps its own quota: a busy league must not push a
+        # competition that plays once a week out of the list.
+        found.sort(key=lambda fixture: fixture["publishedAt"] or "", reverse=True)
+        fixtures.extend(found[:limit] if limit else found)
     fixtures.sort(key=lambda fixture: fixture["publishedAt"] or "", reverse=True)
     for index, fixture in enumerate(fixtures):
         fixture["id"] = f"nowtv-{fixture['videoId']}-{index}"
@@ -1556,10 +1563,8 @@ def cup_fixtures(cup_keys: list[str], args) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def build(args) -> dict:
-    fixtures = nowtv_fixtures(args.areas, args.page_size, args.timeout)
+    fixtures = nowtv_fixtures(args.areas, args.page_size, args.timeout, args.limit)
     cups = [] if args.no_youtube else cup_fixtures(args.cups, args)
-    if args.limit:
-        fixtures = fixtures[: args.limit]
     for fixture in fixtures:
         fixture["upcoming"] = False
     for index, fixture in enumerate(fixtures):
@@ -1650,7 +1655,9 @@ def audit(payload: dict) -> int:
 def parse_args(argv):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--areas", default=",".join(DEFAULT_AREAS), help="NOW TV areas to list")
-    parser.add_argument("--limit", type=int, default=12, help="max matches to publish")
+    parser.add_argument(
+        "--limit", type=int, default=12, help="max NOW TV matches per area (0 = no cap)"
+    )
     parser.add_argument("--page-size", type=int, default=48, help="items requested per area")
     parser.add_argument("--no-youtube", action="store_true")
     parser.add_argument(

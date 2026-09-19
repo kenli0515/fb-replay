@@ -54,12 +54,16 @@ python3 -m http.server 8765
 ## 重新抓資料
 
 ```bash
-python3 scripts/build_data.py                                   # 英超 + 歐聯，12 場
+python3 scripts/build_data.py                                   # 英超 + 歐聯，每個 area 12 場
 python3 scripts/build_data.py --areas england,ucl,spain --limit 20
 python3 scripts/build_data.py --no-youtube --limit 40            # 只抓 NOW TV，快好多
 python3 scripts/build_data.py --cups carabao-cup --cup-results 6  # 只要聯賽盃，每邊 6 場
 python3 scripts/build_data.py --cups ""                           # 唔要盃賽
 ```
+
+`--limit` 係**每個 area（每項賽事）各自嘅上限**，唔係全部賽事夾埋嘅總數：英超一個星期可以
+上載十幾場，如果同歐聯共用一個 quota，一星期只踢一輪嘅歐聯就會被擠走。想連埋歐霸／歐協聯，
+加 `--areas england,ucl,uel,uecl`。
 
 需要 Python 3.10+（用 `zoneinfo`）同 [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
 （`brew install yt-dlp`，或者 `pip install yt-dlp`）。
