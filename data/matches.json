@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T06:04:06Z",
+  "generatedAt": "2026-09-25T17:54:12Z",
   "areas": [
     {
       "key": "england",
@@ -870,7 +870,7 @@
       "kickoff": "2026-09-19T03:00:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-18",
+      "id": "cup-carabao-cup-17",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -904,7 +904,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-17",
+      "id": "cup-carabao-cup-16",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -938,7 +938,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-20",
+      "id": "cup-carabao-cup-18",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1039,7 +1039,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-21",
+      "id": "cup-carabao-cup-20",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1075,40 +1075,6 @@
           "titleHidden": true,
           "channel": "Tottenham Hotspur",
           "durationSeconds": 459.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-22",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-09-15",
-      "kickoff": null,
-      "home": "West Ham",
-      "away": "Fulham",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "ySZSP7fB8cE",
-          "title": null,
-          "titleHidden": true,
-          "channel": "West Ham United FC",
-          "durationSeconds": 640.0
-        },
-        {
-          "id": "26JapFRE6_g",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 548.0
         }
       ],
       "upcoming": false
@@ -1175,11 +1141,11 @@
           "durationSeconds": 703.0
         },
         {
-          "id": "VAEM8teZMBo",
+          "id": "tKQT6CahLmg",
           "title": null,
           "titleHidden": true,
-          "channel": "Retro Footy TV",
-          "durationSeconds": 135.0
+          "channel": "TUDN USA",
+          "durationSeconds": 920.0
         }
       ],
       "id": "nowtv-202608132156332-12",
@@ -1374,6 +1340,13 @@
           "durationSeconds": 603.0
         },
         {
+          "id": "v7faDv3T3r8",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA",
+          "durationSeconds": 1500.0
+        },
+        {
           "id": "Jf0yF-VrxJU",
           "title": null,
           "titleHidden": true,
@@ -1477,11 +1450,11 @@
           "durationSeconds": 783.0
         },
         {
-          "id": "O2_GZJQpLvE",
-          "title": "HIGHLIGHTS - Liverpool vs Atlético de Madrid | UEFA Champions League - Matchday 1 League Phase",
+          "id": "2dK4gfp7xsg",
+          "title": "SUPER EXTENDED HIGHLIGHTS - Liverpool vs Atlético de Madrid | UEFA Champions League - Matchday 1",
           "titleHidden": false,
-          "channel": "TUDN USA and ViX",
-          "durationSeconds": 920.0
+          "channel": "TUDN USA",
+          "durationSeconds": 1515.0
         }
       ],
       "id": "nowtv-202608132156327-21",
@@ -1566,6 +1539,33 @@
       "upcoming": false
     },
     {
+      "id": "cup-carabao-cup-21",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": "2026-09-09",
+      "kickoff": null,
+      "home": "Chelsea",
+      "away": "Leeds United",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "Cd8jRI5aPAY",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 608.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
       "id": "cup-fa-cup-0",
       "cup": "fa-cup",
       "area": null,
@@ -1627,7 +1627,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-3",
+      "id": "cup-fa-cup-1",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1668,7 +1668,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-4",
+      "id": "cup-fa-cup-3",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1702,7 +1702,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-1",
+      "id": "cup-fa-cup-4",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
