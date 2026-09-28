@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T17:39:48Z",
+  "generatedAt": "2026-09-28T06:37:53Z",
   "areas": [
     {
       "key": "england",
@@ -583,6 +583,13 @@
           "titleHidden": true,
           "channel": "Leeds United Official",
           "durationSeconds": 762.0
+        },
+        {
+          "id": "dVvBk5XMfcg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 868.0
         }
       ],
       "id": "nowtv-202609042162025-2",
@@ -611,18 +618,18 @@
           "durationSeconds": 482.0
         },
         {
+          "id": "QULlw-qizlM",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 92.0
+        },
+        {
           "id": "zAnme5OYXM0",
           "title": "Bournemouth v. Liverpool | PREMIER LEAGUE HIGHLIGHTS | 09/20/2026 | USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1078.0
-        },
-        {
-          "id": "v25fUfsYADM",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 900.0
         }
       ],
       "id": "nowtv-202609042162027-3",
@@ -691,18 +698,18 @@
           "durationSeconds": 735.0
         },
         {
-          "id": "j-iHxGDh7Ks",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 99.0
-        },
-        {
           "id": "Du5R8QLbLZ8",
           "title": null,
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 867.0
+        },
+        {
+          "id": "3VfNsRm4ZEk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "BRADD",
+          "durationSeconds": 3862.0
         }
       ],
       "id": "nowtv-202609042162017-5",
@@ -778,11 +785,11 @@
           "durationSeconds": 124.0
         },
         {
-          "id": "a7APvajzRmM",
+          "id": "pHZ6r-4scag",
           "title": null,
           "titleHidden": true,
-          "channel": "Everton Football Club",
-          "durationSeconds": 793.0
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 901.0
         }
       ],
       "id": "nowtv-202609042162016-7",
@@ -816,13 +823,6 @@
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 1079.0
-        },
-        {
-          "id": "Yu1MrcLLVMI",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 904.0
         }
       ],
       "id": "nowtv-202609042162014-8",
@@ -870,7 +870,7 @@
       "kickoff": "2026-09-19T03:00:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-18",
+      "id": "cup-carabao-cup-20",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -904,7 +904,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-17",
+      "id": "cup-carabao-cup-19",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -938,7 +938,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-21",
+      "id": "cup-carabao-cup-23",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1012,68 +1012,7 @@
       "kickoff": "2026-09-15T03:00:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-19",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-09-15",
-      "kickoff": null,
-      "home": "West Ham",
-      "away": "Fulham",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "ySZSP7fB8cE",
-          "title": null,
-          "titleHidden": true,
-          "channel": "West Ham United FC",
-          "durationSeconds": 640.0
-        },
-        {
-          "id": "26JapFRE6_g",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 548.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-20",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-09-15",
-      "kickoff": null,
-      "home": "Ipswich Town",
-      "away": "Arsenal",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "EHR89mXER04",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 559.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-22",
+      "id": "cup-carabao-cup-21",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1109,6 +1048,67 @@
           "titleHidden": true,
           "channel": "Tottenham Hotspur",
           "durationSeconds": 459.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-22",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": "2026-09-15",
+      "kickoff": null,
+      "home": "West Ham",
+      "away": "Fulham",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "ySZSP7fB8cE",
+          "title": null,
+          "titleHidden": true,
+          "channel": "West Ham United FC",
+          "durationSeconds": 640.0
+        },
+        {
+          "id": "26JapFRE6_g",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 548.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-24",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": "2026-09-15",
+      "kickoff": null,
+      "home": "Ipswich Town",
+      "away": "Arsenal",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "EHR89mXER04",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 559.0
         }
       ],
       "upcoming": false
@@ -1207,18 +1207,18 @@
           "durationSeconds": 623.0
         },
         {
+          "id": "vuxh7agdLgc",
+          "title": "SK Slavia Prague vs. RC Lens | Resilience 💫",
+          "titleHidden": false,
+          "channel": "RCLens",
+          "durationSeconds": 117.0
+        },
+        {
           "id": "Onxn_VhQYnQ",
           "title": null,
           "titleHidden": true,
           "channel": "TUDN USA",
           "durationSeconds": 1520.0
-        },
-        {
-          "id": "0FbblY-Wz_M",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TUDN USA and ViX",
-          "durationSeconds": 921.0
         }
       ],
       "id": "nowtv-202609072162710-13",
@@ -1547,18 +1547,18 @@
           "durationSeconds": 770.0
         },
         {
-          "id": "qNpoCCHN9JI",
-          "title": "Barcelona vs Feyenoord Match Highlights | UEFA Champions League",
-          "titleHidden": false,
-          "channel": "Golix",
-          "durationSeconds": 343.0
-        },
-        {
           "id": "q_4SSuiBdq4",
           "title": null,
           "titleHidden": true,
           "channel": "TUDN USA",
           "durationSeconds": 1517.0
+        },
+        {
+          "id": "m23uSVdBikk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA and ViX",
+          "durationSeconds": 737.0
         }
       ],
       "id": "nowtv-202608132156326-23",
@@ -1569,7 +1569,7 @@
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-05-17",
+      "date": "2026-05-16",
       "kickoff": null,
       "home": "Chelsea",
       "away": "Manchester City",
@@ -1582,11 +1582,11 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "vdwBG5mWFcs",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 483.0
+          "id": "75jiGkByEb8",
+          "title": "Chelsea v Manchester City | Key Moments | Final | Emirates FA Cup 2025-26",
+          "titleHidden": false,
+          "channel": "The Emirates FA Cup",
+          "durationSeconds": 136.0
         },
         {
           "id": "zQ5x1AlImTI",
@@ -1621,6 +1621,33 @@
           "titleHidden": false,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 1688.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-3",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": "2026-04-06",
+      "kickoff": null,
+      "home": "West Ham United",
+      "away": "Leeds United",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "x9QpcGzknOc",
+          "title": "FULL MATCH | West Ham United v Leeds United AFC | Quarter-final | Emirates FA Cup 2025-26",
+          "titleHidden": false,
+          "channel": "The Emirates FA Cup",
+          "durationSeconds": 9312.0
         }
       ],
       "upcoming": false
@@ -1667,41 +1694,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-3",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-04-05",
-      "kickoff": null,
-      "home": "Chelsea",
-      "away": "Port Vale",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "jpBNPm4nIOA",
-          "title": null,
-          "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 376.0
-        },
-        {
-          "id": "SzyCjOU_bfI",
-          "title": "FULL MATCH | Chelsea v Port Vale | Quarter-Final | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 5680.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-4",
+      "id": "cup-fa-cup-5",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1728,14 +1721,14 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-5",
+      "id": "cup-fa-cup-4",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
       "date": "2026-01-11",
       "kickoff": null,
-      "home": "Charlton",
-      "away": "Chelsea",
+      "home": "Man City",
+      "away": "Exeter City",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -1745,18 +1738,18 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "muelEjq9oHg",
+          "id": "I1g3etLad3M",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Man City",
+          "durationSeconds": 547.0
+        },
+        {
+          "id": "hlacrrstovk",
           "title": null,
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 363.0
-        },
-        {
-          "id": "ww6VonVBKFs",
-          "title": "FULL MATCH | Charlton v Chelsea | Third Round | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 6104.0
+          "durationSeconds": 5833.0
         }
       ],
       "upcoming": false
