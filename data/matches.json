@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T16:33:04Z",
+  "generatedAt": "2026-10-25T05:53:38Z",
   "areas": [
     {
       "key": "england",
@@ -757,24 +757,6 @@
       "area": "fa-cup",
       "league": "足總盃",
       "date": "2026-11-07",
-      "kickoff": "2026-11-07T20:00:00+08:00",
-      "home": "Stafford Rangers",
-      "away": "Grimsby Town",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-39"
-    },
-    {
-      "area": "fa-cup",
-      "league": "足總盃",
-      "date": "2026-11-07",
       "kickoff": "2026-11-07T23:00:00+08:00",
       "home": "Accrington Stanley",
       "away": "Wycombe Wanderers",
@@ -787,7 +769,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-40"
+      "id": "schedule-46"
     },
     {
       "area": "fa-cup",
@@ -805,7 +787,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-41"
+      "id": "schedule-50"
     },
     {
       "area": "fa-cup",
@@ -823,7 +805,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-42"
+      "id": "schedule-52"
     },
     {
       "area": "fa-cup",
@@ -841,7 +823,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-43"
+      "id": "schedule-68"
     },
     {
       "area": "fa-cup",
@@ -859,7 +841,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-44"
+      "id": "schedule-66"
     },
     {
       "area": "fa-cup",
@@ -877,7 +859,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-45"
+      "id": "schedule-43"
     },
     {
       "area": "fa-cup",
@@ -895,7 +877,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-46"
+      "id": "schedule-49"
     },
     {
       "area": "fa-cup",
@@ -913,7 +895,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-47"
+      "id": "schedule-58"
     },
     {
       "area": "fa-cup",
@@ -931,7 +913,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-70"
+      "id": "schedule-69"
     },
     {
       "area": "fa-cup",
@@ -949,7 +931,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-63"
+      "id": "schedule-60"
     },
     {
       "area": "fa-cup",
@@ -967,7 +949,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-57"
+      "id": "schedule-53"
     },
     {
       "area": "fa-cup",
@@ -985,7 +967,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-64"
+      "id": "schedule-61"
     },
     {
       "area": "fa-cup",
@@ -1003,7 +985,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-60"
+      "id": "schedule-56"
     },
     {
       "area": "fa-cup",
@@ -1021,7 +1003,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-48"
+      "id": "schedule-39"
     },
     {
       "area": "fa-cup",
@@ -1039,7 +1021,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-65"
+      "id": "schedule-62"
     },
     {
       "area": "fa-cup",
@@ -1057,7 +1039,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-56"
+      "id": "schedule-51"
     },
     {
       "area": "fa-cup",
@@ -1075,7 +1057,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-58"
+      "id": "schedule-54"
     },
     {
       "area": "fa-cup",
@@ -1093,7 +1075,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-68"
+      "id": "schedule-65"
     },
     {
       "area": "fa-cup",
@@ -1111,7 +1093,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-59"
+      "id": "schedule-55"
     },
     {
       "area": "fa-cup",
@@ -1129,7 +1111,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-67"
+      "id": "schedule-64"
     },
     {
       "area": "fa-cup",
@@ -1147,7 +1129,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-50"
+      "id": "schedule-41"
     },
     {
       "area": "fa-cup",
@@ -1165,7 +1147,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-52"
+      "id": "schedule-44"
     },
     {
       "area": "fa-cup",
@@ -1183,7 +1165,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-53"
+      "id": "schedule-45"
     },
     {
       "area": "fa-cup",
@@ -1201,7 +1183,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-51"
+      "id": "schedule-42"
     },
     {
       "area": "fa-cup",
@@ -1219,7 +1201,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-49"
+      "id": "schedule-40"
     },
     {
       "area": "fa-cup",
@@ -1237,7 +1219,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-54"
+      "id": "schedule-47"
     },
     {
       "area": "fa-cup",
@@ -1255,7 +1237,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-55"
+      "id": "schedule-48"
     },
     {
       "area": "fa-cup",
@@ -1273,7 +1255,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-61"
+      "id": "schedule-57"
     },
     {
       "area": "fa-cup",
@@ -1291,7 +1273,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-66"
+      "id": "schedule-63"
     },
     {
       "area": "fa-cup",
@@ -1309,7 +1291,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-62"
+      "id": "schedule-59"
     },
     {
       "area": "fa-cup",
@@ -1327,7 +1309,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-71"
+      "id": "schedule-70"
     },
     {
       "area": "fa-cup",
@@ -1345,7 +1327,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-69"
+      "id": "schedule-67"
     },
     {
       "area": "fa-cup",
@@ -1363,7 +1345,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-72"
+      "id": "schedule-71"
     },
     {
       "area": "fa-cup",
@@ -1372,6 +1354,24 @@
       "kickoff": "2026-11-08T04:00:00+08:00",
       "home": "Peterborough United",
       "away": "Reading",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-72"
+    },
+    {
+      "area": "fa-cup",
+      "league": "足總盃",
+      "date": "2026-11-08",
+      "kickoff": "2026-11-08T20:00:00+08:00",
+      "home": "Stafford Rangers",
+      "away": "Grimsby Town",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -1458,6 +1458,145 @@
     {
       "area": "england",
       "league": "英超",
+      "date": "2026-10-25",
+      "home": "Chelsea",
+      "away": "Tottenham Hotspur",
+      "homeZh": "Chelsea",
+      "awayZh": "Tottenham Hotspur",
+      "titleZh": "【英超】車路士VS熱刺",
+      "videoId": "202609262167945",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167945&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-10-25T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "P414ol9Njm8",
+          "title": "Chelsea v. Tottenham Hotspur | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 751.0
+        }
+      ],
+      "id": "nowtv-202609262167945-0",
+      "upcoming": false,
+      "kickoff": "2026-10-25T00:30:00+08:00"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-10-24",
+      "home": "Coventry City",
+      "away": "Fulham",
+      "homeZh": "Coventry City",
+      "awayZh": "Fulham",
+      "titleZh": "【英超】高雲地利VS富咸",
+      "videoId": "202609262167965",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167965&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-10-24T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "yWs2AkhPUTA",
+          "title": "Coventry City v. Fulham | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 569.0
+        },
+        {
+          "id": "rwesTrUntvQ",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 893.0
+        }
+      ],
+      "id": "nowtv-202609262167965-1",
+      "upcoming": false,
+      "kickoff": "2026-10-24T22:00:00+08:00"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-10-24",
+      "home": "Arsenal",
+      "away": "Everton",
+      "homeZh": "Arsenal",
+      "awayZh": "Everton",
+      "titleZh": "【英超】阿仙奴VS愛華頓",
+      "videoId": "202609262167966",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167966&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-10-24T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "xKOohD6cYpA",
+          "title": "Arsenal v. Everton | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 709.0
+        },
+        {
+          "id": "i4eXftEkNAc",
+          "title": "ARSENAL v EVERTON | Premier League highlights",
+          "titleHidden": false,
+          "channel": "Everton Football Club",
+          "durationSeconds": 103.0
+        },
+        {
+          "id": "txBuDkI-yes",
+          "title": "Arsenal v. Everton | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026 | USA SPORTS",
+          "titleHidden": false,
+          "channel": "USA Sports",
+          "durationSeconds": 1058.0
+        }
+      ],
+      "id": "nowtv-202609262167966-2",
+      "upcoming": false,
+      "kickoff": "2026-10-24T22:00:00+08:00"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-10-24",
+      "home": "Aston Villa",
+      "away": "Manchester City",
+      "homeZh": "Aston Villa",
+      "awayZh": "Manchester City",
+      "titleZh": "【英超】阿士東維拉VS曼城",
+      "videoId": "202609262167939",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167939&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-10-24T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "MTdJNz3QMzo",
+          "title": "Aston Villa v. Manchester City | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 886.0
+        },
+        {
+          "id": "gsGnSC0JHfg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports and USA Sports",
+          "durationSeconds": 214.0
+        },
+        {
+          "id": "XYObm3SygqU",
+          "title": "Aston Villa F.C. v. Manchester City F.C | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026 | USA SPORTS",
+          "titleHidden": false,
+          "channel": "USA Sports",
+          "durationSeconds": 957.0
+        }
+      ],
+      "id": "nowtv-202609262167939-3",
+      "upcoming": false,
+      "kickoff": "2026-10-24T19:30:00+08:00"
+    },
+    {
+      "area": "england",
+      "league": "英超",
       "date": "2026-10-24",
       "home": "Ipswich Town",
       "away": "Nottingham Forest",
@@ -1491,7 +1630,7 @@
           "durationSeconds": 1080.0
         }
       ],
-      "id": "nowtv-202609262167934-0",
+      "id": "nowtv-202609262167934-4",
       "upcoming": false,
       "kickoff": "2026-10-24T03:00:00+08:00"
     },
@@ -1509,7 +1648,7 @@
       "durationSeconds": 180,
       "publishedAt": "2026-10-23T00:00:00+08:00",
       "youtube": [],
-      "id": "nowtv-202610232174985-1",
+      "id": "nowtv-202610232174985-5",
       "upcoming": false
     },
     {
@@ -1526,7 +1665,7 @@
       "durationSeconds": 180,
       "publishedAt": "2026-10-23T00:00:00+08:00",
       "youtube": [],
-      "id": "nowtv-202610232174984-2",
+      "id": "nowtv-202610232174984-6",
       "upcoming": false
     },
     {
@@ -1558,7 +1697,7 @@
           "durationSeconds": 312.0
         }
       ],
-      "id": "nowtv-202609262167920-3",
+      "id": "nowtv-202609262167920-7",
       "upcoming": false
     },
     {
@@ -1597,7 +1736,7 @@
           "durationSeconds": 599.0
         }
       ],
-      "id": "nowtv-202609262167921-4",
+      "id": "nowtv-202609262167921-8",
       "upcoming": false
     },
     {
@@ -1622,21 +1761,21 @@
           "durationSeconds": 1065.0
         },
         {
+          "id": "Ak4xMJJtTos",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA",
+          "durationSeconds": 919.0
+        },
+        {
           "id": "IfHtDTgrpNg",
           "title": null,
           "titleHidden": true,
           "channel": "BeanymanSports",
           "durationSeconds": 1149.0
-        },
-        {
-          "id": "KfsxRdqy6ms",
-          "title": "Aston Villa vs. Viking FK",
-          "titleHidden": false,
-          "channel": "Paramount Plus",
-          "durationSeconds": 5955.0
         }
       ],
-      "id": "nowtv-202609262167919-5",
+      "id": "nowtv-202609262167919-9",
       "upcoming": false
     },
     {
@@ -1675,7 +1814,7 @@
           "durationSeconds": 512.0
         }
       ],
-      "id": "nowtv-202609262167918-6",
+      "id": "nowtv-202609262167918-10",
       "upcoming": false
     },
     {
@@ -1714,7 +1853,7 @@
           "durationSeconds": 1519.0
         }
       ],
-      "id": "nowtv-202609262167916-7",
+      "id": "nowtv-202609262167916-11",
       "upcoming": false
     },
     {
@@ -1746,14 +1885,14 @@
           "durationSeconds": 1519.0
         },
         {
-          "id": "JngbxbUdeTc",
+          "id": "09XcDzQD2E8",
           "title": null,
           "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 920.0
+          "channel": "Fifa Live",
+          "durationSeconds": 831.0
         }
       ],
-      "id": "nowtv-202609262167917-8",
+      "id": "nowtv-202609262167917-12",
       "upcoming": false
     },
     {
@@ -1792,7 +1931,7 @@
           "durationSeconds": 918.0
         }
       ],
-      "id": "nowtv-202610082170790-9",
+      "id": "nowtv-202610082170790-13",
       "upcoming": false
     },
     {
@@ -1817,13 +1956,6 @@
           "durationSeconds": 691.0
         },
         {
-          "id": "pfdbQiSOM2I",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Amazon Prime Video Sport",
-          "durationSeconds": 355.0
-        },
-        {
           "id": "z4mQWetH5cQ",
           "title": "HIGHLIGHTS - Liverpool vs Villarreal | UEFA Champions League - Matchday 3 League Phase 2026-27",
           "titleHidden": false,
@@ -1831,7 +1963,7 @@
           "durationSeconds": 978.0
         }
       ],
-      "id": "nowtv-202609262167876-10",
+      "id": "nowtv-202609262167876-14",
       "upcoming": false
     },
     {
@@ -1870,7 +2002,7 @@
           "durationSeconds": 209.0
         }
       ],
-      "id": "nowtv-202609262167902-11",
+      "id": "nowtv-202609262167902-15",
       "upcoming": false
     },
     {
@@ -1893,9 +2025,23 @@
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
           "durationSeconds": 505.0
+        },
+        {
+          "id": "A1Gn8bsG380",
+          "title": "SUPER EXTENDED HIGHLIGHTS - Roma vs Slovan Bratislava | UEFA Champions League - Matchday 3 League",
+          "titleHidden": false,
+          "channel": "TUDN USA",
+          "durationSeconds": 1504.0
+        },
+        {
+          "id": "7sI50fvKwF0",
+          "title": "HIGHLIGHTS - Roma vs Slovan Bratislava | UEFA Champions League - Matchday 3 League Phase 2026-27",
+          "titleHidden": false,
+          "channel": "TUDN USA",
+          "durationSeconds": 905.0
         }
       ],
-      "id": "nowtv-202610082170787-12",
+      "id": "nowtv-202610082170787-16",
       "upcoming": false
     },
     {
@@ -1920,7 +2066,7 @@
           "durationSeconds": 588.0
         }
       ],
-      "id": "nowtv-202609262167875-13",
+      "id": "nowtv-202609262167875-17",
       "upcoming": false
     },
     {
@@ -1959,7 +2105,7 @@
           "durationSeconds": 921.0
         }
       ],
-      "id": "nowtv-202609262167874-14",
+      "id": "nowtv-202609262167874-18",
       "upcoming": false
     },
     {
@@ -1991,7 +2137,7 @@
           "durationSeconds": 1072.0
         }
       ],
-      "id": "nowtv-202609262167914-15",
+      "id": "nowtv-202609262167914-19",
       "upcoming": false,
       "kickoff": "2026-10-20T03:00:00+08:00"
     },
@@ -2024,7 +2170,7 @@
           "durationSeconds": 908.0
         }
       ],
-      "id": "nowtv-202609262167915-16",
+      "id": "nowtv-202609262167915-20",
       "upcoming": false,
       "kickoff": "2026-10-18T23:30:00+08:00"
     },
@@ -2055,16 +2201,9 @@
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 904.0
-        },
-        {
-          "id": "zJI93MwxqV4",
-          "title": "FC 27 - Bournemouth vs Sunderland - Premier League 26/27 - Full Match - PC [4K60]",
-          "titleHidden": false,
-          "channel": "Black Football",
-          "durationSeconds": 1555.0
         }
       ],
-      "id": "nowtv-202609262167908-17",
+      "id": "nowtv-202609262167908-21",
       "upcoming": false,
       "kickoff": "2026-10-18T21:00:00+08:00"
     },
@@ -2090,21 +2229,21 @@
           "durationSeconds": 620.0
         },
         {
+          "id": "nnpeQkxB_co",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 95.0
+        },
+        {
           "id": "Sd5JP0gLqBU",
           "title": "Leeds United F.C. v. Manchester United F.C. | PREMIER LEAGUE HIGHLIGHTS | 10/18/26 | USA SPORTS",
           "titleHidden": false,
           "channel": "USA Sports",
           "durationSeconds": 989.0
-        },
-        {
-          "id": "61FfxlWIpJU",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 901.0
         }
       ],
-      "id": "nowtv-202609262167909-18",
+      "id": "nowtv-202609262167909-22",
       "upcoming": false,
       "kickoff": "2026-10-18T21:00:00+08:00"
     },
@@ -2144,52 +2283,12 @@
           "durationSeconds": 126.0
         }
       ],
-      "id": "nowtv-202609262167910-19",
+      "id": "nowtv-202609262167910-23",
       "upcoming": false,
       "kickoff": "2026-10-18T21:00:00+08:00"
     },
     {
-      "area": "england",
-      "league": "英超",
-      "date": "2026-10-18",
-      "home": "Newcastle United",
-      "away": "Aston Villa",
-      "homeZh": "Newcastle United",
-      "awayZh": "Aston Villa",
-      "titleZh": "【英超】紐卡素VS阿士東維拉",
-      "videoId": "202609262167901",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167901&type=england",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-18T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "WKz2XqemdLI",
-          "title": "Newcastle United v. Aston Villa | PREMIER LEAGUE HIGHLIGHTS | 10/17/2026",
-          "titleHidden": false,
-          "channel": "NBC Sports",
-          "durationSeconds": 561.0
-        },
-        {
-          "id": "T4LAouNk81w",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Aston Villa Football Club",
-          "durationSeconds": 527.0
-        },
-        {
-          "id": "bVZ7Y7OjFCM",
-          "title": "Newcastle vs Aston Villa | Premier League 26/27 Full Match & Highlights | EA FC 27",
-          "titleHidden": false,
-          "channel": "Fifa Live",
-          "durationSeconds": 898.0
-        }
-      ],
-      "id": "nowtv-202609262167901-20",
-      "upcoming": false,
-      "kickoff": "2026-10-18T00:30:00+08:00"
-    },
-    {
-      "id": "cup-fa-cup-5",
+      "id": "cup-fa-cup-1",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2216,127 +2315,34 @@
       "upcoming": false
     },
     {
-      "area": "england",
-      "league": "英超",
-      "date": "2026-10-17",
-      "home": "Brentford",
-      "away": "Liverpool",
-      "homeZh": "Brentford",
-      "awayZh": "Liverpool",
-      "titleZh": "【英超】賓福特VS利物浦",
-      "videoId": "202609262167897",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167897&type=england",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-17T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "yivzQLxZgPI",
-          "title": "Brentford v. Liverpool | PREMIER LEAGUE HIGHLIGHTS | 10/17/2026",
-          "titleHidden": false,
-          "channel": "NBC Sports",
-          "durationSeconds": 784.0
-        },
-        {
-          "id": "i1bJM0vF5J0",
-          "title": "Brentford vs Liverpool | Premier League 2026/27 Full Match Highlights (EA Sports FC 27)",
-          "titleHidden": false,
-          "channel": "Fifa Live",
-          "durationSeconds": 1029.0
-        },
-        {
-          "id": "EzP85ELmK2g",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 888.0
-        }
-      ],
-      "id": "nowtv-202609262167897-21",
-      "upcoming": false,
-      "kickoff": "2026-10-17T22:00:00+08:00"
-    },
-    {
-      "area": "england",
-      "league": "英超",
-      "date": "2026-10-17",
+      "id": "cup-carabao-cup-17",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": "2026-09-17",
+      "kickoff": null,
       "home": "Manchester City",
-      "away": "Ipswich Town",
-      "homeZh": "Manchester City",
-      "awayZh": "Ipswich Town",
-      "titleZh": "【英超】曼城VS葉士域治",
-      "videoId": "202609262167896",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167896&type=england",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-17T00:00:00+08:00",
+      "away": "Norwich City Carabao",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
       "youtube": [
         {
-          "id": "czf2arTi4u4",
-          "title": "Manchester City v. Ipswich Town | PREMIER LEAGUE HIGHLIGHTS | 10/17/2026",
+          "id": "XiQTvxizMSo",
+          "title": "DEBUTANTS SHINE! | Manchester City v Norwich City Carabao Cup Extended Highlights",
           "titleHidden": false,
-          "channel": "NBC Sports",
-          "durationSeconds": 890.0
-        },
-        {
-          "id": "t7G8LgkWJ3s",
-          "title": "Manchester City F.C. v. Ipswich Town F.C. | PREMIER LEAGUE HIGHLIGHTS | 10/17/26 | USA SPORTS",
-          "titleHidden": false,
-          "channel": "USA Sports",
-          "durationSeconds": 1059.0
-        },
-        {
-          "id": "VJJV0nLYTAk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 906.0
+          "channel": "EFL",
+          "durationSeconds": 635.0
         }
       ],
-      "id": "nowtv-202609262167896-22",
-      "upcoming": false,
-      "kickoff": "2026-10-17T22:00:00+08:00"
+      "upcoming": false
     },
     {
-      "area": "england",
-      "league": "英超",
-      "date": "2026-10-17",
-      "home": "Fulham",
-      "away": "Hull City",
-      "homeZh": "Fulham",
-      "awayZh": "Hull City",
-      "titleZh": "【英超】富咸VS侯城",
-      "videoId": "202609262167895",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167895&type=england",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-17T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "Wv2e6iihj0o",
-          "title": "Fulham v. Hull City | PREMIER LEAGUE HIGHLIGHTS | 10/17/2026",
-          "titleHidden": false,
-          "channel": "NBC Sports",
-          "durationSeconds": 564.0
-        },
-        {
-          "id": "KnmXsTGxsh4",
-          "title": "Fulham vs Hull City | Premier League 2026/27 Full Match Highlights | EA Sports FC 27",
-          "titleHidden": false,
-          "channel": "Fifa Live",
-          "durationSeconds": 689.0
-        },
-        {
-          "id": "RYMYQ9BQyvY",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 890.0
-        }
-      ],
-      "id": "nowtv-202609262167895-23",
-      "upcoming": false,
-      "kickoff": "2026-10-17T22:00:00+08:00"
-    },
-    {
-      "id": "cup-carabao-cup-16",
+      "id": "cup-carabao-cup-15",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -2353,6 +2359,13 @@
       "publishedAt": null,
       "youtube": [
         {
+          "id": "nqNUeIquQJc",
+          "title": "EXTENDED HIGHLIGHTS | Man United v Brighton | Carabao Cup",
+          "titleHidden": false,
+          "channel": "Official Brighton & Hove Albion FC",
+          "durationSeconds": 622.0
+        },
+        {
           "id": "1o6ZRPFaJvk",
           "title": null,
           "titleHidden": true,
@@ -2363,14 +2376,14 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-17",
+      "id": "cup-carabao-cup-16",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
       "date": "2026-09-15",
       "kickoff": null,
       "home": "Liverpool",
-      "away": "Tottenham Hotspur",
+      "away": "Tottenham",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2380,11 +2393,18 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "9oG66a7VmfY",
+          "id": "bWOX89kHMbM",
           "title": null,
           "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 606.0
+          "channel": "Liverpool FC",
+          "durationSeconds": 829.0
+        },
+        {
+          "id": "73_ZMXBgbNs",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Tottenham Hotspur",
+          "durationSeconds": 459.0
         }
       ],
       "upcoming": false
@@ -2394,10 +2414,10 @@
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
-      "date": "2026-09-08",
+      "date": "2026-09-15",
       "kickoff": null,
-      "home": "Sunderland",
-      "away": "Hull City",
+      "home": "West Ham United",
+      "away": "Fulham",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2407,44 +2427,24 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "F9JrtnqqSXI",
+          "id": "ySZSP7fB8cE",
+          "title": null,
+          "titleHidden": true,
+          "channel": "West Ham United FC",
+          "durationSeconds": 640.0
+        },
+        {
+          "id": "26JapFRE6_g",
           "title": null,
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
-          "durationSeconds": 500.0
+          "durationSeconds": 548.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-20",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-08-08",
-      "kickoff": null,
-      "home": "Queens Park Rangers",
-      "away": "Millwall",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "DhG2JdoCKt0",
-          "title": "Queens Park Rangers vs. Millwall: Extended Highlights | Carabao Cup | CBS Sports",
-          "titleHidden": false,
-          "channel": "CBS Sports Golazo - Europe",
-          "durationSeconds": 543.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-0",
+      "id": "cup-fa-cup-4",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2471,7 +2471,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-3",
+      "id": "cup-fa-cup-2",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2498,14 +2498,14 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-2",
+      "id": "cup-fa-cup-3",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
       "date": "2026-04-05",
       "kickoff": null,
-      "home": "Southampton",
-      "away": "Arsenal",
+      "home": "Man City",
+      "away": "Liverpool",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2515,31 +2515,38 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "f3T1AG1OayA",
+          "id": "2Qt89xtgzX8",
           "title": null,
           "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 376.0
+          "channel": "ESPN FC",
+          "durationSeconds": 1951.0
         },
         {
-          "id": "BDp_kUlqcVs",
-          "title": "FULL MATCH | Southampton v Arsenal | Quarter-Final | Emirates FA Cup 2025-26",
+          "id": "TZwdH14f1fI",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Man City",
+          "durationSeconds": 552.0
+        },
+        {
+          "id": "05ny1bmo-Kk",
+          "title": "FULL MATCH | Manchester City v Liverpool | Quarter-Final | Emirates FA Cup 2025-26",
           "titleHidden": false,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 5941.0
+          "durationSeconds": 5628.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-4",
+      "id": "cup-fa-cup-5",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-04-05",
+      "date": "2026-02-15",
       "kickoff": null,
-      "home": "Chelsea",
-      "away": "Port Vale",
+      "home": "Liverpool",
+      "away": "Brighton and Hove Albion",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2549,78 +2556,17 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "jpBNPm4nIOA",
+          "id": "RDLry7ST-4k",
           "title": null,
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 376.0
-        },
-        {
-          "id": "SzyCjOU_bfI",
-          "title": "FULL MATCH | Chelsea v Port Vale | Quarter-Final | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 5680.0
+          "durationSeconds": 379.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-21",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-02-03",
-      "kickoff": null,
-      "home": "Arsenal",
-      "away": "Chelsea",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "IgrBq4cNzIU",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 487.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-19",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-01-14",
-      "kickoff": null,
-      "home": "Chelsea",
-      "away": "Arsenal",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "FNkuMxk_3Zw",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 602.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-1",
+      "id": "cup-fa-cup-0",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2642,20 +2588,6 @@
           "titleHidden": true,
           "channel": "Man City",
           "durationSeconds": 547.0
-        },
-        {
-          "id": "YjLYTzz7MXM",
-          "title": null,
-          "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 360.0
-        },
-        {
-          "id": "hlacrrstovk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 5833.0
         }
       ],
       "upcoming": false
