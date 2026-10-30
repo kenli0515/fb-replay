@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T06:58:29Z",
+  "generatedAt": "2026-10-30T18:33:00Z",
   "areas": [
     {
       "key": "england",
@@ -211,7 +211,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-79"
+      "id": "schedule-89"
     },
     {
       "area": "ucl",
@@ -229,7 +229,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-78"
+      "id": "schedule-88"
     },
     {
       "area": "ucl",
@@ -247,7 +247,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-85"
+      "id": "schedule-95"
     },
     {
       "area": "ucl",
@@ -265,7 +265,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-80"
+      "id": "schedule-90"
     },
     {
       "area": "ucl",
@@ -283,7 +283,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-81"
+      "id": "schedule-91"
     },
     {
       "area": "ucl",
@@ -301,7 +301,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-83"
+      "id": "schedule-93"
     },
     {
       "area": "ucl",
@@ -319,7 +319,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-82"
+      "id": "schedule-92"
     },
     {
       "area": "ucl",
@@ -337,7 +337,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-84"
+      "id": "schedule-94"
     },
     {
       "area": "ucl",
@@ -355,7 +355,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-86"
+      "id": "schedule-96"
     },
     {
       "area": "ucl",
@@ -373,7 +373,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-87"
+      "id": "schedule-97"
     },
     {
       "area": "ucl",
@@ -391,7 +391,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-88"
+      "id": "schedule-98"
     },
     {
       "area": "ucl",
@@ -409,7 +409,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-90"
+      "id": "schedule-100"
     },
     {
       "area": "ucl",
@@ -427,7 +427,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-89"
+      "id": "schedule-99"
     },
     {
       "area": "ucl",
@@ -445,7 +445,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-93"
+      "id": "schedule-103"
     },
     {
       "area": "ucl",
@@ -463,7 +463,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-91"
+      "id": "schedule-101"
     },
     {
       "area": "ucl",
@@ -481,7 +481,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-92"
+      "id": "schedule-102"
     },
     {
       "area": "ucl",
@@ -499,7 +499,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-94"
+      "id": "schedule-104"
     },
     {
       "area": "ucl",
@@ -517,7 +517,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-95"
+      "id": "schedule-105"
     },
     {
       "area": "fa-cup",
@@ -535,7 +535,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-34"
+      "id": "schedule-44"
     },
     {
       "area": "fa-cup",
@@ -553,7 +553,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-42"
+      "id": "schedule-52"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Arsenal",
+      "away": "Hull City",
+      "homeZh": "Arsenal",
+      "awayZh": "Hull City",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-34"
     },
     {
       "area": "fa-cup",
@@ -571,7 +589,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-46"
+      "id": "schedule-56"
     },
     {
       "area": "fa-cup",
@@ -589,7 +607,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-48"
+      "id": "schedule-58"
     },
     {
       "area": "fa-cup",
@@ -607,7 +625,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-64"
+      "id": "schedule-74"
     },
     {
       "area": "fa-cup",
@@ -625,7 +643,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-62"
+      "id": "schedule-72"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Brighton & Hove Albion",
+      "away": "Brentford",
+      "homeZh": "Brighton & Hove Albion",
+      "awayZh": "Brentford",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-42"
     },
     {
       "area": "fa-cup",
@@ -643,7 +679,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-39"
+      "id": "schedule-49"
     },
     {
       "area": "fa-cup",
@@ -661,7 +697,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-45"
+      "id": "schedule-55"
     },
     {
       "area": "fa-cup",
@@ -679,7 +715,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-54"
+      "id": "schedule-64"
     },
     {
       "area": "fa-cup",
@@ -697,7 +733,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-65"
+      "id": "schedule-75"
     },
     {
       "area": "fa-cup",
@@ -715,7 +751,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-56"
+      "id": "schedule-66"
     },
     {
       "area": "fa-cup",
@@ -733,7 +769,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-49"
+      "id": "schedule-59"
     },
     {
       "area": "fa-cup",
@@ -751,7 +787,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-57"
+      "id": "schedule-67"
     },
     {
       "area": "fa-cup",
@@ -769,7 +805,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-52"
+      "id": "schedule-62"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Crystal Palace",
+      "away": "Liverpool",
+      "homeZh": "Crystal Palace",
+      "awayZh": "Liverpool",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-39"
     },
     {
       "area": "fa-cup",
@@ -787,7 +841,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-35"
+      "id": "schedule-45"
     },
     {
       "area": "fa-cup",
@@ -805,7 +859,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-58"
+      "id": "schedule-68"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Everton",
+      "away": "Coventry City",
+      "homeZh": "Everton",
+      "awayZh": "Coventry City",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-38"
     },
     {
       "area": "fa-cup",
@@ -823,7 +895,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-47"
+      "id": "schedule-57"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Fulham",
+      "away": "Newcastle United",
+      "homeZh": "Fulham",
+      "awayZh": "Newcastle United",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-37"
     },
     {
       "area": "fa-cup",
@@ -841,7 +931,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-50"
+      "id": "schedule-60"
     },
     {
       "area": "fa-cup",
@@ -859,7 +949,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-61"
+      "id": "schedule-71"
     },
     {
       "area": "fa-cup",
@@ -877,7 +967,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-51"
+      "id": "schedule-61"
     },
     {
       "area": "fa-cup",
@@ -895,7 +985,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-60"
+      "id": "schedule-70"
     },
     {
       "area": "fa-cup",
@@ -913,7 +1003,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-37"
+      "id": "schedule-47"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Ipswich Town",
+      "away": "Bournemouth",
+      "homeZh": "Ipswich Town",
+      "awayZh": "Bournemouth",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-41"
     },
     {
       "area": "fa-cup",
@@ -931,7 +1039,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-40"
+      "id": "schedule-50"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Leeds United",
+      "away": "Tottenham Hotspur",
+      "homeZh": "Leeds United",
+      "awayZh": "Tottenham Hotspur",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-36"
     },
     {
       "area": "fa-cup",
@@ -949,7 +1075,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-41"
+      "id": "schedule-51"
     },
     {
       "area": "fa-cup",
@@ -967,7 +1093,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-38"
+      "id": "schedule-48"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Manchester United",
+      "away": "Aston Villa",
+      "homeZh": "Manchester United",
+      "awayZh": "Aston Villa",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-43"
     },
     {
       "area": "fa-cup",
@@ -985,7 +1129,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-36"
+      "id": "schedule-46"
     },
     {
       "area": "fa-cup",
@@ -1003,7 +1147,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-43"
+      "id": "schedule-53"
     },
     {
       "area": "fa-cup",
@@ -1021,7 +1165,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-44"
+      "id": "schedule-54"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Nottingham Forest",
+      "away": "Manchester City",
+      "homeZh": "Nottingham Forest",
+      "awayZh": "Manchester City",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-35"
     },
     {
       "area": "fa-cup",
@@ -1039,7 +1201,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-53"
+      "id": "schedule-63"
     },
     {
       "area": "fa-cup",
@@ -1057,7 +1219,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-59"
+      "id": "schedule-69"
     },
     {
       "area": "fa-cup",
@@ -1075,7 +1237,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-55"
+      "id": "schedule-65"
     },
     {
       "area": "fa-cup",
@@ -1093,7 +1255,25 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-66"
+      "id": "schedule-76"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-11-07",
+      "kickoff": "2026-11-07T23:00:00+08:00",
+      "home": "Sunderland",
+      "away": "Chelsea",
+      "homeZh": "Sunderland",
+      "awayZh": "Chelsea",
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-40"
     },
     {
       "area": "fa-cup",
@@ -1111,7 +1291,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-63"
+      "id": "schedule-73"
     },
     {
       "area": "fa-cup",
@@ -1129,7 +1309,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-67"
+      "id": "schedule-77"
     },
     {
       "area": "fa-cup",
@@ -1147,7 +1327,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-68"
+      "id": "schedule-78"
     },
     {
       "area": "fa-cup",
@@ -1165,7 +1345,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-69"
+      "id": "schedule-79"
     },
     {
       "area": "fa-cup",
@@ -1183,7 +1363,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-70"
+      "id": "schedule-80"
     },
     {
       "area": "fa-cup",
@@ -1201,7 +1381,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-71"
+      "id": "schedule-81"
     },
     {
       "area": "fa-cup",
@@ -1219,7 +1399,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-72"
+      "id": "schedule-82"
     },
     {
       "area": "fa-cup",
@@ -1237,7 +1417,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-73"
+      "id": "schedule-83"
     },
     {
       "area": "carabao-cup",
@@ -1255,7 +1435,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-75"
+      "id": "schedule-85"
     },
     {
       "area": "carabao-cup",
@@ -1273,7 +1453,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-76"
+      "id": "schedule-86"
     },
     {
       "area": "carabao-cup",
@@ -1291,7 +1471,7 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-77"
+      "id": "schedule-87"
     },
     {
       "area": "carabao-cup",
@@ -1309,7 +1489,24 @@
       "publishedAt": null,
       "youtube": [],
       "upcoming": true,
-      "id": "schedule-74"
+      "id": "schedule-84"
+    },
+    {
+      "area": "england",
+      "league": "英超",
+      "date": "2026-10-29",
+      "home": "Iraola",
+      "away": "Arteta_childhood friends to PL rival",
+      "homeZh": "Iraola",
+      "awayZh": "Arteta_childhood friends to PL rival",
+      "titleZh": "【英超大戰】伊拉奧拿、阿迪達兒時好友各為其主",
+      "videoId": "202610292176977",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610292176977&type=england",
+      "durationSeconds": 180,
+      "publishedAt": "2026-10-29T00:00:00+08:00",
+      "youtube": [],
+      "id": "nowtv-202610292176977-0",
+      "upcoming": false
     },
     {
       "id": "cup-carabao-cup-17",
@@ -1329,17 +1526,99 @@
       "publishedAt": null,
       "youtube": [
         {
+          "id": "XYaU9OSXu0A",
+          "title": "EVERTON v NEWCASTLE | Carabao Cup highlights",
+          "titleHidden": false,
+          "channel": "Everton Football Club",
+          "durationSeconds": 131.0
+        },
+        {
           "id": "4E2UmRN8Vcw",
           "title": null,
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
           "durationSeconds": 580.0
+        },
+        {
+          "id": "u9yqcdCPDFk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Goal Rush TV",
+          "durationSeconds": 162.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-18",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": "2026-10-28",
+      "kickoff": null,
+      "home": "Liverpool",
+      "away": "Chelsea",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "OHnwE1gGaOE",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 525.0
+        },
+        {
+          "id": "_e74c-a1r1o",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Chelsea Football Club",
+          "durationSeconds": 561.0
+        },
+        {
+          "id": "XwZmyMvOtyw",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Liverpool FC",
+          "durationSeconds": 862.0
         }
       ],
       "upcoming": false
     },
     {
       "id": "cup-carabao-cup-19",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": "2026-10-28",
+      "kickoff": null,
+      "home": "Fulham",
+      "away": "Crystal Palace",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "cp4lcyrZUWk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 495.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-20",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1373,82 +1652,14 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-20",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-10-28",
-      "kickoff": null,
-      "home": "Bournemouth",
-      "away": "Aston Villa",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "TKQ1dmouZCc",
-          "title": "Bournemouth v Aston Villa | Carabao Cup 26/27 | Match Highlights",
-          "titleHidden": false,
-          "channel": "beIN SPORTS Australia",
-          "durationSeconds": 152.0
-        },
-        {
-          "id": "-_NEr8F7Bzg",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 506.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-21",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-10-28",
-      "kickoff": null,
-      "home": "Liverpool",
-      "away": "Chelsea",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "OHnwE1gGaOE",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 525.0
-        },
-        {
-          "id": "_e74c-a1r1o",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 561.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
       "id": "cup-carabao-cup-22",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
       "date": "2026-10-28",
       "kickoff": null,
-      "home": "Fulham",
-      "away": "Crystal Palace",
+      "home": "Sunderland",
+      "away": "Brentford",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -1458,17 +1669,17 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "cp4lcyrZUWk",
+          "id": "aB-zakPhTYE",
           "title": null,
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
-          "durationSeconds": 495.0
+          "durationSeconds": 639.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-18",
+      "id": "cup-carabao-cup-21",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1530,7 +1741,7 @@
           "durationSeconds": 901.0
         }
       ],
-      "id": "nowtv-202609262167968-0",
+      "id": "nowtv-202609262167968-1",
       "upcoming": false,
       "kickoff": "2026-10-26T00:30:00+08:00"
     },
@@ -1570,7 +1781,7 @@
           "durationSeconds": 1072.0
         }
       ],
-      "id": "nowtv-202609262167961-1",
+      "id": "nowtv-202609262167961-2",
       "upcoming": false,
       "kickoff": "2026-10-25T22:00:00+08:00"
     },
@@ -1610,7 +1821,7 @@
           "durationSeconds": 137.0
         }
       ],
-      "id": "nowtv-202609262167960-2",
+      "id": "nowtv-202609262167960-3",
       "upcoming": false,
       "kickoff": "2026-10-25T22:00:00+08:00"
     },
@@ -1650,7 +1861,7 @@
           "durationSeconds": 123.0
         }
       ],
-      "id": "nowtv-202609262167962-3",
+      "id": "nowtv-202609262167962-4",
       "upcoming": false,
       "kickoff": "2026-10-25T22:00:00+08:00"
     },
@@ -1690,7 +1901,7 @@
           "durationSeconds": 1642.0
         }
       ],
-      "id": "nowtv-202609262167963-4",
+      "id": "nowtv-202609262167963-5",
       "upcoming": false,
       "kickoff": "2026-10-25T22:00:00+08:00"
     },
@@ -1723,7 +1934,7 @@
           "durationSeconds": 897.0
         }
       ],
-      "id": "nowtv-202609262167945-5",
+      "id": "nowtv-202609262167945-6",
       "upcoming": false,
       "kickoff": "2026-10-25T00:30:00+08:00"
     },
@@ -1763,7 +1974,7 @@
           "durationSeconds": 893.0
         }
       ],
-      "id": "nowtv-202609262167965-6",
+      "id": "nowtv-202609262167965-7",
       "upcoming": false,
       "kickoff": "2026-10-24T22:00:00+08:00"
     },
@@ -1796,14 +2007,14 @@
           "durationSeconds": 103.0
         },
         {
-          "id": "AxxKjAdibqs",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 121.0
+          "id": "txBuDkI-yes",
+          "title": "Arsenal v. Everton | PREMIER LEAGUE HIGHLIGHTS | 10/24/2026 | USA SPORTS",
+          "titleHidden": false,
+          "channel": "USA Sports",
+          "durationSeconds": 1058.0
         }
       ],
-      "id": "nowtv-202609262167966-7",
+      "id": "nowtv-202609262167966-8",
       "upcoming": false,
       "kickoff": "2026-10-24T22:00:00+08:00"
     },
@@ -1843,7 +2054,7 @@
           "durationSeconds": 813.0
         }
       ],
-      "id": "nowtv-202609262167939-8",
+      "id": "nowtv-202609262167939-9",
       "upcoming": false,
       "kickoff": "2026-10-24T19:30:00+08:00"
     },
@@ -1876,14 +2087,14 @@
           "durationSeconds": 1080.0
         },
         {
-          "id": "FfI2Ia9isoQ",
-          "title": "Ipswich Town vs Nottingham Forest | Premier League 2026/27 Full Match Highlights | EA FC 27",
-          "titleHidden": false,
-          "channel": "Fifa Live",
-          "durationSeconds": 910.0
+          "id": "wfEpbtsv4Lw",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 903.0
         }
       ],
-      "id": "nowtv-202609262167934-9",
+      "id": "nowtv-202609262167934-10",
       "upcoming": false,
       "kickoff": "2026-10-24T03:00:00+08:00"
     },
@@ -1901,24 +2112,7 @@
       "durationSeconds": 180,
       "publishedAt": "2026-10-23T00:00:00+08:00",
       "youtube": [],
-      "id": "nowtv-202610232174985-10",
-      "upcoming": false
-    },
-    {
-      "area": "england",
-      "league": "英超",
-      "date": "2026-10-23",
-      "home": "Chelsea",
-      "away": "Spurs_cards",
-      "homeZh": "Chelsea",
-      "awayZh": "Spurs_cards",
-      "titleZh": "【英超大戰】車熱倫敦打吡「牌」山倒海",
-      "videoId": "202610232174984",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610232174984&type=england",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-23T00:00:00+08:00",
-      "youtube": [],
-      "id": "nowtv-202610232174984-11",
+      "id": "nowtv-202610232174985-11",
       "upcoming": false
     },
     {
@@ -1982,11 +2176,11 @@
           "durationSeconds": 121.0
         },
         {
-          "id": "-HPgXTSVaN4",
-          "title": "Inter vs Shakhtar Donetsk | Complete Match Collection",
+          "id": "iEaFmR0tJdg",
+          "title": "Inter Milan vs Shakhtar Donetsk Full Match Highlights | UEFA Champions League | EA Sports FC 27",
           "titleHidden": false,
-          "channel": "Inter Classic",
-          "durationSeconds": 599.0
+          "channel": "Fifa Live",
+          "durationSeconds": 803.0
         }
       ],
       "id": "nowtv-202609262167921-13",
@@ -2131,11 +2325,11 @@
           "durationSeconds": 1519.0
         },
         {
-          "id": "09XcDzQD2E8",
+          "id": "JngbxbUdeTc",
           "title": null,
           "titleHidden": true,
-          "channel": "Fifa Live",
-          "durationSeconds": 831.0
+          "channel": "TUDN USA",
+          "durationSeconds": 920.0
         }
       ],
       "id": "nowtv-202609262167917-17",
@@ -2348,7 +2542,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-3",
+      "id": "cup-fa-cup-5",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2365,11 +2559,11 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "vdwBG5mWFcs",
+          "id": "4bZ7_BRgyCc",
           "title": null,
           "titleHidden": true,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 483.0
+          "channel": "The Emirates FA Cup",
+          "durationSeconds": 376.0
         },
         {
           "id": "zQ5x1AlImTI",
@@ -2409,38 +2603,11 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-2",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-04-06",
-      "kickoff": null,
-      "home": "West Ham United",
-      "away": "Leeds United",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "x9QpcGzknOc",
-          "title": "FULL MATCH | West Ham United v Leeds United AFC | Quarter-final | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 9312.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
       "id": "cup-fa-cup-0",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-04-05",
+      "date": "2026-04-03",
       "kickoff": null,
       "home": "Southampton",
       "away": "Arsenal",
@@ -2453,24 +2620,51 @@
       "publishedAt": null,
       "youtube": [
         {
+          "id": "_d2EMrROqO0",
+          "title": "Southampton vs Arsenal - The Emirates FA Cup 2025/26 Full Match Highlights",
+          "titleHidden": false,
+          "channel": "Gunners Gameplay",
+          "durationSeconds": 651.0
+        },
+        {
           "id": "f3T1AG1OayA",
           "title": null,
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 376.0
-        },
-        {
-          "id": "BDp_kUlqcVs",
-          "title": "FULL MATCH | Southampton v Arsenal | Quarter-Final | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 5941.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-5",
+      "id": "cup-fa-cup-2",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": "2026-03-13",
+      "kickoff": null,
+      "home": "Emirates FA",
+      "away": "West Ham United",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "JBIEg0z6ql4",
+          "title": "Emirates FA Cup Final : Queensgate City vs West Ham United | Extended Highlights | 2028/2029 Season",
+          "titleHidden": false,
+          "channel": "Starquest Sports",
+          "durationSeconds": 1769.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-3",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
