@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T20:23:50Z",
+  "generatedAt": "2026-11-05T07:51:27Z",
   "areas": [
     {
       "key": "england",
@@ -15,114 +15,6 @@
     "youtube"
   ],
   "matches": [
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "kickoff": "2026-11-05T05:00:00+08:00",
-      "home": "Borussia Dortmund",
-      "away": "Real Betis",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-78"
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "kickoff": "2026-11-05T05:00:00+08:00",
-      "home": "Lens",
-      "away": "Como",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-81"
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "kickoff": "2026-11-05T05:00:00+08:00",
-      "home": "PSV Eindhoven",
-      "away": "Club Brugge",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-79"
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "kickoff": "2026-11-05T05:00:00+08:00",
-      "home": "RB Leipzig",
-      "away": "Manchester City",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-80"
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "kickoff": "2026-11-05T05:00:00+08:00",
-      "home": "Slavia Prague",
-      "away": "Arsenal",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-82"
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "kickoff": "2026-11-05T05:00:00+08:00",
-      "home": "Viking",
-      "away": "Sabah",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [],
-      "upcoming": true,
-      "id": "schedule-83"
-    },
     {
       "area": "fa-cup",
       "league": "足總盃",
@@ -1024,12 +916,354 @@
       "id": "schedule-73"
     },
     {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T01:45:00+08:00",
+      "home": "Galatasaray",
+      "away": "Aston Villa",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-79"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T02:45:00+08:00",
+      "home": "Bodø/Glimt",
+      "away": "LASK",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-78"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T04:00:00+08:00",
+      "home": "Arsenal",
+      "away": "Borussia Dortmund",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-80"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T04:00:00+08:00",
+      "home": "Manchester City",
+      "away": "Napoli",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-83"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T05:00:00+08:00",
+      "home": "Como",
+      "away": "AEK Athens",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-81"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T05:00:00+08:00",
+      "home": "Feyenoord",
+      "away": "Porto",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-82"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T05:00:00+08:00",
+      "home": "RB Leipzig",
+      "away": "Lens",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-84"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T05:00:00+08:00",
+      "home": "Real Madrid",
+      "away": "PSV Eindhoven",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-85"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-24",
+      "kickoff": "2026-11-25T05:00:00+08:00",
+      "home": "Slovan Bratislava",
+      "away": "Real Betis",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-86"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T01:45:00+08:00",
+      "home": "Sabah",
+      "away": "Barcelona",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-87"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T02:45:00+08:00",
+      "home": "Slavia Prague",
+      "away": "Villarreal",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-88"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T04:00:00+08:00",
+      "home": "Shakhtar Donetsk",
+      "away": "Fenerbahçe",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-92"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T04:00:00+08:00",
+      "home": "Sporting CP",
+      "away": "Manchester United",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-95"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T05:00:00+08:00",
+      "home": "Atlético Madrid",
+      "away": "Viking",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-89"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T05:00:00+08:00",
+      "home": "Club Brugge",
+      "away": "Liverpool",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-90"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T05:00:00+08:00",
+      "home": "Inter Milan",
+      "away": "VfB Stuttgart",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-91"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T05:00:00+08:00",
+      "home": "Lille",
+      "away": "Bayern Munich",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-93"
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-25",
+      "kickoff": "2026-11-26T05:00:00+08:00",
+      "home": "Paris Saint-Germain",
+      "away": "Roma",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-94"
+    },
+    {
+      "area": "carabao-cup",
+      "league": "聯賽盃",
+      "date": "2026-12-15",
+      "kickoff": "2026-12-16T04:00:00+08:00",
+      "home": "Manchester City",
+      "away": "Bradford City",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [],
+      "upcoming": true,
+      "id": "schedule-74"
+    },
+    {
       "area": "carabao-cup",
       "league": "聯賽盃",
       "date": "2026-12-16",
-      "kickoff": null,
-      "home": "Fleetwood Town",
-      "away": "Everton",
+      "kickoff": "2026-12-17T03:30:00+08:00",
+      "home": "Crystal Palace",
+      "away": "Sunderland",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -1045,7 +1279,7 @@
       "area": "carabao-cup",
       "league": "聯賽盃",
       "date": "2026-12-16",
-      "kickoff": null,
+      "kickoff": "2026-12-17T04:00:00+08:00",
       "home": "Liverpool",
       "away": "Bournemouth",
       "homeZh": null,
@@ -1062,10 +1296,10 @@
     {
       "area": "carabao-cup",
       "league": "聯賽盃",
-      "date": "2026-12-16",
-      "kickoff": null,
-      "home": "Manchester City",
-      "away": "Bradford City",
+      "date": "2026-12-17",
+      "kickoff": "2026-12-18T04:00:00+08:00",
+      "home": "Fleetwood Town",
+      "away": "Everton",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -1078,22 +1312,192 @@
       "id": "schedule-77"
     },
     {
-      "area": "carabao-cup",
-      "league": "聯賽盃",
-      "date": "2026-12-17",
-      "kickoff": null,
-      "home": "Crystal Palace",
-      "away": "Sunderland",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Lens",
+      "away": "Como (English)",
+      "homeZh": "Lens",
+      "awayZh": "Como (English)",
+      "titleZh": "【歐聯】朗斯VS科木",
+      "videoId": "202610262175830",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175830&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
       "youtube": [],
-      "upcoming": true,
-      "id": "schedule-74"
+      "id": "nowtv-202610262175830-0",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Slavia Prague",
+      "away": "Arsenal",
+      "homeZh": "Slavia Prague",
+      "awayZh": "Arsenal",
+      "titleZh": "【歐聯】布拉格斯拉維亞VS阿仙奴",
+      "videoId": "202610262175834",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175834&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "xR-AMBxuDTI",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 631.0
+        }
+      ],
+      "id": "nowtv-202610262175834-1",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Porto",
+      "away": "Napoli",
+      "homeZh": "Porto",
+      "awayZh": "Napoli",
+      "titleZh": "【歐聯】波圖VS拿玻里",
+      "videoId": "202610262175831",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175831&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "wHRzwD7Vijo",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 655.0
+        }
+      ],
+      "id": "nowtv-202610262175831-2",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Dortmund",
+      "away": "Real Betis",
+      "homeZh": "Dortmund",
+      "awayZh": "Real Betis",
+      "titleZh": "【歐聯】多蒙特VS貝迪斯",
+      "videoId": "202610262175832",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175832&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "ub9PRDan2BA",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 567.0
+        }
+      ],
+      "id": "nowtv-202610262175832-3",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Leipzig",
+      "away": "Manchester City",
+      "homeZh": "Leipzig",
+      "awayZh": "Manchester City",
+      "titleZh": "【歐聯】萊比錫VS曼城",
+      "videoId": "202610262175833",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175833&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "r8CjZSVWsqM",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 579.0
+        },
+        {
+          "id": "1E5gxEQgHEM",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 427.0
+        }
+      ],
+      "id": "nowtv-202610262175833-4",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "AEK Athens",
+      "away": "Real Madrid",
+      "homeZh": "AEK Athens",
+      "awayZh": "Real Madrid",
+      "titleZh": "【歐聯】AEK雅典VS皇家馬德里",
+      "videoId": "202610262175829",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175829&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "MNPIkN1U5u0",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 663.0
+        },
+        {
+          "id": "hUHS2PbC72g",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 1064.0
+        }
+      ],
+      "id": "nowtv-202610262175829-5",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Fenerbahce",
+      "away": "Liverpool",
+      "homeZh": "Fenerbahce",
+      "awayZh": "Liverpool",
+      "titleZh": "【歐聯】費倫巴治VS利物浦",
+      "videoId": "202610262175828",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175828&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "DWFo06AZ31k",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 521.0
+        },
+        {
+          "id": "rrIRlVsfbKg",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 978.0
+        }
+      ],
+      "id": "nowtv-202610262175828-6",
+      "upcoming": false
     },
     {
       "area": "ucl",
@@ -1124,7 +1528,7 @@
           "durationSeconds": 418.0
         }
       ],
-      "id": "nowtv-202610132172229-0",
+      "id": "nowtv-202610132172229-7",
       "upcoming": false
     },
     {
@@ -1154,9 +1558,16 @@
           "titleHidden": false,
           "channel": "FOOTBALL MANIA",
           "durationSeconds": 290.0
+        },
+        {
+          "id": "mnjZ3KvsKzI",
+          "title": "Barcelona vs Aston Villa Highlights | UEFA Champions League 2026/27",
+          "titleHidden": false,
+          "channel": "Nexus Football",
+          "durationSeconds": 240.0
         }
       ],
-      "id": "nowtv-202610262175822-1",
+      "id": "nowtv-202610262175822-8",
       "upcoming": false
     },
     {
@@ -1181,21 +1592,21 @@
           "durationSeconds": 527.0
         },
         {
-          "id": "2XXITdQJLGk",
-          "title": "HIGHLIGHTS - Atlético de Madrid vs Bayern | UEFA Champions League - Matchday 4 2026-2027 | TUDN",
-          "titleHidden": false,
-          "channel": "TUDN USA",
-          "durationSeconds": 917.0
-        },
-        {
-          "id": "QL4kxRJa44U",
+          "id": "LETLmTDLsWs",
           "title": null,
           "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 110.0
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 521.0
+        },
+        {
+          "id": "941vUTQ20K0",
+          "title": "Atletico Madrid vs Bayern Munich Highlights | UEFA Champions League 2026/27",
+          "titleHidden": false,
+          "channel": "Nexus Football",
+          "durationSeconds": 173.0
         }
       ],
-      "id": "nowtv-202610262175823-2",
+      "id": "nowtv-202610262175823-9",
       "upcoming": false
     },
     {
@@ -1211,8 +1622,16 @@
       "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610132172230&type=ucl",
       "durationSeconds": 180,
       "publishedAt": "2026-11-04T00:00:00+08:00",
-      "youtube": [],
-      "id": "nowtv-202610132172230-3",
+      "youtube": [
+        {
+          "id": "iwzaiEL1Dvk",
+          "title": "Feyenoord vs. Internazionale",
+          "titleHidden": false,
+          "channel": "Paramount Plus",
+          "durationSeconds": 5812.0
+        }
+      ],
+      "id": "nowtv-202610132172230-10",
       "upcoming": false
     },
     {
@@ -1251,63 +1670,7 @@
           "durationSeconds": 625.0
         }
       ],
-      "id": "nowtv-202610262175825-4",
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "home": "Shakhtar",
-      "away": "Sporting",
-      "homeZh": "Shakhtar",
-      "awayZh": "Sporting",
-      "titleZh": "【歐聯】薩克達VS士砵亭",
-      "videoId": "202610132172228",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610132172228&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-11-04T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "sz8u-6MVL50",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 548.0
-        },
-        {
-          "id": "y1jy743TS-g",
-          "title": "HIGHLIGHTS - Shakhtar vs Sporting CP | UEFA Champions League - Matchday 4 League Phase 2026-27",
-          "titleHidden": false,
-          "channel": "TUDN USA",
-          "durationSeconds": 919.0
-        },
-        {
-          "id": "HspyUEqEwcc",
-          "title": "Shakhtar Donetsk vs Sporting CP Highlights Today | Full Match Highlights UEFA Champions League 2026",
-          "titleHidden": false,
-          "channel": "March Football Highlights",
-          "durationSeconds": 179.0
-        }
-      ],
-      "id": "nowtv-202610132172228-5",
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-04",
-      "home": "Galatasaray",
-      "away": "Stuggart",
-      "homeZh": "Galatasaray",
-      "awayZh": "Stuggart",
-      "titleZh": "【歐聯】加拉塔沙雷VS史特加",
-      "videoId": "202610132172193",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610132172193&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-11-04T00:00:00+08:00",
-      "youtube": [],
-      "id": "nowtv-202610132172193-6",
+      "id": "nowtv-202610262175825-11",
       "upcoming": false
     },
     {
@@ -1346,7 +1709,7 @@
           "durationSeconds": 689.0
         }
       ],
-      "id": "nowtv-202610132172195-7",
+      "id": "nowtv-202610132172195-12",
       "upcoming": false,
       "kickoff": "2026-11-03T04:00:00+08:00"
     },
@@ -1372,13 +1735,6 @@
           "durationSeconds": 588.0
         },
         {
-          "id": "fzBiwJCg06k",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 122.0
-        },
-        {
           "id": "y-AL6Sh71QA",
           "title": null,
           "titleHidden": true,
@@ -1386,7 +1742,7 @@
           "durationSeconds": 860.0
         }
       ],
-      "id": "nowtv-202610132172186-8",
+      "id": "nowtv-202610132172186-13",
       "upcoming": false,
       "kickoff": "2026-11-02T00:30:00+08:00"
     },
@@ -1412,21 +1768,21 @@
           "durationSeconds": 623.0
         },
         {
+          "id": "X88aNED8zmI",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 92.0
+        },
+        {
           "id": "zch14U562Ho",
           "title": "Aston Villa vs Fulham Full Match Highlights | EA SPORTS FC 27 Premier League 2026/27",
           "titleHidden": false,
           "channel": "Fifa Live",
           "durationSeconds": 654.0
-        },
-        {
-          "id": "S0SWSzLVjHE",
-          "title": "ASTON VILLA vs FULHAM 🔥 INSANE MATCH HIGHLIGHTS | Premier League 2026 ⚽",
-          "titleHidden": false,
-          "channel": "Fc football",
-          "durationSeconds": 93.0
         }
       ],
-      "id": "nowtv-202610132172173-9",
+      "id": "nowtv-202610132172173-14",
       "upcoming": false,
       "kickoff": "2026-11-01T04:00:00+08:00"
     },
@@ -1459,7 +1815,7 @@
           "durationSeconds": 940.0
         }
       ],
-      "id": "nowtv-202610132172172-10",
+      "id": "nowtv-202610132172172-15",
       "upcoming": false,
       "kickoff": "2026-11-01T01:30:00+08:00"
     },
@@ -1499,7 +1855,7 @@
           "durationSeconds": 138.0
         }
       ],
-      "id": "nowtv-202610132172167-11",
+      "id": "nowtv-202610132172167-16",
       "upcoming": false,
       "kickoff": "2026-10-31T23:00:00+08:00"
     },
@@ -1539,7 +1895,7 @@
           "durationSeconds": 893.0
         }
       ],
-      "id": "nowtv-202610132172163-12",
+      "id": "nowtv-202610132172163-17",
       "upcoming": false,
       "kickoff": "2026-10-31T23:00:00+08:00"
     },
@@ -1579,7 +1935,7 @@
           "durationSeconds": 937.0
         }
       ],
-      "id": "nowtv-202610132172164-13",
+      "id": "nowtv-202610132172164-18",
       "upcoming": false,
       "kickoff": "2026-10-31T23:00:00+08:00"
     },
@@ -1619,7 +1975,7 @@
           "durationSeconds": 256.0
         }
       ],
-      "id": "nowtv-202610132172166-14",
+      "id": "nowtv-202610132172166-19",
       "upcoming": false,
       "kickoff": "2026-10-31T23:00:00+08:00"
     },
@@ -1652,14 +2008,14 @@
           "durationSeconds": 1077.0
         },
         {
-          "id": "N7CCdP5N7kI",
-          "title": "Brentford vs Nottingham Forest | Premier League 26/27 Full Match Highlights | FC 27",
-          "titleHidden": false,
-          "channel": "Fifa Live",
-          "durationSeconds": 867.0
+          "id": "rDI2-lWRQ2U",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Telemundo Deportes",
+          "durationSeconds": 872.0
         }
       ],
-      "id": "nowtv-202610132172165-15",
+      "id": "nowtv-202610132172165-20",
       "upcoming": false,
       "kickoff": "2026-10-31T23:00:00+08:00"
     },
@@ -1699,7 +2055,7 @@
           "durationSeconds": 900.0
         }
       ],
-      "id": "nowtv-202610132172159-16",
+      "id": "nowtv-202610132172159-21",
       "upcoming": false,
       "kickoff": "2026-10-31T20:30:00+08:00"
     },
@@ -1717,11 +2073,11 @@
       "durationSeconds": 180,
       "publishedAt": "2026-10-29T00:00:00+08:00",
       "youtube": [],
-      "id": "nowtv-202610292176977-17",
+      "id": "nowtv-202610292176977-22",
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-17",
+      "id": "cup-carabao-cup-23",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1748,7 +2104,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-14",
+      "id": "cup-carabao-cup-21",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1770,19 +2126,12 @@
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
           "durationSeconds": 525.0
-        },
-        {
-          "id": "_e74c-a1r1o",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 561.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-15",
+      "id": "cup-carabao-cup-22",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1809,7 +2158,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-16",
+      "id": "cup-carabao-cup-24",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1826,13 +2175,6 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "HbeWWm7J8NM",
-          "title": "Carabao Cup Highlights | AFC Bournemouth v Aston Villa",
-          "titleHidden": false,
-          "channel": "Aston Villa Football Club",
-          "durationSeconds": 133.0
-        },
-        {
           "id": "-_NEr8F7Bzg",
           "title": null,
           "titleHidden": true,
@@ -1843,7 +2185,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-18",
+      "id": "cup-carabao-cup-26",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1870,7 +2212,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-19",
+      "id": "cup-carabao-cup-25",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1914,211 +2256,57 @@
           "id": "PWIL5ywiiNU",
           "title": "Sunderland v. Leeds United | PREMIER LEAGUE HIGHLIGHTS | 10/25/2026",
           "titleHidden": false,
-          "channel": "NBC Sports",
+          "channel": null,
           "durationSeconds": 521.0
         },
         {
           "id": "J7a_ql1rL_U",
           "title": "Sunderland A.F.C. v. Leeds United F.C. | PREMIER LEAGUE HIGHLIGHTS | 10/25/26 | USA SPORTS",
           "titleHidden": false,
-          "channel": "USA Sports",
+          "channel": null,
           "durationSeconds": 1076.0
         },
         {
           "id": "P7FiOxTN3N0",
           "title": null,
           "titleHidden": true,
-          "channel": "Telemundo Deportes",
+          "channel": null,
           "durationSeconds": 901.0
         }
       ],
-      "id": "nowtv-202609262167968-18",
+      "id": "nowtv-202609262167968-23",
       "upcoming": false,
       "kickoff": "2026-10-26T00:30:00+08:00"
     },
     {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-10-22",
-      "home": "Real Madrid",
-      "away": "Leipzig",
-      "homeZh": "Real Madrid",
-      "awayZh": "Leipzig",
-      "titleZh": "【歐聯】皇家馬德里VS萊比錫",
-      "videoId": "202609262167920",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167920&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-22T00:00:00+08:00",
+      "id": "cup-fa-cup-2",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": "2026-08-28",
+      "kickoff": null,
+      "home": "Bootle",
+      "away": "Northwich Victoria - Emirates FA",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
       "youtube": [
         {
-          "id": "t0T5Ir_kiLk",
+          "id": "aujJwN2FhLQ",
           "title": null,
           "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 707.0
-        },
-        {
-          "id": "RyL7tqzYlCE",
-          "title": "Real Madrid Vs RB Leipzig Extended Highlights | UEFA Champions League 2026",
-          "titleHidden": false,
-          "channel": "FOOTBALL MANIA",
-          "durationSeconds": 312.0
+          "channel": "Bootle Football Club",
+          "durationSeconds": 1397.0
         }
       ],
-      "id": "nowtv-202609262167920-19",
       "upcoming": false
     },
     {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-10-22",
-      "home": "Inter",
-      "away": "Shakhtar Donetsk",
-      "homeZh": "Inter",
-      "awayZh": "Shakhtar Donetsk",
-      "titleZh": "【歐聯】國際米蘭VS薩克達",
-      "videoId": "202609262167921",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167921&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-22T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "aB6XCeOH_r4",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 593.0
-        },
-        {
-          "id": "-yyn49fCX94",
-          "title": "Inter vs Shakhtar. Highlights of the Champions League match (21/10/2026)",
-          "titleHidden": false,
-          "channel": "FC Shakhtar Donetsk",
-          "durationSeconds": 121.0
-        },
-        {
-          "id": "-HPgXTSVaN4",
-          "title": "Inter vs Shakhtar Donetsk | Complete Match Collection",
-          "titleHidden": false,
-          "channel": "Inter Classic",
-          "durationSeconds": 599.0
-        }
-      ],
-      "id": "nowtv-202609262167921-20",
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-10-22",
-      "home": "Aston Villa",
-      "away": "Viking Stavanger",
-      "homeZh": "Aston Villa",
-      "awayZh": "Viking Stavanger",
-      "titleZh": "【歐聯】阿士東維拉VS維京",
-      "videoId": "202609262167919",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167919&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-22T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "q29EnmM2fSo",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 1509.0
-        },
-        {
-          "id": "Ak4xMJJtTos",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 919.0
-        }
-      ],
-      "id": "nowtv-202609262167919-21",
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-10-22",
-      "home": "Bayern Munchen",
-      "away": "Arsenal",
-      "homeZh": "Bayern Munchen",
-      "awayZh": "Arsenal",
-      "titleZh": "【歐聯】拜仁慕尼黑VS阿仙奴",
-      "videoId": "202609262167918",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167918&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-22T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "ImduvQP0Fv8",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 672.0
-        },
-        {
-          "id": "jM_bVGPowhA",
-          "title": null,
-          "titleHidden": true,
-          "channel": "FC Bayern München",
-          "durationSeconds": 120.0
-        },
-        {
-          "id": "gnhOvaXJmfc",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 1493.0
-        }
-      ],
-      "id": "nowtv-202609262167918-22",
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-10-22",
-      "home": "Como",
-      "away": "Manchester United",
-      "homeZh": "Como",
-      "awayZh": "Manchester United",
-      "titleZh": "【歐聯】科木VS曼聯",
-      "videoId": "202609262167916",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202609262167916&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-10-22T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "BgPYZhHYOXA",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 523.0
-        },
-        {
-          "id": "gSCbm_ia-zE",
-          "title": "HIGHLIGHTS - Como vs Manchester United | UEFA Champions League - Group 3, 2026-27 | TUDN",
-          "titleHidden": false,
-          "channel": "TUDN USA",
-          "durationSeconds": 919.0
-        },
-        {
-          "id": "s7oOZuxM69I",
-          "title": "SUPER EXTENDED HIGHLIGHTS - Como vs Manchester United | UEFA Champions League - Matchday 3 League",
-          "titleHidden": false,
-          "channel": "TUDN USA",
-          "durationSeconds": 1519.0
-        }
-      ],
-      "id": "nowtv-202609262167916-23",
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-4",
+      "id": "cup-fa-cup-3",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2145,11 +2333,11 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-0",
+      "id": "cup-fa-cup-5",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-05-16",
+      "date": "2026-05-18",
       "kickoff": null,
       "home": "Chelsea",
       "away": "Manchester City",
@@ -2162,38 +2350,24 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "vdwBG5mWFcs",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 483.0
-        },
-        {
-          "id": "yQKbtu_vV_4",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Man City",
-          "durationSeconds": 536.0
-        },
-        {
-          "id": "75jiGkByEb8",
-          "title": "Chelsea v Manchester City | Key Moments | Final | Emirates FA Cup 2025-26",
+          "id": "zQ5x1AlImTI",
+          "title": "FULL MATCH | Chelsea v Manchester City | Final | Emirates FA Cup 2025-26",
           "titleHidden": false,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 136.0
+          "durationSeconds": 5956.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-2",
+      "id": "cup-fa-cup-4",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-04-29",
+      "date": "2026-04-28",
       "kickoff": null,
-      "home": "Manchester City",
-      "away": "Southampton",
+      "home": "Chelsea",
+      "away": "Leeds United",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2203,24 +2377,24 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "LBQHNiFTbrE",
-          "title": "WILD Final 20 Minutes In Full 🍿 | Manchester City v Southampton | Semi-Final",
+          "id": "eM_H_XOEgaI",
+          "title": "FULL MATCH | Chelsea v Leeds United | Semi-Final | Emirates FA Cup 2025-26",
           "titleHidden": false,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 1688.0
+          "durationSeconds": 6293.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-1",
+      "id": "cup-fa-cup-0",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-04-05",
+      "date": "2026-04-03",
       "kickoff": null,
       "home": "Southampton",
-      "away": "Arsenal",
+      "away": "Arsenal - The Emirates FA",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2235,53 +2409,26 @@
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 376.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-5",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-04-05",
-      "kickoff": null,
-      "home": "Manchester City",
-      "away": "Liverpool",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
+        },
         {
-          "id": "2Qt89xtgzX8",
-          "title": "Manchester City vs. Liverpool EXTENDED HIGHLIGHTS [April 4, 2026] | FA Cup Highlights | ESPN FC",
+          "id": "BDp_kUlqcVs",
+          "title": "FULL MATCH | Southampton v Arsenal | Quarter-Final | Emirates FA Cup 2025-26",
           "titleHidden": false,
-          "channel": "ESPN FC",
-          "durationSeconds": 1951.0
-        },
-        {
-          "id": "TZwdH14f1fI",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Man City",
-          "durationSeconds": 552.0
-        },
-        {
-          "id": "GT-jsV1e8ac",
-          "title": null,
-          "titleHidden": true,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 375.0
+          "durationSeconds": 5941.0
+        },
+        {
+          "id": "_d2EMrROqO0",
+          "title": "Southampton vs Arsenal - The Emirates FA Cup 2025/26 Full Match Highlights",
+          "titleHidden": false,
+          "channel": "Gunners Gameplay",
+          "durationSeconds": 651.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-3",
+      "id": "cup-fa-cup-1",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
