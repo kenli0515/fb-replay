@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T08:25:20Z",
+  "generatedAt": "2026-11-18T21:19:07Z",
   "areas": [
     {
       "key": "england",
@@ -1012,18 +1012,18 @@
           "durationSeconds": 570.0
         },
         {
+          "id": "tezXpAUpYvc",
+          "title": null,
+          "titleHidden": true,
+          "channel": "NBC Sports",
+          "durationSeconds": 84.0
+        },
+        {
           "id": "Byf4LKAly9Y",
           "title": "Ipswich Town vs AFC Bournemouth | Premier League 26/27 Full Match Highlights | FC 27",
           "titleHidden": false,
           "channel": "Fifa Live",
           "durationSeconds": 780.0
-        },
-        {
-          "id": "kdR0fHyMslA",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 886.0
         }
       ],
       "id": "nowtv-202610262175884-1",
@@ -1059,11 +1059,11 @@
           "durationSeconds": 990.0
         },
         {
-          "id": "4LSdU1kt1cM",
+          "id": "CL3UFNh0w0o",
           "title": null,
           "titleHidden": true,
-          "channel": "Telemundo Deportes",
-          "durationSeconds": 889.0
+          "channel": "fotbal Tefo",
+          "durationSeconds": 305.0
         }
       ],
       "id": "nowtv-202610262175886-2",
@@ -1168,8 +1168,15 @@
           "id": "cLsjU81bJ8c",
           "title": "Nottingham Forest v. Manchester City | PREMIER LEAGUE HIGHLIGHTS | 11/7/2026",
           "titleHidden": false,
-          "channel": "NBC Sports",
+          "channel": null,
           "durationSeconds": 738.0
+        },
+        {
+          "id": "ZlEbwPmTHkU",
+          "title": "Nottingham Forest vs Manchester City Full Match Highlights",
+          "titleHidden": false,
+          "channel": null,
+          "durationSeconds": 550.0
         }
       ],
       "id": "nowtv-202610262175870-5",
@@ -1237,18 +1244,18 @@
           "durationSeconds": 626.0
         },
         {
+          "id": "ipjHMFH9yHs",
+          "title": null,
+          "titleHidden": true,
+          "channel": "fotbal Tefo",
+          "durationSeconds": 315.0
+        },
+        {
           "id": "kskCmbDFVXI",
           "title": null,
           "titleHidden": true,
           "channel": "Telemundo Deportes",
           "durationSeconds": 949.0
-        },
-        {
-          "id": "077ZI5aUYXI",
-          "title": null,
-          "titleHidden": true,
-          "channel": "BenEL",
-          "durationSeconds": 474.0
         }
       ],
       "id": "nowtv-202610262175867-7",
@@ -1313,22 +1320,22 @@
           "id": "UCYawtueuo0",
           "title": "Everton v. Coventry City | PREMIER LEAGUE HIGHLIGHTS | 11/6/2026",
           "titleHidden": false,
-          "channel": "NBC Sports",
+          "channel": null,
           "durationSeconds": 679.0
         },
         {
           "id": "I0JRZ49r7Sw",
           "title": "Everton v Coventry City | Premier League highlights ▶️🔵",
           "titleHidden": false,
-          "channel": "Everton Football Club",
+          "channel": null,
           "durationSeconds": 128.0
         },
         {
-          "id": "Gd5AOX8SEKk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "NBC Sports",
-          "durationSeconds": 101.0
+          "id": "8I7QuIkp4SY",
+          "title": "Everton F.C. v. Coventry City F.C. | PREMIER LEAGUE HIGHLIGHTS | 11/06/2026 | USA SPORTS",
+          "titleHidden": false,
+          "channel": null,
+          "durationSeconds": 995.0
         }
       ],
       "id": "nowtv-202610262175859-9",
@@ -1353,7 +1360,7 @@
           "id": "ok8H8i29yiA",
           "title": null,
           "titleHidden": true,
-          "channel": null,
+          "channel": "CBS Sports Golazo",
           "durationSeconds": 546.0
         }
       ],
@@ -1403,45 +1410,6 @@
       "area": "ucl",
       "league": "歐聯",
       "date": "2026-11-05",
-      "home": "Porto",
-      "away": "Napoli",
-      "homeZh": "Porto",
-      "awayZh": "Napoli",
-      "titleZh": "【歐聯】波圖VS拿玻里",
-      "videoId": "202610262175831",
-      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175831&type=ucl",
-      "durationSeconds": 180,
-      "publishedAt": "2026-11-05T00:00:00+08:00",
-      "youtube": [
-        {
-          "id": "wHRzwD7Vijo",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 655.0
-        },
-        {
-          "id": "g7patOAKMoM",
-          "title": "HIGHLIGHTS - Porto vs. Napoli | UEFA Champions League - Matchday 4 2026-2027 | TUDN",
-          "titleHidden": false,
-          "channel": "TUDN USA",
-          "durationSeconds": 921.0
-        },
-        {
-          "id": "wQtRUqIfXag",
-          "title": null,
-          "titleHidden": true,
-          "channel": "TUDN USA",
-          "durationSeconds": 1520.0
-        }
-      ],
-      "id": "nowtv-202610262175831-12",
-      "upcoming": false
-    },
-    {
-      "area": "ucl",
-      "league": "歐聯",
-      "date": "2026-11-05",
       "home": "Dortmund",
       "away": "Real Betis",
       "homeZh": "Dortmund",
@@ -1474,7 +1442,46 @@
           "durationSeconds": 838.0
         }
       ],
-      "id": "nowtv-202610262175832-13",
+      "id": "nowtv-202610262175832-12",
+      "upcoming": false
+    },
+    {
+      "area": "ucl",
+      "league": "歐聯",
+      "date": "2026-11-05",
+      "home": "Porto",
+      "away": "Napoli",
+      "homeZh": "Porto",
+      "awayZh": "Napoli",
+      "titleZh": "【歐聯】波圖VS拿玻里",
+      "videoId": "202610262175831",
+      "nowtvUrl": "https://sports.now.com/home/video#tvVideoId=202610262175831&type=ucl",
+      "durationSeconds": 180,
+      "publishedAt": "2026-11-05T00:00:00+08:00",
+      "youtube": [
+        {
+          "id": "wHRzwD7Vijo",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 655.0
+        },
+        {
+          "id": "g7patOAKMoM",
+          "title": "HIGHLIGHTS - Porto vs. Napoli | UEFA Champions League - Matchday 4 2026-2027 | TUDN",
+          "titleHidden": false,
+          "channel": "TUDN USA",
+          "durationSeconds": 921.0
+        },
+        {
+          "id": "wQtRUqIfXag",
+          "title": null,
+          "titleHidden": true,
+          "channel": "TUDN USA",
+          "durationSeconds": 1520.0
+        }
+      ],
+      "id": "nowtv-202610262175831-13",
       "upcoming": false
     },
     {
@@ -1497,6 +1504,13 @@
           "titleHidden": true,
           "channel": "CBS Sports Golazo",
           "durationSeconds": 579.0
+        },
+        {
+          "id": "0-fsJQm6aXo",
+          "title": null,
+          "titleHidden": true,
+          "channel": "fotbal Tefo",
+          "durationSeconds": 248.0
         }
       ],
       "id": "nowtv-202610262175833-14",
@@ -1632,6 +1646,13 @@
           "titleHidden": false,
           "channel": "FOOTBALL MANIA",
           "durationSeconds": 290.0
+        },
+        {
+          "id": "mnjZ3KvsKzI",
+          "title": "Barcelona vs Aston Villa Highlights | UEFA Champions League 2026/27",
+          "titleHidden": false,
+          "channel": "Nexus Football",
+          "durationSeconds": 240.0
         }
       ],
       "id": "nowtv-202610262175822-18",
@@ -1659,18 +1680,18 @@
           "durationSeconds": 527.0
         },
         {
-          "id": "M2LHsxYA0RE",
-          "title": null,
-          "titleHidden": true,
-          "channel": "FC Bayern München",
-          "durationSeconds": 261.0
-        },
-        {
           "id": "mfoaeYeQXJQ",
           "title": "SUPER EXTENDED HIGHLIGHTS - Atlético de Madrid vs Bayern | UEFA Champions League - MD4 2026-2027",
           "titleHidden": false,
           "channel": "TUDN USA",
           "durationSeconds": 1520.0
+        },
+        {
+          "id": "2XXITdQJLGk",
+          "title": "HIGHLIGHTS - Atlético de Madrid vs Bayern | UEFA Champions League - Matchday 4 2026-2027 | TUDN",
+          "titleHidden": false,
+          "channel": "TUDN USA",
+          "durationSeconds": 917.0
         }
       ],
       "id": "nowtv-202610262175823-19",
@@ -1708,25 +1729,25 @@
       "publishedAt": "2026-11-04T00:00:00+08:00",
       "youtube": [
         {
-          "id": "qlPO-JhL7v8",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 531.0
-        },
-        {
-          "id": "ZwbgvV1YU1Q",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 954.0
-        },
-        {
           "id": "bG9uIRqtFzw",
           "title": "SUPER EXTENDED HIGHLIGHTS - Manchester United vs AS Roma | UEFA Champions League - MD4 2026-2027",
           "titleHidden": false,
-          "channel": "TUDN USA",
+          "channel": null,
           "durationSeconds": 1433.0
+        },
+        {
+          "id": "jf1AnLBsnUA",
+          "title": "HIGHLIGHTS - Manchester United vs Roma | UEFA Champions League - Matchday 4 2026-27 | TUDN",
+          "titleHidden": false,
+          "channel": null,
+          "durationSeconds": 895.0
+        },
+        {
+          "id": "qlPO-JhL7v8",
+          "title": null,
+          "titleHidden": true,
+          "channel": null,
+          "durationSeconds": 531.0
         }
       ],
       "id": "nowtv-202610262175825-21",
@@ -1806,241 +1827,11 @@
       "kickoff": "2026-11-02T00:30:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-22",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-10-28",
-      "kickoff": null,
-      "home": "Liverpool",
-      "away": "Chelsea",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "OHnwE1gGaOE",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 525.0
-        },
-        {
-          "id": "_e74c-a1r1o",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Chelsea Football Club",
-          "durationSeconds": 561.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-23",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-10-28",
-      "kickoff": null,
-      "home": "Manchester City",
-      "away": "Brighton",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "QAXtYUn7Hdw",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 670.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-24",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-10-28",
-      "kickoff": null,
-      "home": "Bournemouth",
-      "away": "Aston Villa",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "-_NEr8F7Bzg",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 506.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-25",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-10-28",
-      "kickoff": null,
-      "home": "Fulham",
-      "away": "Crystal Palace",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "cp4lcyrZUWk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 495.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-27",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-09-16",
-      "kickoff": null,
-      "home": "Manchester United",
-      "away": "Brighton",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "1o6ZRPFaJvk",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 566.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-carabao-cup-26",
-      "cup": "carabao-cup",
-      "area": null,
-      "league": "聯賽盃",
-      "date": "2026-09-15",
-      "kickoff": null,
-      "home": "Liverpool",
-      "away": "Tottenham",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "9oG66a7VmfY",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 606.0
-        },
-        {
-          "id": "bWOX89kHMbM",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Liverpool FC",
-          "durationSeconds": 829.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-3",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-05-18",
-      "kickoff": null,
-      "home": "Chelsea",
-      "away": "Manchester City",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "zQ5x1AlImTI",
-          "title": "FULL MATCH | Chelsea v Manchester City | Final | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 5956.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-4",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-04-29",
-      "kickoff": null,
-      "home": "Manchester City",
-      "away": "Southampton",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "LBQHNiFTbrE",
-          "title": "WILD Final 20 Minutes In Full 🍿 | Manchester City v Southampton | Semi-Final",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 1688.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
       "id": "cup-fa-cup-0",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-04-05",
+      "date": null,
       "kickoff": null,
       "home": "Southampton",
       "away": "Arsenal",
@@ -2053,18 +1844,45 @@
       "publishedAt": null,
       "youtube": [
         {
+          "id": "_d2EMrROqO0",
+          "title": "Southampton vs Arsenal - The Emirates FA Cup 2025/26 Full Match Highlights",
+          "titleHidden": false,
+          "channel": "Gunners Gameplay",
+          "durationSeconds": 651.0
+        },
+        {
           "id": "f3T1AG1OayA",
           "title": null,
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 376.0
-        },
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-1",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": null,
+      "kickoff": null,
+      "home": "Man City",
+      "away": "Exeter City",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
         {
-          "id": "BDp_kUlqcVs",
-          "title": "FULL MATCH | Southampton v Arsenal | Quarter-Final | Emirates FA Cup 2025-26",
-          "titleHidden": false,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 5941.0
+          "id": "I1g3etLad3M",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Man City",
+          "durationSeconds": 547.0
         }
       ],
       "upcoming": false
@@ -2074,7 +1892,61 @@
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-04-05",
+      "date": null,
+      "kickoff": null,
+      "home": "Emirates FA",
+      "away": "West Ham United",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "JBIEg0z6ql4",
+          "title": "Emirates FA Cup Final : Queensgate City vs West Ham United | Extended Highlights | 2028/2029 Season",
+          "titleHidden": false,
+          "channel": "Starquest Sports",
+          "durationSeconds": 1769.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-3",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": null,
+      "kickoff": null,
+      "home": "Emirates FA",
+      "away": "Barnsley",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "ZuYTqkQnNqY",
+          "title": "Emirates FA Cup Round 4 : Queensgate City vs Barnsley | Extended Highlights 2027/2028 Season",
+          "titleHidden": false,
+          "channel": "Starquest Sports",
+          "durationSeconds": 1511.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-4",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": null,
       "kickoff": null,
       "home": "Manchester City",
       "away": "Liverpool",
@@ -2104,14 +1976,14 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-1",
+      "id": "cup-fa-cup-5",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
-      "date": "2026-02-15",
+      "date": null,
       "kickoff": null,
-      "home": "Liverpool",
-      "away": "Brighton and Hove Albion",
+      "home": "Bristol Rovers",
+      "away": "Cambridge United",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2121,24 +1993,24 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "RDLry7ST-4k",
+          "id": "u3piyEofaJI",
           "title": null,
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
-          "durationSeconds": 379.0
+          "durationSeconds": 137.0
         }
       ],
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-5",
-      "cup": "fa-cup",
+      "id": "cup-carabao-cup-22",
+      "cup": "carabao-cup",
       "area": null,
-      "league": "足總盃",
-      "date": "2026-01-13",
+      "league": "聯賽盃",
+      "date": null,
       "kickoff": null,
       "home": "Liverpool",
-      "away": "Barnsley",
+      "away": "Chelsea",
       "homeZh": null,
       "awayZh": null,
       "titleZh": null,
@@ -2148,11 +2020,174 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "EGXNeFfadNM",
+          "id": "OHnwE1gGaOE",
           "title": null,
           "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 360.0
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 525.0
+        },
+        {
+          "id": "_e74c-a1r1o",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Chelsea Football Club",
+          "durationSeconds": 561.0
+        },
+        {
+          "id": "XwZmyMvOtyw",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Liverpool FC",
+          "durationSeconds": 862.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-23",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": null,
+      "kickoff": null,
+      "home": "Manchester City",
+      "away": "Brighton",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "QAXtYUn7Hdw",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 670.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-24",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": null,
+      "kickoff": null,
+      "home": "Liverpool",
+      "away": "Tottenham",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "bWOX89kHMbM",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Liverpool FC",
+          "durationSeconds": 829.0
+        },
+        {
+          "id": "73_ZMXBgbNs",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Tottenham Hotspur",
+          "durationSeconds": 459.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-25",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": null,
+      "kickoff": null,
+      "home": "Fulham",
+      "away": "Crystal Palace",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "cp4lcyrZUWk",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 495.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-26",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": null,
+      "kickoff": null,
+      "home": "West Ham",
+      "away": "Fulham",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "ySZSP7fB8cE",
+          "title": null,
+          "titleHidden": true,
+          "channel": "West Ham United FC",
+          "durationSeconds": 640.0
+        },
+        {
+          "id": "26JapFRE6_g",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 548.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-carabao-cup-27",
+      "cup": "carabao-cup",
+      "area": null,
+      "league": "聯賽盃",
+      "date": null,
+      "kickoff": null,
+      "home": "Manchester City",
+      "away": "Norwich City",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "1zbzm3kyRaQ",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 486.0
         }
       ],
       "upcoming": false
