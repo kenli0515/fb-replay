@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T21:20:11Z",
+  "generatedAt": "2026-11-20T08:19:44Z",
   "areas": [
     {
       "key": "england",
@@ -1092,6 +1092,13 @@
           "durationSeconds": 775.0
         },
         {
+          "id": "U2WjWmXby8s",
+          "title": null,
+          "titleHidden": true,
+          "channel": "fotbal Tefo",
+          "durationSeconds": 361.0
+        },
+        {
           "id": "8dEKsDn6VwE",
           "title": null,
           "titleHidden": true,
@@ -1118,25 +1125,25 @@
       "publishedAt": "2026-11-08T00:00:00+08:00",
       "youtube": [
         {
-          "id": "Taf-z1Fmaco",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Official Brighton & Hove Albion FC",
-          "durationSeconds": 441.0
+          "id": "syrmsHOA1lE",
+          "title": "Brighton v. Brentford | PREMIER LEAGUE HIGHLIGHTS | 11/8/2026",
+          "titleHidden": false,
+          "channel": "NBC Sports",
+          "durationSeconds": 693.0
         },
         {
           "id": "xVToV41jGKo",
           "title": "EXTENDED HIGHLIGHTS | Brighton v Brentford | Premier League",
           "titleHidden": false,
-          "channel": null,
+          "channel": "Official Brighton & Hove Albion FC",
           "durationSeconds": 557.0
         },
         {
-          "id": "syrmsHOA1lE",
-          "title": "Brighton v. Brentford | PREMIER LEAGUE HIGHLIGHTS | 11/8/2026",
+          "id": "7eUjJEXlcGE",
+          "title": "HIGHLIGHTS | Brighton v Brentford | Premier League",
           "titleHidden": false,
-          "channel": null,
-          "durationSeconds": 693.0
+          "channel": "Official Brighton & Hove Albion FC",
+          "durationSeconds": 121.0
         }
       ],
       "id": "nowtv-202610262175885-4",
@@ -1176,7 +1183,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-2",
+      "id": "cup-fa-cup-3",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -1441,25 +1448,25 @@
       "publishedAt": "2026-11-05T00:00:00+08:00",
       "youtube": [
         {
+          "id": "wHRzwD7Vijo",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 655.0
+        },
+        {
           "id": "g7patOAKMoM",
           "title": "HIGHLIGHTS - Porto vs. Napoli | UEFA Champions League - Matchday 4 2026-2027 | TUDN",
           "titleHidden": false,
-          "channel": null,
+          "channel": "TUDN USA",
           "durationSeconds": 921.0
         },
         {
           "id": "wQtRUqIfXag",
           "title": null,
           "titleHidden": true,
-          "channel": null,
+          "channel": "TUDN USA",
           "durationSeconds": 1520.0
-        },
-        {
-          "id": "wHRzwD7Vijo",
-          "title": null,
-          "titleHidden": true,
-          "channel": null,
-          "durationSeconds": 655.0
         }
       ],
       "id": "nowtv-202610262175831-12",
@@ -1487,18 +1494,18 @@
           "durationSeconds": 1431.0
         },
         {
+          "id": "Fs2C9n0yzvM",
+          "title": null,
+          "titleHidden": true,
+          "channel": "Club Games #7",
+          "durationSeconds": 623.0
+        },
+        {
           "id": "ub9PRDan2BA",
           "title": null,
           "titleHidden": true,
           "channel": null,
           "durationSeconds": 567.0
-        },
-        {
-          "id": "XIwuEmjKRuo",
-          "title": null,
-          "titleHidden": true,
-          "channel": null,
-          "durationSeconds": 838.0
         }
       ],
       "id": "nowtv-202610262175832-13",
@@ -1526,18 +1533,18 @@
           "durationSeconds": 579.0
         },
         {
+          "id": "1E5gxEQgHEM",
+          "title": null,
+          "titleHidden": true,
+          "channel": "CBS Sports Golazo",
+          "durationSeconds": 427.0
+        },
+        {
           "id": "0-fsJQm6aXo",
           "title": null,
           "titleHidden": true,
           "channel": "fotbal Tefo",
           "durationSeconds": 248.0
-        },
-        {
-          "id": "B91YH6A8BrA",
-          "title": null,
-          "titleHidden": true,
-          "channel": "Game Flix Fc",
-          "durationSeconds": 1251.0
         }
       ],
       "id": "nowtv-202610262175833-14",
@@ -1590,25 +1597,25 @@
       "publishedAt": "2026-11-05T00:00:00+08:00",
       "youtube": [
         {
-          "id": "DWFo06AZ31k",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 521.0
-        },
-        {
-          "id": "rrIRlVsfbKg",
-          "title": null,
-          "titleHidden": true,
-          "channel": "CBS Sports Golazo",
-          "durationSeconds": 978.0
-        },
-        {
           "id": "dknwh5yHLr4",
           "title": "Fenerbahçe vs Liverpool Highlights | UEFA Champions League 2026/27",
           "titleHidden": false,
-          "channel": "Nexus Football",
+          "channel": null,
           "durationSeconds": 293.0
+        },
+        {
+          "id": "Zke5jT3Di0g",
+          "title": "SUPER EXTENDED HIGHLIGHTS - Fenerbahce vs Liverpool | UEFA Champions League - Matchday 4 2026-2027",
+          "titleHidden": false,
+          "channel": null,
+          "durationSeconds": 1521.0
+        },
+        {
+          "id": "saDJZgY8GZA",
+          "title": "HIGHLIGHTS - Fenerbahçe vs Liverpool | UEFA Champions League - Matchday 4 2026-27 | TUDN",
+          "titleHidden": false,
+          "channel": null,
+          "durationSeconds": 981.0
         }
       ],
       "id": "nowtv-202610262175828-16",
@@ -1700,11 +1707,11 @@
           "durationSeconds": 527.0
         },
         {
-          "id": "M2LHsxYA0RE",
-          "title": null,
-          "titleHidden": true,
-          "channel": "FC Bayern München",
-          "durationSeconds": 261.0
+          "id": "941vUTQ20K0",
+          "title": "Atletico Madrid vs Bayern Munich Highlights | UEFA Champions League 2026/27",
+          "titleHidden": false,
+          "channel": "Nexus Football",
+          "durationSeconds": 173.0
         },
         {
           "id": "mfoaeYeQXJQ",
@@ -1847,7 +1854,7 @@
       "kickoff": "2026-11-02T00:30:00+08:00"
     },
     {
-      "id": "cup-carabao-cup-28",
+      "id": "cup-carabao-cup-27",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1864,13 +1871,6 @@
       "publishedAt": null,
       "youtube": [
         {
-          "id": "XYaU9OSXu0A",
-          "title": "EVERTON v NEWCASTLE | Carabao Cup highlights",
-          "titleHidden": false,
-          "channel": "Everton Football Club",
-          "durationSeconds": 131.0
-        },
-        {
           "id": "4E2UmRN8Vcw",
           "title": null,
           "titleHidden": true,
@@ -1881,7 +1881,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-26",
+      "id": "cup-carabao-cup-25",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1915,7 +1915,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-27",
+      "id": "cup-carabao-cup-26",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1942,7 +1942,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-30",
+      "id": "cup-carabao-cup-29",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1969,7 +1969,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-31",
+      "id": "cup-carabao-cup-30",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -1996,7 +1996,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-carabao-cup-29",
+      "id": "cup-carabao-cup-28",
       "cup": "carabao-cup",
       "area": null,
       "league": "聯賽盃",
@@ -2023,7 +2023,7 @@
       "upcoming": false
     },
     {
-      "id": "cup-fa-cup-3",
+      "id": "cup-fa-cup-2",
       "cup": "fa-cup",
       "area": null,
       "league": "足總盃",
@@ -2045,6 +2045,33 @@
           "titleHidden": false,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 5956.0
+        }
+      ],
+      "upcoming": false
+    },
+    {
+      "id": "cup-fa-cup-5",
+      "cup": "fa-cup",
+      "area": null,
+      "league": "足總盃",
+      "date": "2026-04-06",
+      "kickoff": null,
+      "home": "West Ham United",
+      "away": "Leeds United",
+      "homeZh": null,
+      "awayZh": null,
+      "titleZh": null,
+      "videoId": null,
+      "nowtvUrl": null,
+      "durationSeconds": null,
+      "publishedAt": null,
+      "youtube": [
+        {
+          "id": "x9QpcGzknOc",
+          "title": "FULL MATCH | West Ham United v Leeds United AFC | Quarter-final | Emirates FA Cup 2025-26",
+          "titleHidden": false,
+          "channel": "The Emirates FA Cup",
+          "durationSeconds": 9312.0
         }
       ],
       "upcoming": false
@@ -2090,7 +2117,7 @@
       "league": "足總盃",
       "date": "2026-04-05",
       "kickoff": null,
-      "home": "Manchester City",
+      "home": "Man City",
       "away": "Liverpool",
       "homeZh": null,
       "awayZh": null,
@@ -2140,33 +2167,6 @@
           "titleHidden": true,
           "channel": "The Emirates FA Cup",
           "durationSeconds": 379.0
-        }
-      ],
-      "upcoming": false
-    },
-    {
-      "id": "cup-fa-cup-5",
-      "cup": "fa-cup",
-      "area": null,
-      "league": "足總盃",
-      "date": "2026-01-13",
-      "kickoff": null,
-      "home": "Liverpool",
-      "away": "Barnsley",
-      "homeZh": null,
-      "awayZh": null,
-      "titleZh": null,
-      "videoId": null,
-      "nowtvUrl": null,
-      "durationSeconds": null,
-      "publishedAt": null,
-      "youtube": [
-        {
-          "id": "EGXNeFfadNM",
-          "title": null,
-          "titleHidden": true,
-          "channel": "The Emirates FA Cup",
-          "durationSeconds": 360.0
         }
       ],
       "upcoming": false
